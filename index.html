@@ -9,7 +9,7 @@
   
   <style>
     :root {
-      --bg-dark: #0f172a;
+      --bg-dark: #0b1329;
       --panel-dark: #1e293b;
       --accent-blue: #0284c7;
       --text-bright: #38bdf8;
@@ -26,7 +26,7 @@
       color: var(--text-light);
     }
 
-    /* ENCABEZADO PERSONALIZADO CON MONUMENTOS Y AVION TATTOO */
+    /* ENCABEZADO ESTILO TATTOO & VECTOR GRAPHICS */
     header {
       background: linear-gradient(135deg, #020617 0%, #0369a1 50%, #0f172a 100%);
       padding: 2.2rem 1rem;
@@ -42,7 +42,7 @@
       top: 0; left: 0; right: 0; bottom: 0;
       background-image: radial-gradient(#38bdf8 1.5px, transparent 1.5px);
       background-size: 30px 30px;
-      opacity: 0.15;
+      opacity: 0.12;
       pointer-events: none;
     }
 
@@ -58,41 +58,61 @@
       z-index: 1;
     }
 
-    /* ESTILO AVION TATTOO & MONUMENTOS REALES (IZQUIERDA) */
+    /* SILUETAS VECTORIALES (IZQUIERDA) */
     .tattoo-header-card {
       background: rgba(15, 23, 42, 0.85);
-      border: 2px solid var(--accent-blue);
+      border: 1px solid rgba(56, 189, 248, 0.4);
       border-radius: 16px;
-      padding: 15px 20px;
-      min-width: 250px;
+      padding: 16px 22px;
+      min-width: 260px;
       backdrop-filter: blur(8px);
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
     }
 
-    .tattoo-flight-line {
+    .vector-monuments-row {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px dashed rgba(56, 189, 248, 0.4);
-      padding-bottom: 8px;
-      margin-bottom: 8px;
+      gap: 12px;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed rgba(56, 189, 248, 0.3);
+      padding-bottom: 10px;
     }
 
-    .tattoo-plane {
-      font-size: 1.6rem;
-      display: inline-block;
-      animation: tattooFly 4s ease-in-out infinite alternate;
-      filter: drop-shadow(0 0 5px var(--text-bright));
+    .svg-icon {
+      width: 28px;
+      height: 28px;
+      fill: none;
+      stroke: var(--text-bright);
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 0 4px var(--text-bright));
     }
 
-    @keyframes tattooFly {
-      0% { transform: translateX(0px) rotate(-5deg); }
-      100% { transform: translateX(25px) rotate(5deg); }
+    .tattoo-flight-path {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: auto;
     }
 
-    .monuments-icons {
-      font-size: 1.2rem;
-      letter-spacing: 4px;
+    .flight-dots {
+      width: 40px;
+      height: 2px;
+      background: repeating-linear-gradient(90deg, var(--text-bright) 0 4px, transparent 4px 8px);
+    }
+
+    .plane-svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--text-bright);
+      transform: rotate(45deg);
+      animation: planeHover 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes planeHover {
+      0% { transform: rotate(45deg) translateY(0px); }
+      100% { transform: rotate(45deg) translateY(-4px); }
     }
 
     .tattoo-header-card h4 {
@@ -100,22 +120,22 @@
       color: var(--text-bright);
       font-size: 0.95rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
     }
 
     .tattoo-header-card p {
-      margin: 3px 0 0 0;
-      font-size: 0.82rem;
+      margin: 4px 0 0 0;
+      font-size: 0.8rem;
       color: var(--text-muted);
     }
 
-    /* LOGO CENTRAL MÁS GRANDE */
+    /* LOGO CENTRAL DESTACADO */
     .logo-center {
       text-align: center;
     }
 
     .brand-logo {
-      max-width: 190px; /* Ligeramente más grande */
+      max-width: 195px;
       height: auto;
       border-radius: 50%;
       box-shadow: 0 0 40px rgba(56, 189, 248, 0.85);
@@ -442,27 +462,40 @@
 </head>
 <body>
 
-  <!-- ENCABEZADO PERSONALIZADO CON AVION TATTOO Y MONUMENTOS -->
   <header>
     <div class="header-container">
       
-      <!-- Izquierda: Avión Tattoo y Iconos de Lugares Reales -->
       <div class="tattoo-header-card">
-        <div class="tattoo-flight-line">
-          <span class="monuments-icons">🗿 🏔️ 🗼</span>
-          <span style="color: #38bdf8; font-size: 0.8rem;">••••••••</span>
-          <span class="tattoo-plane">✈︎</span>
+        <div class="vector-monuments-row">
+          
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M12 2v20M8 22h8M9 15h6M10 9h4M7 22l3-14 2-6 2 6 3 14"/>
+          </svg>
+
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M4 8h16M12 4v16M10 22h4"/>
+          </svg>
+
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M3 20l7-12 4 6 3-3 4 9H3z"/>
+          </svg>
+
+          <div class="tattoo-flight-path">
+            <div class="flight-dots"></div>
+            <svg class="plane-svg" viewBox="0 0 24 24">
+              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+            </svg>
+          </div>
+
         </div>
         <h4>EQ TRAVEL 360</h4>
-        <p>Cristo Redentor • Machu Picchu • Eiffel</p>
+        <p>París • Río • Machu Picchu</p>
       </div>
 
-      <!-- Centro: Logo Oficial Más Grande -->
       <div class="logo-center">
         <img src="logo.jpg.png" alt="EQ Travel 360 Logo" class="brand-logo">
       </div>
 
-      <!-- Derecha: Sello Oficial de Pasaporte -->
       <div class="stamp-badge-large">
         <span style="letter-spacing: 1px;">EQ TRAVEL</span>
         <span class="stamp-star">★</span>
@@ -473,7 +506,6 @@
     </div>
   </header>
 
-  <!-- BUSCADOR Y FILTROS POR REGIÓN -->
   <div class="controls-container">
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="🔍 Buscar cualquier ciudad, montaña o destino..." onkeyup="buscarDestino()">
@@ -487,12 +519,10 @@
     </div>
   </div>
 
-  <!-- MAPA INTERACTIVO -->
   <div class="map-section">
     <div id="map"></div>
   </div>
 
-  <!-- SECCIÓN DESTACADA DE REDES SOCIALES -->
   <div class="social-banner">
     <div class="social-info">
       <h3>🎥 Sigue la Bitácora en Video</h3>
@@ -508,13 +538,11 @@
     </div>
   </div>
 
-  <!-- BITÁCORAS DE VIAJE -->
   <div class="cards-section">
     <h2 style="color: var(--text-bright); text-align: center; font-size: 1.8rem; margin-bottom: 25px;">Bitácoras Principales y Rutas Logísticas</h2>
     
     <div class="cards-grid">
       
-      <!-- CUSCO & RUTA INCA -->
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Perú • Circuito Inca & Cumbres</span>
@@ -524,7 +552,6 @@
         </div>
       </div>
 
-      <!-- ALASKA & NORTEAMÉRICA -->
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Norteamérica • Rutas del Norte</span>
@@ -534,7 +561,6 @@
         </div>
       </div>
 
-      <!-- GUATEMALA HIGHLANDS -->
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Guatemala • Cumbres & Ruinas</span>
@@ -544,7 +570,6 @@
         </div>
       </div>
 
-      <!-- NICARAGUA -->
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Nicaragua • Circuito Volcánico</span>
@@ -554,7 +579,6 @@
         </div>
       </div>
 
-      <!-- ECUADOR & COLOMBIA -->
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Ecuador & Colombia • Andes</span>
@@ -564,7 +588,6 @@
         </div>
       </div>
 
-      <!-- BRASIL & TRIPLE FRONTERA -->
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Brasil - Paraguay - Uruguay</span>
@@ -574,379 +597,6 @@
         </div>
       </div>
 
-      <!-- EUROPA -->
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Europa • Trenes & Capitales</span>
-          <h3>Circuito Europa Clásica</h3>
-          <p>Guías para conectar en tren de alta velocidad París (Eiffel), Londres, Barcelona y Roma.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaEuropa', [48.8566, 2.3522])">Ver Sub-bitácoras</button>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- SUB-BITÁCORAS DESPLEGABLES -->
-
-    <!-- CUSCO Y CIRCUITO INCA -->
-    <div id="guiaCuscoGeneral" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇵🇪 Cusco & Ruta Inca: Selección de Sub-bitácora</h2>
-      
-      <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subVinicunca', [-13.8693, -71.3029])">🌈 Montaña 7 Colores (5,200m)</span>
-        <span class="sub-link" onclick="mostrarSub('subHumantay', [-13.3361, -72.5694])">🌊 Laguna Humantay (4,200m)</span>
-        <span class="sub-link" onclick="mostrarSub('subMachuPicchu', [-13.1631, -72.5450])">🛕 Machu Picchu & Tren</span>
-        <span class="sub-link" onclick="mostrarSub('subCaminoInca', [-13.2263, -72.4184])">🥾 Camino Inca</span>
-        <span class="sub-link" onclick="mostrarSub('subCuscoCiudad', [-13.5320, -71.9675])">🏛️ Cusco Imperial</span>
-      </div>
-
-      <div id="subVinicunca" class="sub-content-box">
-        <h3>🌈 Montaña de 7 Colores (Vinicunca - 5,200m)</h3>
-        <span class="transport-tag">🚌 BUS DE CUSCO</span> <span class="transport-tag">🥾 SENDERISMO DE ALTA MONTAÑA</span>
-        <p><b>Cómo llegar y Tips de Trekking:</b> Salida a las 3:00 AM de Cusco en minivan hacia Cusipata (3 hrs). Desayuno y traslado a Phulawasipata (inicio del trek). <br><b>Tip de Senderismo:</b> Aclimatarse mínimo 2 días en Cusco. Caminata de 1.5 a 2 horas sobre terreno empinado a 5,000m+. Llevar bastones de trekking, caramelos de coca y ropa de abrigo por capas.</p>
-      </div>
-
-      <div id="subHumantay" class="sub-content-box" style="display:none;">
-        <h3>🌊 Laguna Humantay (4,200m)</h3>
-        <span class="transport-tag">🚌 BUS A MOLLEPATA</span> <span class="transport-tag">🥾 SENDERISMO</span>
-        <p><b>Paso a Paso:</b> Traslado de Cusco a Mollepata y Soraypampa (3 hrs). <br><b>Tip de Trekking:</b> La subida desde Soraypampa dura aproximadamente 1.5 horas con pendiente pronunciada. Usar calzado con buen agarre y subir a ritmo constante.</p>
-      </div>
-
-      <div id="subMachuPicchu" class="sub-content-box" style="display:none;">
-        <h3>🛕 Machu Picchu desde Ollantaytambo</h3>
-        <span class="transport-tag">🚌 BUS OLLANTAYTAMBO</span> <span class="transport-tag">🚆 TREN PERURAIL/INCA RAIL</span>
-        <p><b>Logística:</b> Bus de Cusco a Ollantaytambo en el Valle Sagrado (1.5 hrs), tren hacia Aguas Calientes (Machu Picchu Pueblo) y bus de subida a la ciudadela Inca.</p>
-      </div>
-
-      <div id="subCaminoInca" class="sub-content-box" style="display:none;">
-        <h3>🥾 Camino Inca Clásico</h3>
-        <span class="transport-tag">🥾 TREKKING 4 DÍAS</span> <span class="transport-tag">🎫 PERMISO OBLIGATORIO</span>
-        <p><b>Tips de Ruta:</b> Inicia en el Km 82 de la vía férrea. Requiere reserva previa de boleto oficial con meses de anticipación con guía autorizado.</p>
-      </div>
-
-      <div id="subCuscoCiudad" class="sub-content-box" style="display:none;">
-        <h3>🏛️ Cusco Imperial</h3>
-        <span class="transport-tag">✈️ AEROPUERTO VELAZCO ASTETE</span>
-        <p><b>Aclimatación:</b> Ciudad ubicada a 3,400 metros de altitud. Recomendado descansar el primer día y tomar té de coca.</p>
-      </div>
-    </div>
-
-    <!-- ALASKA -->
-    <div id="guiaAlaska" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇺🇸 Alaska: Selección de Sub-bitácora</h2>
-      
-      <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subAnchorage', [61.2181, -149.9003])">🏔️ Anchorage</span>
-        <span class="sub-link" onclick="mostrarSub('subDenali', [63.1148, -151.1926])">❄️ Parque Nacional Denali</span>
-      </div>
-
-      <div id="subAnchorage" class="sub-content-box">
-        <h3>🏔️ Anchorage & Rutas de Glaciares</h3>
-        <span class="transport-tag">✈️ AEROPUERTO ANC</span> <span class="transport-tag">🚗 AUTO RENTADO / TREN ALASKA RAILROAD</span>
-        <p><b>Logística:</b> Puerta de entrada a Alaska. Alquila un vehículo o usa el tren panorámico Alaska Railroad para recorrer Seward y la península de Kenai.</p>
-      </div>
-
-      <div id="subDenali" class="sub-content-box" style="display:none;">
-        <h3>❄️ Parque Nacional Denali</h3>
-        <span class="transport-tag">🚌 BUS DEL PARQUE</span> <span class="transport-tag">🥾 SENDERISMO SALVAJE</span>
-        <p><b>Tips de Visita:</b> La cumbre más alta de Norteamérica. El acceso interno al parque está restringido a autobuses autorizados del parque para preservar la fauna salvaje.</p>
-      </div>
-    </div>
-
-    <!-- GUATEMALA -->
-    <div id="guiaGuateGeneral" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇬🇹 Guatemala: Selección de Sub-bitácora</h2>
-      
-      <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subTajumulco', [15.0433, -91.9037])">🌋 Volcán Tajumulco</span>
-        <span class="sub-link" onclick="mostrarSub('subTikal', [17.2220, -89.6237])">🛕 Tikal Maya</span>
-        <span class="sub-link" onclick="mostrarSub('subXela', [14.8347, -91.5180])">🏙️ Quetzaltenango (Xela)</span>
-        <span class="sub-link" onclick="mostrarSub('subAntigua', [14.5586, -90.7295])">🏛️ Antigua Guatemala</span>
-        <span class="sub-link" onclick="mostrarSub('subAtitlan', [14.6906, -91.2025])">🌊 Lago Atitlán</span>
-      </div>
-
-      <div id="subTajumulco" class="sub-content-box">
-        <h3>🌋 Volcán Tajumulco (4,220m)</h3>
-        <span class="transport-tag">🚌 BUS LOCAL</span> <span class="transport-tag">🥾 SENDERISMO</span>
-        <p><b>Paso a Paso:</b> Bus de Xela a San Marcos y "chicken bus" a Tacaná hasta la <b>Aldea Tuichán (3,000m)</b>. Inicio del ascenso a la cima más alta de Centroamérica.</p>
-      </div>
-
-      <div id="subTikal" class="sub-content-box" style="display:none;">
-        <h3>🛕 Tikal (Petén) desde Zona 1</h3>
-        <span class="transport-tag">✈️ AVIÓN</span> <span class="transport-tag">🚌 BUS NOCTURNO</span>
-        <p><b>Opción Terrestre:</b> Sal desde la capital en buses nocturnos de <i>Fuente del Norte</i> a Santa Elena (8 horas) y colectivo directo al parque arqueológico.</p>
-      </div>
-
-      <div id="subXela" class="sub-content-box" style="display:none;">
-        <h3>🏙️ Quetzaltenango (Xela)</h3>
-        <span class="transport-tag">🚌 BUS DIRECTO</span>
-        <p><b>Transporte:</b> Salidas desde la capital en <i>Transportes Alamo</i> o <i>Línea Dorada</i> (4 horas).</p>
-      </div>
-
-      <div id="subAntigua" class="sub-content-box" style="display:none;">
-        <h3>🏛️ Antigua Guatemala</h3>
-        <span class="transport-tag">🚌 SHUTTLE</span>
-        <p><b>Desde Aeropuerto La Aurora:</b> Shuttle compartido directo a Antigua (1 hora).</p>
-      </div>
-
-      <div id="subAtitlan" class="sub-content-box" style="display:none;">
-        <h3>🌊 Lago Atitlán (Panajachel)</h3>
-        <span class="transport-tag">🚌 SHUTTLE</span> <span class="transport-tag">🚤 LANCHA PUBLICAS</span>
-        <p><b>Movilidad:</b> Lanchas rápidas conectan Panajachel con San Juan, San Pedro y Santiago Atitlán.</p>
-      </div>
-    </div>
-
-    <!-- NICARAGUA -->
-    <div id="guiaNicaraguaGeneral" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇳🇮 Nicaragua: Selección de Sub-bitácora</h2>
-      
-      <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subOmetepe', [11.5392, -85.5701])">🌋 Isla de Ometepe</span>
-        <span class="sub-link" onclick="mostrarSub('subLeon', [12.4379, -86.8780])">🏛️ León</span>
-        <span class="sub-link" onclick="mostrarSub('subGranada', [11.9299, -85.9560])">⛵ Granada</span>
-      </div>
-
-      <div id="subOmetepe" class="sub-content-box">
-        <h3>🌋 Isla de Ometepe</h3>
-        <span class="transport-tag">🚌 BUS LOCAL</span> <span class="transport-tag">⛴️ FERRY</span>
-        <p><b>Ruta:</b> Bus de Managua a Rivas, taxi a Puerto de San Jorge y ferry de 1 hora a Moyogalpa.</p>
-      </div>
-
-      <div id="subLeon" class="sub-content-box" style="display:none;">
-        <h3>🏛️ León</h3>
-        <span class="transport-tag">🚌 MICROBÚS</span>
-        <p><b>Ruta:</b> Microbuses desde la Terminal UCA en Managua (1h 15m).</p>
-      </div>
-
-      <div id="subGranada" class="sub-content-box" style="display:none;">
-        <h3>⛵ Granada</h3>
-        <span class="transport-tag">🚌 MICROBÚS</span>
-        <p><b>Ruta:</b> Microbuses desde la Terminal UCA directo al parque central de Granada (50 min).</p>
-      </div>
-    </div>
-
-    <!-- ECUADOR Y COLOMBIA -->
-    <div id="guiaEcuadorColombia" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇪🇨🇨🇴 Ecuador & Colombia: Selección de Sub-bitácora</h2>
-      
-      <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subChimborazo', [-1.4693, -78.8169])">🏔️ Chimborazo (Condor Cocha)</span>
-        <span class="sub-link" onclick="mostrarSub('subIpiales', [0.8248, -77.6432])">⛪ Ipiales & Las Lajas</span>
-        <span class="sub-link" onclick="mostrarSub('subQuito', [-0.1807, -78.4678])">🏛️ Quito</span>
-      </div>
-
-      <div id="subChimborazo" class="sub-content-box">
-        <h3>🏔️ Laguna Condor Cocha (Chimborazo 5,100m)</h3>
-        <span class="transport-tag">🚌 BUS DE RIOBAMBA</span> <span class="transport-tag">🥾 TREKKING</span>
-        <p><b>Paso a Paso:</b> Bus de Riobamba al ingreso de la Reserva, subida al Refugio Carrel (4,800m) y caminata a Condor Cocha (5,100m).</p>
-      </div>
-
-      <div id="subIpiales" class="sub-content-box" style="display:none;">
-        <h3>⛪ De Quito a Ipiales por Tulcán</h3>
-        <span class="transport-tag">🚌 BUS</span> <span class="transport-tag">🛃 FRONTERA RUMICHACA</span>
-        <p><b>Ruta:</b> Bus de Quito a Tulcán (5 hrs), taxi a la frontera Rumichaca y colectivo al Santuario de Las Lajas.</p>
-      </div>
-
-      <div id="subQuito" class="sub-content-box" style="display:none;">
-        <h3>🏛️ Quito</h3>
-        <span class="transport-tag">🚇 METRO DE QUITO</span>
-        <p><b>Movilidad:</b> Usa el nuevo Metro de Quito para conectar de norte a sur.</p>
-      </div>
-    </div>
-
-    <!-- BRASIL & FRONTERAS -->
-    <div id="guiaBrasil" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇧🇷 Brasil & Fronteras: Selección de Sub-bitácora</h2>
-      
-      <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subRio', [-22.9068, -43.1729])">🏖️ Río (Cristo Redentor)</span>
-        <span class="sub-link" onclick="mostrarSub('subIlhaGrande', [-23.1523, -44.2319])">🏝️ Ilha Grande</span>
-        <span class="sub-link" onclick="mostrarSub('subIguazu', [-25.6953, -54.4367])">🌊 Cataratas del Iguazú</span>
-      </div>
-
-      <div id="subRio" class="sub-content-box">
-        <h3>🏖️ Río de Janeiro & Cristo Redentor</h3>
-        <span class="transport-tag">🚇 METRÔ RIO</span> <span class="transport-tag">🚆 TREN CORCOVADO</span>
-        <p><b>Logística:</b> Tren del Corcovado desde Cosme Velho para subir al Cristo Redentor.</p>
-      </div>
-
-      <div id="subIlhaGrande" class="sub-content-box" style="display:none;">
-        <h3>🏝️ Ilha Grande (Vila do Abraão)</h3>
-        <span class="transport-tag">🚌 BUS</span> <span class="transport-tag">🚤 FLEXBOAT</span>
-        <p><b>Ruta:</b> Bus de Río a Conceição de Jacareí y lancha rápida a Abraão (20 min).</p>
-      </div>
-
-      <div id="subIguazu" class="sub-content-box" style="display:none;">
-        <h3>🌊 Cataratas do Iguaçu</h3>
-        <span class="transport-tag">🚌 BUS INTERNACIONAL</span>
-        <p><b>Frontera:</b> Buses locales conectan Foz do Iguaçu, Puerto Iguazú y Ciudad del Este.</p>
-      </div>
-    </div>
-
-    <!-- EUROPA -->
-    <div id="guiaEuropa" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇪🇺 Europa Clásica: Selección de Sub-bitácora</h2>
-      
-      <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subParis', [48.8566, 2.3522])">🗼 París (Torre Eiffel)</span>
-        <span class="sub-link" onclick="mostrarSub('subLondres', [51.5074, -0.1278])">🇬🇧 Londres</span>
-        <span class="sub-link" onclick="mostrarSub('subBarcelona', [41.3851, 2.1734])">🎨 Barcelona</span>
-        <span class="sub-link" onclick="mostrarSub('subRoma', [41.9028, 12.4964])">🏛️ Roma</span>
-      </div>
-
-      <div id="subParis" class="sub-content-box">
-        <h3>🗼 París & Torre Eiffel</h3>
-        <span class="transport-tag">🚆 EUROSTAR / TGV</span>
-        <p><b>Conexión:</b> Tren de alta velocidad Eurostar conecta París (Gare du Nord) con Londres en 2h 15m.</p>
-      </div>
-
-      <div id="subLondres" class="sub-content-box" style="display:none;">
-        <h3>🇬🇧 Londres</h3>
-        <span class="transport-tag">🚇 UNDERGROUND</span>
-        <p><b>Desde Heathrow:</b> Usa la línea <i>Piccadilly Line</i> o <i>Elizabeth Line</i> al centro.</p>
-      </div>
-
-      <div id="subBarcelona" class="sub-content-box" style="display:none;">
-        <h3>🎨 Barcelona</h3>
-        <span class="transport-tag">🚆 TREN AVE</span>
-        <p><b>Conexión:</b> Trenes AVE conectan la estación Sants con Madrid y Francia.</p>
-      </div>
-
-      <div id="subRoma" class="sub-content-box" style="display:none;">
-        <h3>🏛️ Roma</h3>
-        <span class="transport-tag">🚆 LEONARDO EXPRESS</span>
-        <p><b>Desde Fiumicino:</b> Tren directo <i>Leonardo Express</i> a Roma Termini (32 min).</p>
-      </div>
-    </div>
-
-  </div>
-
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script>
-    const map = L.map('map').setView([10, -30], 2);
-
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-      maxZoom: 19,
-      attribution: 'Tiles &copy; Esri | EQ Travel 360'
-    }).addTo(map);
-
-    const destinos = [
-      { nombre: "Anchorage, Alaska (EE.UU.)", region: "Norteamérica", coords: [61.2181, -149.9003] },
-      { nombre: "Parque Nacional Denali, Alaska", region: "Norteamérica", coords: [63.1148, -151.1926] },
-      { nombre: "Cusco Imperial, Perú", region: "Sudamérica", coords: [-13.5320, -71.9675] },
-      { nombre: "Machu Picchu, Perú", region: "Sudamérica", coords: [-13.1631, -72.5450] },
-      { nombre: "Montaña de 7 Colores (Vinicunca), Perú", region: "Sudamérica", coords: [-13.8693, -71.3029] },
-      { nombre: "Laguna Humantay, Perú", region: "Sudamérica", coords: [-13.3361, -72.5694] },
-      { nombre: "Camino Inca, Perú", region: "Sudamérica", coords: [-13.2263, -72.4184] },
-      { nombre: "Lima, Perú", region: "Sudamérica", coords: [-12.0464, -77.0428] },
-      { nombre: "Ica & Huacachina, Perú", region: "Sudamérica", coords: [-14.0875, -75.7626] },
-      { nombre: "La Paz, Bolivia", region: "Sudamérica", coords: [-16.4897, -68.1193] },
-      { nombre: "Salar de Uyuni, Bolivia", region: "Sudamérica", coords: [-20.1338, -67.4891] },
-      { nombre: "Río de Janeiro (Cristo Redentor), Brasil", region: "Sudamérica", coords: [-22.9068, -43.1729] },
-      { nombre: "Ilha Grande, Brasil", region: "Sudamérica", coords: [-23.1523, -44.2319] },
-      { nombre: "São Paulo, Brasil", region: "Sudamérica", coords: [-23.5505, -46.6333] },
-      { nombre: "Foz do Iguaçu / Cataratas", region: "Sudamérica", coords: [-25.6953, -54.4367] },
-      { nombre: "Quito, Ecuador", region: "Sudamérica", coords: [-0.1807, -78.4678] },
-      { nombre: "Volcán Chimborazo & Laguna Condor Cocha", region: "Sudamérica", coords: [-1.4693, -78.8169] },
-      { nombre: "Tulcán, Ecuador", region: "Sudamérica", coords: [0.8116, -77.7172] },
-      { nombre: "Ipiales (Santuario Las Lajas), Colombia", region: "Sudamérica", coords: [0.8248, -77.6432] },
-      { nombre: "Bogotá, Colombia", region: "Sudamérica", coords: [4.7110, -74.0721] },
-      { nombre: "Buenos Aires, Argentina", region: "Sudamérica", coords: [-34.6037, -58.3816] },
-      { nombre: "Mendoza, Argentina", region: "Sudamérica", coords: [-32.8895, -68.8458] },
-      { nombre: "Salta, Argentina", region: "Sudamérica", coords: [-24.7859, -65.4117] },
-      { nombre: "Ushuaia, Argentina", region: "Sudamérica", coords: [-54.8019, -68.3030] },
-      { nombre: "San Pedro de Atacama, Chile", region: "Sudamérica", coords: [-22.9087, -68.1997] },
-      { nombre: "San José, Costa Rica", region: "Centroamérica", coords: [9.9281, -84.0907] },
-      { nombre: "Panamá", region: "Centroamérica", coords: [8.9824, -79.5199] },
-      { nombre: "Managua, Nicaragua", region: "Centroamérica", coords: [12.1149, -86.2362] },
-      { nombre: "León, Nicaragua", region: "Centroamérica", coords: [12.4379, -86.8780] },
-      { nombre: "Granada, Nicaragua", region: "Centroamérica", coords: [11.9299, -85.9560] },
-      { nombre: "Isla de Ometepe, Nicaragua", region: "Centroamérica", coords: [11.5392, -85.5701] },
-      { nombre: "Tikal (Petén), Guatemala", region: "Centroamérica", coords: [17.2220, -89.6237] },
-      { nombre: "Ciudad de Guatemala (Zona 1)", region: "Centroamérica", coords: [14.6349, -90.5069] },
-      { nombre: "Antigua Guatemala", region: "Centroamérica", coords: [14.5586, -90.7295] },
-      { nombre: "Lago Atitlán, Guatemala", region: "Centroamérica", coords: [14.6906, -91.2025] },
-      { nombre: "Quetzaltenango (Xela), Guatemala", region: "Centroamérica", coords: [14.8347, -91.5180] },
-      { nombre: "Volcán Tajumulco, Guatemala", region: "Centroamérica", coords: [15.0433, -91.9037] },
-      { nombre: "Londres, Reino Unido", region: "Europa", coords: [51.5074, -0.1278] },
-      { nombre: "París (Torre Eiffel), Francia", region: "Europa", coords: [48.8566, 2.3522] },
-      { nombre: "Barcelona, España", region: "Europa", coords: [41.3851, 2.1734] },
-      { nombre: "Roma, Italia", region: "Europa", coords: [41.9028, 12.4964] }
-    ];
-
-    let marcadoresMap = {};
-
-    function cargarMarcadores(lista) {
-      Object.values(marcadoresMap).forEach(m => map.removeLayer(m));
-      marcadoresMap = {};
-
-      lista.forEach(punto => {
-        const m = L.marker(punto.coords).addTo(map)
-          .bindPopup(`<strong style="color: #38bdf8;">${punto.nombre}</strong><br><small style="color: #94a3b8;">${punto.region}</small>`);
-        marcadoresMap[punto.nombre] = m;
-      });
-    }
-
-    cargarMarcadores(destinos);
-
-    function buscarDestino() {
-      const texto = document.getElementById('searchInput').value.toLowerCase();
-      const filtrados = destinos.filter(d => d.nombre.toLowerCase().includes(texto));
-      cargarMarcadores(filtrados);
-
-      if (filtrados.length === 1) {
-        map.setView(filtrados[0].coords, 9);
-        marcadoresMap[filtrados[0].nombre].openPopup();
-      } else if (filtrados.length === 0) {
-        map.setView([10, -30], 2);
-      }
-    }
-
-    function filtrarRegión(region, btn) {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      if (region === 'todos') {
-        cargarMarcadores(destinos);
-        map.setView([10, -30], 2);
-      } else {
-        const filtrados = destinos.filter(d => d.region === region);
-        cargarMarcadores(filtrados);
-        
-        if(region === 'Centroamérica') map.setView([13, -85], 6);
-        if(region === 'Sudamérica') map.setView([-20, -60], 3);
-        if(region === 'Norteamérica') map.setView([55, -120], 3);
-        if(region === 'Europa') map.setView([48, 10], 4);
-      }
-    }
-
-    function cerrarGuias() {
-      document.querySelectorAll('.guide-modal').forEach(g => g.style.display = 'none');
-    }
-
-    function abrirGuia(idGuia, coords) {
-      cerrarGuias();
-      const el = document.getElementById(idGuia);
-      if(el) {
-        el.style.display = 'block';
-        el.scrollIntoView({ behavior: 'smooth' });
-        map.setView(coords, 7);
-      }
-    }
-
-    function mostrarSub(subId, coords) {
-      const modal = document.getElementById(subId).closest('.guide-modal');
-      modal.querySelectorAll('.sub-content-box').forEach(box => box.style.display = 'none');
-      document.getElementById(subId).style.display = 'block';
-      map.setView(coords, 10);
-    }
-  </script>
-</body>
-</html>
