@@ -198,30 +198,42 @@
       background: #0f172a;
       border: 1px solid var(--accent-blue);
       color: var(--text-bright);
-      padding: 6px 12px;
+      padding: 8px 14px;
       border-radius: 15px;
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       cursor: pointer;
-      text-decoration: none;
       transition: all 0.2s ease;
+      font-weight: 500;
     }
 
-    .sub-link:hover {
+    .sub-link:hover, .sub-link.active-sub {
       background: var(--accent-blue);
       color: white;
     }
 
-    .guide-step {
+    .sub-content-box {
       background: #0f172a;
-      padding: 15px;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 15px;
       border-left: 4px solid var(--accent-blue);
-      border-radius: 6px;
-      margin-bottom: 15px;
     }
 
-    .guide-step h4 {
-      margin: 0 0 5px 0;
+    .sub-content-box h3 {
       color: var(--text-bright);
+      margin-top: 0;
+    }
+
+    .transport-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      background: #334155;
+      color: #38bdf8;
     }
 
     .close-btn {
@@ -279,8 +291,8 @@
         <div class="card-body">
           <span class="card-tag">Guatemala • Cumbres & Ruinas</span>
           <h3>Guatemala: Cumbres & Mundo Maya</h3>
-          <p>Explora el Volcán Tajumulco, Quetzaltenango (Xela), Antigua, Atitlán y Tikal con sus sub-bitácoras individuales.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaGuateGeneral', [15.0433, -91.9037])">Explorar Sub-bitácoras</button>
+          <p>Selecciona la sub-bitácora para ver detalles de cómo llegar a Tajumulco, Tikal, Xela, Antigua y Atitlán.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaGuateGeneral', [15.0433, -91.9037])">Ver Sub-bitácoras</button>
         </div>
       </div>
 
@@ -289,8 +301,8 @@
         <div class="card-body">
           <span class="card-tag">Nicaragua • Circuito Volcánico</span>
           <h3>Ruta Nicaragua</h3>
-          <p>Acceso directo a las sub-bitácoras de Managua, León, Granada y la mágica Isla de Ometepe.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaNicaraguaGeneral', [11.5392, -85.5701])">Explorar Sub-bitácoras</button>
+          <p>Detalles de logística para Managua, León, Granada y la Isla de Ometepe en bus y ferry.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaNicaraguaGeneral', [11.5392, -85.5701])">Ver Sub-bitácoras</button>
         </div>
       </div>
 
@@ -299,8 +311,8 @@
         <div class="card-body">
           <span class="card-tag">Ecuador & Colombia • Andes</span>
           <h3>Ecuador & Colombia Andina</h3>
-          <p>Sub-guías para Quito, Chimborazo (Condor Cocha), Tulcán, Ipiales (Las Lajas) y Bogotá.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaEcuadorColombia', [-0.1807, -78.4678])">Explorar Sub-bitácoras</button>
+          <p>Sub-guías con ruta en bus para Quito, Chimborazo (Condor Cocha), Tulcán, Ipiales (Las Lajas) y Bogotá.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaEcuadorColombia', [-0.1807, -78.4678])">Ver Sub-bitácoras</button>
         </div>
       </div>
 
@@ -309,8 +321,8 @@
         <div class="card-body">
           <span class="card-tag">Perú & Bolivia • Altiplano</span>
           <h3>Ruta del Pacífico al Salar</h3>
-          <p>Sub-bitácoras de Lima, Huacachina (Ica), La Paz y la inmensidad del Salar de Uyuni.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaPeruBolivia', [-20.1338, -67.4891])">Explorar Sub-bitácoras</button>
+          <p>Sub-bitácoras logísticas para Lima, Huacachina (Ica), La Paz y el Salar de Uyuni.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaPeruBolivia', [-20.1338, -67.4891])">Ver Sub-bitácoras</button>
         </div>
       </div>
 
@@ -319,8 +331,8 @@
         <div class="card-body">
           <span class="card-tag">Brasil - Paraguay - Uruguay</span>
           <h3>Brasil & Ruta de Fronteras</h3>
-          <p>Sub-bitácoras de Río de Janeiro, Ilha Grande, São Paulo, Cataratas de Iguaçu, Ciudad del Este y Colonia.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaBrasil', [-22.9068, -43.1729])">Explorar Sub-bitácoras</button>
+          <p>Sub-guías para conectar Río de Janeiro, Ilha Grande, São Paulo, Cataratas de Iguaçu y Colonia.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaBrasil', [-22.9068, -43.1729])">Ver Sub-bitácoras</button>
         </div>
       </div>
 
@@ -328,138 +340,257 @@
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Argentina & Chile</span>
-          <h3>Ruta del Cono Sur & Atacama</h3>
-          <p>Sub-bitácoras para Buenos Aires, Mendoza, Salta, Ushuaia y San Pedro de Atacama por Paso de Jama.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaConoSur', [-24.7859, -65.4117])">Explorar Sub-bitácoras</button>
+          <h3>Ruta Transandina & Cono Sur</h3>
+          <p>Detalles de buses y vuelos para Buenos Aires, Mendoza, Salta, Ushuaia y Atacama por Paso de Jama.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaConoSur', [-24.7859, -65.4117])">Ver Sub-bitácoras</button>
+        </div>
+      </div>
+
+      <!-- EUROPA -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Europa • Trenes de Alta Velocidad</span>
+          <h3>Circuito Europa Clásica</h3>
+          <p>Guías para conectar en tren de alta velocidad, bus y avión Londres, París, Barcelona y Roma.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaEuropa', [48.8566, 2.3522])">Ver Sub-bitácoras</button>
         </div>
       </div>
 
     </div>
 
-    <!-- SECCIÓN DE SUB-BITÁCORAS DESPLEGABLES -->
+    <!-- SUB-BITÁCORAS DESPLEGABLES CON FICHA TÉCNICA -->
 
     <!-- GUATEMALA -->
     <div id="guiaGuateGeneral" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇬🇹 Bitácora Principal: Guatemala</h2>
+      <h2>🇬🇹 Guatemala: Selección de Sub-bitácora</h2>
       
       <div class="sub-nav">
-        <span class="sub-link" onclick="enfocarDestino([15.0433, -91.9037], 'Volcán Tajumulco (4,220m)')">📍 Sub-bitácora: Volcán Tajumulco</span>
-        <span class="sub-link" onclick="enfocarDestino([17.2220, -89.6237], 'Tikal (Petén)')">📍 Sub-bitácora: Tikal en Bus</span>
-        <span class="sub-link" onclick="enfocarDestino([14.8347, -91.5180], 'Quetzaltenango (Xela)')">📍 Sub-bitácora: Xela</span>
-        <span class="sub-link" onclick="enfocarDestino([14.5586, -90.7295], 'Antigua Guatemala')">📍 Sub-bitácora: Antigua</span>
-        <span class="sub-link" onclick="enfocarDestino([14.6906, -91.2025], 'Lago Atitlán')">📍 Sub-bitácora: Lago Atitlán</span>
+        <span class="sub-link" onclick="mostrarSub('subTajumulco', [15.0433, -91.9037])">🌋 Volcán Tajumulco</span>
+        <span class="sub-link" onclick="mostrarSub('subTikal', [17.2220, -89.6237])">🛕 Tikal Maya</span>
+        <span class="sub-link" onclick="mostrarSub('subXela', [14.8347, -91.5180])">🏙️ Quetzaltenango (Xela)</span>
+        <span class="sub-link" onclick="mostrarSub('subAntigua', [14.5586, -90.7295])">🏛️ Antigua Guatemala</span>
+        <span class="sub-link" onclick="mostrarSub('subAtitlan', [14.6906, -91.2025])">🌊 Lago Atitlán</span>
       </div>
 
-      <div class="guide-step">
-        <h4>🌋 Volcán Tajumulco (4,220m)</h4>
-        <p><b>Cómo llegar:</b> Toma bus en Xela (Minerva) a San Marcos y luego camión a Tuichán. Registro e inicio de caminata hacia el campamento base.</p>
+      <div id="subTajumulco" class="sub-content-box">
+        <h3>🌋 Volcán Tajumulco (4,220m)</h3>
+        <span class="transport-tag">🚌 BUS / CAMIÓNETA LOCAL</span>
+        <p><b>Cómo llegar desde Xela:</b> Toma un bus en la Terminal Minerva de Xela hacia San Marcos (1.5 hrs). En San Marcos aborda un "chicken bus" hacia Tacaná y pídele al chofer bajarte en el crucero de la <b>Aldea Tuichán (3,000m)</b>, punto exacto de inicio del trekking.</p>
+        <p><b>💡 Tip EQ:</b> Es ideal dormir la noche previa en Xela para aclimatarse antes de hacer cumbre.</p>
       </div>
-      <div class="guide-step">
-        <h4>🛕 Tikal desde Zona 1</h4>
-        <p><b>Cómo llegar:</b> Bus nocturno de la capital a Santa Elena (Petén). Desde Flores, toma el transporte colectivo directo a las ruinas.</p>
+
+      <div id="subTikal" class="sub-content-box" style="display:none;">
+        <h3>🛕 Tikal (Petén) desde Zona 1</h3>
+        <span class="transport-tag">✈️ AVIÓN (AEROPUERTO MUNDO MAYA)</span> <span class="transport-tag">🚌 BUS NOCTURNO</span>
+        <p><b>Opción Terrestre:</b> Sal desde la capital (Zona 1/Zona 4) en buses nocturnos de <i>Fuente del Norte</i> o <i>Maya de Oro</i> (9 PM a 10 PM). Llegas en 8 horas a Santa Elena.</p>
+        <p><b>Desde Flores a Tikal:</b> En la terminal de Santa Elena o la Isla de Flores toma un microbús colectivo directo a la puerta del Parque Tikal (1 hora).</p>
+      </div>
+
+      <div id="subXela" class="sub-content-box" style="display:none;">
+        <h3>🏙️ Quetzaltenango (Xela)</h3>
+        <span class="transport-tag">🚌 BUS DIRECTO</span>
+        <p><b>Cómo llegar:</b> Desde Ciudad de Guatemala (Terminal de Buses Zona 7/11) toma transporte directo con <i>Transportes Alamo</i> o <i>Línea Dorada</i> (aprox. 4 horas por la Panamericana).</p>
+      </div>
+
+      <div id="subAntigua" class="sub-content-box" style="display:none;">
+        <h3>🏛️ Antigua Guatemala</h3>
+        <span class="transport-tag">🚌 SHUTTLE / MICROBÚS</span>
+        <p><b>Desde el Aeropuerto La Aurora (GUA):</b> Toma un shuttle compartido directo que sale a la salida de la terminal aérea hacia Antigua (1 hora de trayecto).</p>
+      </div>
+
+      <div id="subAtitlan" class="sub-content-box" style="display:none;">
+        <h3>🌊 Lago Atitlán (Panajachel)</h3>
+        <span class="transport-tag">🚌 BUS / SHUTTLE</span> <span class="transport-tag">🚤 LANCHA RÁPIDA</span>
+        <p><b>Llegada a Panajachel:</b> Toma un bus o shuttle desde Antigua o Xela hasta Panajachel.</p>
+        <p><b>Movilidad entre pueblos:</b> Muévete en lanchas públicas desde el embarcadero de Pana hacia San Pedro, San Juan La Laguna o Santiago Atitlán.</p>
       </div>
     </div>
 
     <!-- NICARAGUA -->
     <div id="guiaNicaraguaGeneral" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇳🇮 Bitácora Principal: Ruta Nicaragua</h2>
+      <h2>🇳🇮 Nicaragua: Selección de Sub-bitácora</h2>
       
       <div class="sub-nav">
-        <span class="sub-link" onclick="enfocarDestino([11.5392, -85.5701], 'Isla de Ometepe')">📍 Sub-bitácora: Isla de Ometepe</span>
-        <span class="sub-link" onclick="enfocarDestino([12.4379, -86.8780], 'León')">📍 Sub-bitácora: León & Volcano Boarding</span>
-        <span class="sub-link" onclick="enfocarDestino([11.9299, -85.9560], 'Granada')">📍 Sub-bitácora: Granada Colonial</span>
-        <span class="sub-link" onclick="enfocarDestino([12.1149, -86.2362], 'Managua')">📍 Sub-bitácora: Managua</span>
+        <span class="sub-link" onclick="mostrarSub('subOmetepe', [11.5392, -85.5701])">🌋 Isla de Ometepe</span>
+        <span class="sub-link" onclick="mostrarSub('subLeon', [12.4379, -86.8780])">🏛️ León</span>
+        <span class="sub-link" onclick="mostrarSub('subGranada', [11.9299, -85.9560])">⛵ Granada</span>
       </div>
 
-      <div class="guide-step">
-        <h4>🌋 Isla de Ometepe</h4>
-        <p><b>Cómo llegar:</b> Viaja a Rivas y dirígete al Puerto de San Jorge. Toma el ferry a Moyogalpa para explorar los volcanes Concepción y Maderas.</p>
+      <div id="subOmetepe" class="sub-content-box">
+        <h3>🌋 Isla de Ometepe</h3>
+        <span class="transport-tag">🚌 BUS LOCAL</span> <span class="transport-tag">⛴️ FERRY OMETEPE</span>
+        <p><b>Paso a Paso:</b> Desde la Terminal Huembes en Managua toma bus a Rivas. En la terminal de Rivas toma un taxi corto de 10 min al <b>Puerto de San Jorge</b>. Aborda el ferry directo hacia Moyogalpa en la Isla de Ometepe (1 hora cruzando el Gran Lago de Nicaragua).</p>
       </div>
-      <div class="guide-step">
-        <h4>🏛️ León & Granada</h4>
-        <p><b>Cómo llegar:</b> Microbuses interurbanos conectan la Terminal UCA de Managua con León y Granada en recorridos de menos de 1.5 horas.</p>
+
+      <div id="subLeon" class="sub-content-box" style="display:none;">
+        <h3>🏛️ León & Volcano Boarding</h3>
+        <span class="transport-tag">🚌 MICROBÚS INTERURBANO</span>
+        <p><b>Cómo llegar:</b> Ve a la Terminal UCA en Managua y aborda los microbuses interurbanos rápidos hacia León (1 hora y 15 minutos).</p>
+      </div>
+
+      <div id="subGranada" class="sub-content-box" style="display:none;">
+        <h3>⛵ Granada Colonial</h3>
+        <span class="transport-tag">🚌 MICROBÚS INTERURBANO</span>
+        <p><b>Cómo llegar:</b> Desde la Terminal UCA en Managua toman microbuses colectivos que te dejan en el parque central de Granada en 50 minutos.</p>
       </div>
     </div>
 
     <!-- ECUADOR Y COLOMBIA -->
     <div id="guiaEcuadorColombia" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇪🇨🇨🇴 Bitácora Principal: Ecuador & Colombia</h2>
+      <h2>🇪🇨🇨🇴 Ecuador & Colombia: Selección de Sub-bitácora</h2>
       
       <div class="sub-nav">
-        <span class="sub-link" onclick="enfocarDestino([-1.4693, -78.8169], 'Volcán Chimborazo & Laguna Condor Cocha')">📍 Sub-bitácora: Condor Cocha (5,100m)</span>
-        <span class="sub-link" onclick="enfocarDestino([0.8248, -77.6432], 'Ipiales - Las Lajas')">📍 Sub-bitácora: Ipiales & Las Lajas</span>
-        <span class="sub-link" onclick="enfocarDestino([-0.1807, -78.4678], 'Quito Centro Histórico')">📍 Sub-bitácora: Quito</span>
-        <span class="sub-link" onclick="enfocarDestino([4.7110, -74.0721], 'Bogotá')">📍 Sub-bitácora: Bogotá</span>
+        <span class="sub-link" onclick="mostrarSub('subChimborazo', [-1.4693, -78.8169])">🏔️ Chimborazo (Condor Cocha)</span>
+        <span class="sub-link" onclick="mostrarSub('subIpiales', [0.8248, -77.6432])">⛪ Ipiales & Las Lajas</span>
+        <span class="sub-link" onclick="mostrarSub('subQuito', [-0.1807, -78.4678])">🏛️ Quito</span>
       </div>
 
-      <div class="guide-step">
-        <h4>🏔️ Condor Cocha (Chimborazo)</h4>
-        <p><b>Cómo llegar:</b> Bus de Riobamba al ingreso de la Reserva. Sube al Refugio Carrel (4,800m) y camina hacia la laguna a 5,100m.</p>
+      <div id="subChimborazo" class="sub-content-box">
+        <h3>🏔️ Laguna Condor Cocha (Chimborazo 5,100m)</h3>
+        <span class="transport-tag">🚌 BUS DE RIOBAMBA</span> <span class="transport-tag">🥾 TREKKING</span>
+        <p><b>Paso a Paso:</b> Toma un bus en la Terminal de Riobamba hacia Guaranda y pide bajar en el Control de la Reserva Chimborazo. Toma transporte hasta el Refugio Hermanos Carrel (4,800m) y camina 45 minutos en ascenso hasta el Refugio Whymper y la Laguna Condor Cocha (5,100m).</p>
       </div>
-      <div class="guide-step">
-        <h4>⛪ De Quito a Ipiales por Tulcán</h4>
-        <p><b>Cómo llegar:</b> Terminal Carcelén (Quito) a Tulcán. Cruza la frontera Rumichaca hacia Ipiales para visitar el Santuario de Las Lajas.</p>
+
+      <div id="subIpiales" class="sub-content-box" style="display:none;">
+        <h3>⛪ De Quito a Ipiales por Tulcán</h3>
+        <span class="transport-tag">🚌 BUS INTERPROVINCIAL</span> <span class="transport-tag">🛃 CRUCE FRONTERIZO</span>
+        <p><b>Paso a Paso:</b> Toma bus en Terminal Carcelén (Quito) a Tulcán (5 horas). Toma taxi de Tulcán a la frontera Rumichaca. Realiza migración Ecuador/Colombia, toma colectivo a Ipiales y taxi directo al Santuario de Las Lajas.</p>
+      </div>
+
+      <div id="subQuito" class="sub-content-box" style="display:none;">
+        <h3>🏛️ Quito Centro Histórico</h3>
+        <span class="transport-tag">✈️ AEROPUERTO MARISCAL SUCRE (UIO)</span> <span class="transport-tag">🚌 METROBUS / METRO</span>
+        <p><b>Desde el Aeropuerto UIO:</b> Toma el bus directo Aeroservicios hasta la antigua terminal de Cumandá o usa el nuevo Metro de Quito para conectar de norte a sur.</p>
       </div>
     </div>
 
     <!-- PERÚ Y BOLIVIA -->
     <div id="guiaPeruBolivia" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇵🇪🇧🇴 Bitácora Principal: Perú & Bolivia</h2>
+      <h2>🇵🇪🇧🇴 Perú & Bolivia: Selección de Sub-bitácora</h2>
       
       <div class="sub-nav">
-        <span class="sub-link" onclick="enfocarDestino([-20.1338, -67.4891], 'Salar de Uyuni')">📍 Sub-bitácora: Salar de Uyuni</span>
-        <span class="sub-link" onclick="enfocarDestino([-16.4897, -68.1193], 'La Paz')">📍 Sub-bitácora: La Paz & Teleféricos</span>
-        <span class="sub-link" onclick="enfocarDestino([-14.0875, -75.7626], 'Ica & Huacachina')">📍 Sub-bitácora: Huacachina</span>
-        <span class="sub-link" onclick="enfocarDestino([-12.0464, -77.0428], 'Lima')">📍 Sub-bitácora: Lima Gastronómica</span>
+        <span class="sub-link" onclick="mostrarSub('subUyuni', [-20.1338, -67.4891])">🏜️ Salar de Uyuni</span>
+        <span class="sub-link" onclick="mostrarSub('subLaPaz', [-16.4897, -68.1193])">🚡 La Paz & Teleféricos</span>
+        <span class="sub-link" onclick="mostrarSub('subHuacachina', [-14.0875, -75.7626])">🏜️ Oasis de Huacachina</span>
       </div>
 
-      <div class="guide-step">
-        <h4>🏜️ Salar de Uyuni</h4>
-        <p><b>Cómo llegar:</b> Bus nocturno directo desde la Terminal de La Paz hacia Uyuni. Tours de 1 o 3 días por el desierto de sal.</p>
+      <div id="subUyuni" class="sub-content-box">
+        <h3>🏜️ Salar de Uyuni</h3>
+        <span class="transport-tag">🚌 BUS NOCTURNO DESDE LA PAZ</span> <span class="transport-tag">🚆 TREN DEL ALTO</span>
+        <p><b>Ruta desde La Paz:</b> Aborda un bus nocturno en la Terminal de La Paz (empresas como <i>Todo Turismo</i> o <i>Omar</i>). Viajas toda la noche (8 hrs) y amaneces directamente en Uyuni para iniciar el tour en 4x4 por el espejo de sal.</p>
       </div>
-      <div class="guide-step">
-        <h4>🏜️ Oasis de Huacachina</h4>
-        <p><b>Cómo llegar:</b> Bus directo de Lima a Ica (4 horas) y mototaxi corto de 10 minutos hacia el oasis entre dunas.</p>
+
+      <div id="subLaPaz" class="sub-content-box" style="display:none;">
+        <h3>🚡 La Paz</h3>
+        <span class="transport-tag">✈️ AEROPUERTO EL ALTO (LPB)</span> <span class="transport-tag">🚡 RED MI TELEFÉRICO</span>
+        <p><b>Movilidad Urbana:</b> Del Aeropuerto El Alto baja al centro en la línea Plateada/Roja del sistema Mi Teleférico. Es el mejor transporte para evitar el tráfico de la hoyada.</p>
+      </div>
+
+      <div id="subHuacachina" class="sub-content-box" style="display:none;">
+        <h3>🏜️ Oasis de Huacachina (Ica)</h3>
+        <span class="transport-tag">🚌 BUS LIMA A ICA</span> <span class="transport-tag">🛺 MOTOTAXI</span>
+        <p><b>Cómo llegar:</b> Toma un bus en Lima con <i>Cruz del Sur</i> hacia Ica (4 horas). Al llegar a la terminal de Ica, toma una mototaxi o taxi por 10 minutos directo al oasis de Huacachina.</p>
       </div>
     </div>
 
-    <!-- BRASIL -->
+    <!-- BRASIL & FRONTERAS -->
     <div id="guiaBrasil" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇧🇷 Bitácora Principal: Brasil & Fronteras</h2>
+      <h2>🇧🇷 Brasil & Fronteras: Selección de Sub-bitácora</h2>
       
       <div class="sub-nav">
-        <span class="sub-link" onclick="enfocarDestino([-22.9068, -43.1729], 'Río de Janeiro')">📍 Sub-bitácora: Río de Janeiro</span>
-        <span class="sub-link" onclick="enfocarDestino([-23.1523, -44.2319], 'Ilha Grande')">📍 Sub-bitácora: Ilha Grande</span>
-        <span class="sub-link" onclick="enfocarDestino([-25.6953, -54.4367], 'Cataratas do Iguaçu')">📍 Sub-bitácora: Cataratas del Iguazú</span>
-        <span class="sub-link" onclick="enfocarDestino([-34.4714, -57.8442], 'Colonia del Sacramento')">📍 Sub-bitácora: Colonia (Uruguay)</span>
+        <span class="sub-link" onclick="mostrarSub('subRio', [-22.9068, -43.1729])">🏖️ Río de Janeiro</span>
+        <span class="sub-link" onclick="mostrarSub('subIlhaGrande', [-23.1523, -44.2319])">🏝️ Ilha Grande</span>
+        <span class="sub-link" onclick="mostrarSub('subIguazu', [-25.6953, -54.4367])">🌊 Cataratas del Iguazú</span>
       </div>
 
-      <div class="guide-step">
-        <h4>🏖️ Río de Janeiro & Ilha Grande</h4>
-        <p><b>Cómo llegar:</b> De Río toma un bus de la Terminal Novo Rio a Conceição de Jacareí y cruza en lancha rápida hacia Vila do Abraão en Ilha Grande.</p>
+      <div id="subRio" class="sub-content-box">
+        <h3>🏖️ Río de Janeiro</h3>
+        <span class="transport-tag">✈️ AEROPUERTO GALEÃO (GIG) / SDU</span> <span class="transport-tag">🚇 METRÔ RIO</span>
+        <p><b>Logística Urbana:</b> Muévete en las Líneas 1 y 2 del Metrô Rio para conectar Copacabana, Ipanema y el centro. Para el Corcovado, toma el tren del Corcovado en Cosme Velho.</p>
+      </div>
+
+      <div id="subIlhaGrande" class="sub-content-box" style="display:none;">
+        <h3>🏝️ Ilha Grande (Vila do Abraão)</h3>
+        <span class="transport-tag">🚌 BUS DE RÍO DE JANEIRO</span> <span class="transport-tag">🚤 LANCHA FLEXBOAT</span>
+        <p><b>Ruta de Acceso:</b> Toma un bus de la Rodoviária Novo Rio hacia Conceição de Jacareí (2.5 hrs). De ahí aborda la lancha rápida Flexboat directa a Vila do Abraão en Ilha Grande (20 min de navegación).</p>
+      </div>
+
+      <div id="subIguazu" class="sub-content-box" style="display:none;">
+        <h3>🌊 Cataratas do Iguaçu (Triple Frontera)</h3>
+        <span class="transport-tag">✈️ AEROPUERTO IGUASSU (IGU)</span> <span class="transport-tag">🚌 BUS INTERNACIONAL</span>
+        <p><b>Ruta Triple Frontera:</b> Buses locales frecuentes conectan Foz do Iguaçu (Brasil), Puerto Iguazú (Argentina) y Ciudad del Este (Paraguay) cruzando el Puente de la Amistad.</p>
       </div>
     </div>
 
     <!-- CONO SUR -->
     <div id="guiaConoSur" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇦🇷🇨🇱 Bitácora Principal: Argentina & Chile</h2>
+      <h2>🇦🇷🇨🇱 Cono Sur: Selección de Sub-bitácora</h2>
       
       <div class="sub-nav">
-        <span class="sub-link" onclick="enfocarDestino([-22.9087, -68.1997], 'San Pedro de Atacama')">📍 Sub-bitácora: Atacama por Paso de Jama</span>
-        <span class="sub-link" onclick="enfocarDestino([-54.8019, -68.3030], 'Ushuaia')">📍 Sub-bitácora: Ushuaia Fin del Mundo</span>
-        <span class="sub-link" onclick="enfocarDestino([-24.7859, -65.4117], 'Salta')">📍 Sub-bitácora: Salta la Linda</span>
-        <span class="sub-link" onclick="enfocarDestino([-32.8895, -68.8458], 'Mendoza')">📍 Sub-bitácora: Mendoza & Vino</span>
+        <span class="sub-link" onclick="mostrarSub('subAtacama', [-22.9087, -68.1997])">🌵 Atacama por Paso de Jama</span>
+        <span class="sub-link" onclick="mostrarSub('subUshuaia', [-54.8019, -68.3030])">🐧 Ushuaia Fin del Mundo</span>
+        <span class="sub-link" onclick="mostrarSub('subSalta', [-24.7859, -65.4117])">🏜️ Salta & Jujuy</span>
       </div>
 
-      <div class="guide-step">
-        <h4>🌵 Salta a Atacama por Paso de Jama</h4>
-        <p><b>Cómo llegar:</b> Bus internacional directo desde Salta atravesando Jujuy, Purmamarca, Salinas Grandes y el paso andino a 4,800m.</p>
+      <div id="subAtacama" class="sub-content-box">
+        <h3>🌵 De Salta a San Pedro de Atacama en Bus</h3>
+        <span class="transport-tag">🚌 BUS INTERNACIONAL</span> <span class="transport-tag">🏔️ PASO ANDINO (4,800m)</span>
+        <p><b>Travesía Transandina:</b> Aborda el bus internacional en la Terminal de Salta (empresas <i>Andesmar</i> o <i>Geminis</i>). El bus sube por Jujuy, Salinas Grandes y cruza el Paso de Jama (4,800m) antes de descender a San Pedro de Atacama.</p>
+      </div>
+
+      <div id="subUshuaia" class="sub-content-box" style="display:none;">
+        <h3>🐧 Ushuaia (Fin del Mundo)</h3>
+        <span class="transport-tag">✈️ AEROPUERTO MALVINAS ARGENTINAS (USH)</span> <span class="transport-tag">🚢 CATAMARÁN BEAGLE</span>
+        <p><b>Cómo llegar:</b> Vuelo directo de 3.5 horas desde Buenos Aires (Aeroparque AEP o Ezeiza EZE) hacia el aeropuerto más austral del mundo.</p>
+      </div>
+
+      <div id="subSalta" class="sub-content-box" style="display:none;">
+        <h3>🏜️ Salta la Linda</h3>
+        <span class="transport-tag">✈️ AEROPUERTO MARTÍN MIGUEL DE GÜEMES (SLA)</span> <span class="transport-tag">🚌 OMNIBUS TERRESTRE</span>
+        <p><b>Conexión:</b> Vuelos diarios desde Buenos Aires o buses directos desde la provincia de Jujuy.</p>
+      </div>
+    </div>
+
+    <!-- EUROPA -->
+    <div id="guiaEuropa" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇪🇺 Europa Clásica: Selección de Sub-bitácora</h2>
+      
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subParis', [48.8566, 2.3522])">🗼 París</span>
+        <span class="sub-link" onclick="mostrarSub('subLondres', [51.5074, -0.1278])">🇬🇧 Londres</span>
+        <span class="sub-link" onclick="mostrarSub('subBarcelona', [41.3851, 2.1734])">🎨 Barcelona</span>
+        <span class="sub-link" onclick="mostrarSub('subRoma', [41.9028, 12.4964])">🏛️ Roma</span>
+      </div>
+
+      <div id="subParis" class="sub-content-box">
+        <h3>🗼 París</h3>
+        <span class="transport-tag">✈️ CHARLES DE GAULLE (CDG) / ORLY</span> <span class="transport-tag">🚆 TREN EUROSTAR / TGV</span>
+        <p><b>Conexión con Londres:</b> Toma el tren submarino de alta velocidad <b>Eurostar</b> desde la estación Gare du Nord en París directo a St Pancras en Londres en solo 2 horas y 15 minutos.</p>
+      </div>
+
+      <div id="subLondres" class="sub-content-box" style="display:none;">
+        <h3>🇬🇧 Londres</h3>
+        <span class="transport-tag">✈️ HEATHROW (LHR) / GATWICK</span> <span class="transport-tag">🚇 UNDERGROUND (TUBE)</span>
+        <p><b>Desde Heathrow:</b> Utiliza la línea de metro <i>Piccadilly Line</i> o el tren rápido <i>Elizabeth Line</i> directo al centro de Londres.</p>
+      </div>
+
+      <div id="subBarcelona" class="sub-content-box" style="display:none;">
+        <h3>🎨 Barcelona</h3>
+        <span class="transport-tag">✈️ AEROPUERTO EL PRAT (BCN)</span> <span class="transport-tag">🚆 TREN AVE</span>
+        <p><b>Conexión en Tren:</b> Conecta con París o Madrid a través del tren de alta velocidad AVE desde la estación de Sants.</p>
+      </div>
+
+      <div id="subRoma" class="sub-content-box" style="display:none;">
+        <h3>🏛️ Roma</h3>
+        <span class="transport-tag">✈️ FIUMICINO (FCO)</span> <span class="transport-tag">🚆 LEONARDO EXPRESS</span>
+        <p><b>Desde Fiumicino:</b> Aborda el tren directo <i>Leonardo Express</i> que te deja en 32 minutos en la estación central Roma Termini.</p>
       </div>
     </div>
 
@@ -588,10 +719,17 @@
       }
     }
 
-    /* Navegación Interactiva de Sub-bitácoras */
-    function enfocarDestino(coords, nombrePunto) {
+    /* Alternar entre sub-bitácoras de una misma categoría */
+    function mostrarSub(subId, coords) {
+      // Ocultar todas las sub-cajas dentro de la guía activa
+      const modal = document.getElementById(subId).closest('.guide-modal');
+      modal.querySelectorAll('.sub-content-box').forEach(box => box.style.display = 'none');
+      
+      // Mostrar la seleccionada
+      document.getElementById(subId).style.display = 'block';
+      
+      // Mover el mapa suavemente
       map.setView(coords, 10);
-      window.scrollTo({ top: 180, behavior: 'smooth' });
     }
   </script>
 </body>
