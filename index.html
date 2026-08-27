@@ -230,7 +230,7 @@
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Centroamérica • Esencia Local</span>
-          <h3>Ruta del itsmo: San José a Managua</h3>
+          <h3>Ruta del istmo: San José a Managua</h3>
           <p>Senderos, montañas y el pulso urbano entre Costa Rica y Nicaragua.</p>
           <a href="#" class="card-btn">Ver Bitácora 360°</a>
         </div>
@@ -242,10 +242,10 @@
   <script>
     const map = L.map('map').setView([10, -30], 2);
 
-    // Servidor de mapas multilingüe con tipografía clara y estándar
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    // Servidor Esri World Street Map: 100% gratuito, sin API Keys y en español/alfabeto latino
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
       maxZoom: 19,
-      attribution: '© OpenStreetMap | EQ Travel 360'
+      attribution: 'Tiles &copy; Esri | EQ Travel 360'
     }).addTo(map);
 
     const destinos = [
