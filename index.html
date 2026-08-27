@@ -28,8 +28,7 @@
 
     /* ENCABEZADO CON BANNER DE YOUTUBE DE FONDO */
     header {
-      /* Carga banner.jpg o banner.png si existe en GitHub; de lo contrario usa gradiente azul */
-      background: linear-gradient(rgba(11, 19, 41, 0.45), rgba(11, 19, 41, 0.75)), 
+      background: linear-gradient(rgba(11, 19, 41, 0.5), rgba(11, 19, 41, 0.8)), 
                   url('banner.jpg') center/cover no-repeat, 
                   linear-gradient(135deg, #020617 0%, #0369a1 50%, #0f172a 100%);
       padding: 2.5rem 1.5rem;
@@ -75,15 +74,15 @@
       transform: scale(1.05) rotate(2deg);
     }
 
-    /* TÍTULO CENTRAL CON EFECTO VIDRIO */
+    /* TÍTULO CENTRAL CON EFECTO VIDRIO Y "GUÍAS DE RUTA" */
     .header-center-title {
       text-align: center;
-      background: rgba(15, 23, 42, 0.65);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      padding: 12px 28px;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      padding: 14px 30px;
       border-radius: 20px;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
     }
 
     .header-center-title h1 {
@@ -97,7 +96,7 @@
 
     .header-center-title p {
       margin: 4px 0 0 0;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--text-light);
       letter-spacing: 1px;
     }
@@ -414,7 +413,7 @@
 </head>
 <body>
 
-  <!-- ENCABEZADO: BANNER DE YOUTUBE AL FONDO, LOGO A LA IZQUIERDA Y SELLO A LA DERECHA -->
+  <!-- ENCABEZADO CON BANNER DE YOUTUBE AL FONDO -->
   <header>
     <div class="header-container">
       
@@ -426,7 +425,7 @@
       <!-- Título Central en Caja Neón Vidrio -->
       <div class="header-center-title">
         <h1>EQ TRAVEL 360</h1>
-        <p>Rutas & Bitácoras por el Mundo</p>
+        <p>Guías de Ruta por el Mundo</p>
       </div>
 
       <!-- Sello de Pasaporte Verificado a la Derecha -->
@@ -462,8 +461,8 @@
   <!-- BANNER REDES SOCIALES -->
   <div class="social-banner">
     <div class="social-info">
-      <h3>🎥 Sigue la Bitácora en Video</h3>
-      <p>Suscríbete al canal y acompaña las rutas completas en YouTube e Instagram.</p>
+      <h3>🎥 Sigue las Guías de Ruta en Video</h3>
+      <p>Suscríbete al canal y acompaña los recorridos completos en YouTube e Instagram.</p>
     </div>
     <div class="social-links">
       <a href="https://www.youtube.com/@edgarquieltravel" target="_blank" class="social-btn btn-youtube">
@@ -475,9 +474,9 @@
     </div>
   </div>
 
-  <!-- SECCIÓN DE BITÁCORAS -->
+  <!-- SECCIÓN DE GUÍAS DE RUTA -->
   <div class="cards-section">
-    <h2 style="color: var(--text-bright); text-align: center; font-size: 1.8rem; margin-bottom: 25px;">Bitácoras Principales y Rutas Logísticas</h2>
+    <h2 style="color: var(--text-bright); text-align: center; font-size: 1.8rem; margin-bottom: 25px;">Guías de Ruta Principales</h2>
     
     <div class="cards-grid">
       
@@ -486,8 +485,8 @@
         <div class="card-body">
           <span class="card-tag">Perú • Circuito Inca & Cumbres</span>
           <h3>Cusco, Machu Picchu & Alturas</h3>
-          <p>Sub-bitácoras completas para Cusco, Machu Picchu, Camino Inca, Laguna Humantay y la Montaña de 7 Colores.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaCuscoGeneral', [-13.5320, -71.9675])">Ver Sub-bitácoras</button>
+          <p>Guías de ruta completas para Cusco, Machu Picchu, Camino Inca, Laguna Humantay y la Montaña de 7 Colores.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaCuscoGeneral', [-13.5320, -71.9675])">Ver Guías de Ruta</button>
         </div>
       </div>
 
@@ -497,7 +496,7 @@
           <span class="card-tag">Norteamérica • Rutas del Norte</span>
           <h3>Alaska & Norteamérica</h3>
           <p>Logística para Anchorage, glaciares de Denali y rutas por la gran naturaleza de Alaska.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaAlaska', [61.2181, -149.9003])">Ver Sub-bitácoras</button>
+          <button class="card-btn" onclick="abrirGuia('guiaAlaska', [61.2181, -149.9003])">Ver Guías de Ruta</button>
         </div>
       </div>
 
@@ -506,8 +505,8 @@
         <div class="card-body">
           <span class="card-tag">Guatemala • Cumbres & Ruinas</span>
           <h3>Guatemala: Cumbres & Mundo Maya</h3>
-          <p>Selecciona la sub-bitácora para ver detalles de cómo llegar a Tajumulco, Tikal, Xela, Antigua y Atitlán.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaGuateGeneral', [15.0433, -91.9037])">Ver Sub-bitácoras</button>
+          <p>Selecciona la guía para ver detalles de cómo llegar a Tajumulco, Tikal, Xela, Antigua y Atitlán.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaGuateGeneral', [15.0433, -91.9037])">Ver Guías de Ruta</button>
         </div>
       </div>
 
@@ -517,7 +516,7 @@
           <span class="card-tag">Nicaragua • Circuito Volcánico</span>
           <h3>Ruta Nicaragua</h3>
           <p>Detalles de logística para Managua, León, Granada y la Isla de Ometepe en bus y ferry.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaNicaraguaGeneral', [11.5392, -85.5701])">Ver Sub-bitácoras</button>
+          <button class="card-btn" onclick="abrirGuia('guiaNicaraguaGeneral', [11.5392, -85.5701])">Ver Guías de Ruta</button>
         </div>
       </div>
 
@@ -526,8 +525,8 @@
         <div class="card-body">
           <span class="card-tag">Ecuador & Colombia • Andes</span>
           <h3>Ecuador & Colombia Andina</h3>
-          <p>Sub-guías con ruta en bus para Quito, Chimborazo (Condor Cocha), Tulcán, Ipiales (Las Lajas) y Bogotá.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaEcuadorColombia', [-0.1807, -78.4678])">Ver Sub-bitácoras</button>
+          <p>Guías con ruta en bus para Quito, Chimborazo (Condor Cocha), Tulcán, Ipiales (Las Lajas) y Bogotá.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaEcuadorColombia', [-0.1807, -78.4678])">Ver Guías de Ruta</button>
         </div>
       </div>
 
@@ -536,8 +535,8 @@
         <div class="card-body">
           <span class="card-tag">Brasil - Paraguay - Uruguay</span>
           <h3>Brasil & Ruta de Fronteras</h3>
-          <p>Sub-guías para conectar Río de Janeiro (Cristo Redentor), Ilha Grande, São Paulo y Cataratas.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaBrasil', [-22.9068, -43.1729])">Ver Sub-bitácoras</button>
+          <p>Guías para conectar Río de Janeiro (Cristo Redentor), Ilha Grande, São Paulo y Cataratas.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaBrasil', [-22.9068, -43.1729])">Ver Guías de Ruta</button>
         </div>
       </div>
 
@@ -547,18 +546,18 @@
           <span class="card-tag">Europa • Trenes & Capitales</span>
           <h3>Circuito Europa Clásica</h3>
           <p>Guías para conectar en tren de alta velocidad París (Eiffel), Londres, Barcelona y Roma.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaEuropa', [48.8566, 2.3522])">Ver Sub-bitácoras</button>
+          <button class="card-btn" onclick="abrirGuia('guiaEuropa', [48.8566, 2.3522])">Ver Guías de Ruta</button>
         </div>
       </div>
 
     </div>
 
-    <!-- MODALES DE SUB-BITÁCORAS -->
+    <!-- MODALES DE GUÍAS DE RUTA -->
 
     <!-- CUSCO -->
     <div id="guiaCuscoGeneral" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇵🇪 Cusco & Ruta Inca: Selección de Sub-bitácora</h2>
+      <h2>🇵🇪 Cusco & Ruta Inca: Selección de Guía de Ruta</h2>
       
       <div class="sub-nav">
         <span class="sub-link" onclick="mostrarSub('subVinicunca', [-13.8693, -71.3029])">Montaña 7 Colores (5,200m)</span>
@@ -602,7 +601,7 @@
     <!-- ALASKA -->
     <div id="guiaAlaska" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇺🇸 Alaska: Selección de Sub-bitácora</h2>
+      <h2>🇺🇸 Alaska: Selección de Guía de Ruta</h2>
       
       <div class="sub-nav">
         <span class="sub-link" onclick="mostrarSub('subAnchorage', [61.2181, -149.9003])">Anchorage</span>
@@ -625,7 +624,7 @@
     <!-- GUATEMALA -->
     <div id="guiaGuateGeneral" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇬🇹 Guatemala: Selección de Sub-bitácora</h2>
+      <h2>🇬🇹 Guatemala: Selección de Guía de Ruta</h2>
       
       <div class="sub-nav">
         <span class="sub-link" onclick="mostrarSub('subTajumulco', [15.0433, -91.9037])">Volcán Tajumulco</span>
@@ -669,7 +668,7 @@
     <!-- NICARAGUA -->
     <div id="guiaNicaraguaGeneral" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇳🇮 Nicaragua: Selección de Sub-bitácora</h2>
+      <h2>🇳🇮 Nicaragua: Selección de Guía de Ruta</h2>
       
       <div class="sub-nav">
         <span class="sub-link" onclick="mostrarSub('subOmetepe', [11.5392, -85.5701])">Isla de Ometepe</span>
@@ -699,7 +698,7 @@
     <!-- ECUADOR Y COLOMBIA -->
     <div id="guiaEcuadorColombia" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇪🇨🇨🇴 Ecuador & Colombia: Selección de Sub-bitácora</h2>
+      <h2>🇪🇨🇨🇴 Ecuador & Colombia: Selección de Guía de Ruta</h2>
       
       <div class="sub-nav">
         <span class="sub-link" onclick="mostrarSub('subChimborazo', [-1.4693, -78.8169])">Chimborazo (Condor Cocha)</span>
@@ -729,7 +728,7 @@
     <!-- BRASIL & FRONTERAS -->
     <div id="guiaBrasil" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇧🇷 Brasil & Fronteras: Selección de Sub-bitácora</h2>
+      <h2>🇧🇷 Brasil & Fronteras: Selección de Guía de Ruta</h2>
       
       <div class="sub-nav">
         <span class="sub-link" onclick="mostrarSub('subRio', [-22.9068, -43.1729])">Río (Cristo Redentor)</span>
@@ -759,7 +758,7 @@
     <!-- EUROPA -->
     <div id="guiaEuropa" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇪🇺 Europa Clásica: Selección de Sub-bitácora</h2>
+      <h2>🇪🇺 Europa Clásica: Selección de Guía de Ruta</h2>
       
       <div class="sub-nav">
         <span class="sub-link" onclick="mostrarSub('subParis', [48.8566, 2.3522])">París (Torre Eiffel)</span>
@@ -922,9 +921,3 @@
   </script>
 </body>
 </html>
-```eof
-
-### Pasos finales:
-1. Copia el código actualizado y sustitúyelo en tu archivo **`index.html`** de GitHub.
-2. Sube la imagen de tu banner de YouTube a GitHub guardándola como **`banner.jpg`** (en la misma lista de archivos).
-3. Entra a **`edgarquieltravel.com`** para ver el encabezado enlazado con la identidad visual de tu canal de YouTube. ¡Quedará increíble!
