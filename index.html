@@ -26,28 +26,28 @@
       color: var(--text-light);
     }
 
-    /* ENCABEZADO HERO PASSPORT */
+    /* ENCABEZADO ILUMINADO Y DINÁMICO */
     header {
-      background: linear-gradient(135deg, #0b1329 0%, #1e293b 50%, #0b1329 100%);
-      padding: 2.5rem 1rem;
-      border-bottom: 3px solid var(--accent-blue);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      background: linear-gradient(135deg, #030712 0%, #0369a1 50%, #0f172a 100%);
+      padding: 2rem 1rem;
+      border-bottom: 4px solid var(--text-bright);
+      box-shadow: 0 10px 35px rgba(2, 132, 199, 0.4);
       position: relative;
       overflow: hidden;
     }
 
-    /* Textura gráfica de fondo */
+    /* Fondo animado de estrellas/partículas */
     header::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background-image: radial-gradient(#38bdf8 0.75px, transparent 0.75px);
-      background-size: 24px 24px;
-      opacity: 0.08;
+      background-image: radial-gradient(#38bdf8 1.5px, transparent 1.5px);
+      background-size: 30px 30px;
+      opacity: 0.15;
       pointer-events: none;
     }
 
-    .passport-header-container {
+    .header-container {
       max-width: 1100px;
       margin: 0 auto;
       display: flex;
@@ -59,65 +59,119 @@
       z-index: 1;
     }
 
-    .passport-badge {
-      background: rgba(15, 23, 42, 0.75);
-      border: 1px dashed var(--accent-blue);
-      border-radius: 12px;
-      padding: 12px 18px;
-      min-width: 200px;
-      backdrop-filter: blur(5px);
+    /* TARJETA DINÁMICA DE AVIÓN Y MOCHILERO (IZQUIERDA) */
+    .traveler-card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 2px solid var(--accent-blue);
+      border-radius: 16px;
+      padding: 15px 22px;
+      min-width: 240px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+      position: relative;
+      overflow: hidden;
     }
 
-    .passport-badge h4 {
-      margin: 0 0 5px 0;
-      font-size: 0.8rem;
+    .flight-path {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed rgba(56, 189, 248, 0.3);
+      padding-bottom: 8px;
+    }
+
+    .plane-icon {
+      font-size: 1.5rem;
+      display: inline-block;
+      animation: flyAirplane 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes flyAirplane {
+      0% { transform: translateX(0px) translateY(0px) rotate(0deg); }
+      100% { transform: translateX(35px) translateY(-5px) rotate(10deg); }
+    }
+
+    .hiker-icon {
+      font-size: 1.6rem;
+      display: inline-block;
+      animation: walkHiker 1.2s ease-in-out infinite alternate;
+    }
+
+    @keyframes walkHiker {
+      0% { transform: translateY(0px) scale(1); }
+      100% { transform: translateY(-4px) scale(1.05); }
+    }
+
+    .traveler-card h4 {
+      margin: 0;
       color: var(--text-bright);
+      font-size: 0.95rem;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
     }
 
-    .passport-badge p {
-      margin: 3px 0;
-      font-size: 0.82rem;
+    .traveler-card p {
+      margin: 4px 0 0 0;
+      font-size: 0.83rem;
       color: var(--text-muted);
     }
 
-    .stamp-badge {
-      border: 2px solid var(--gold-accent);
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transform: rotate(-8deg);
-      background: rgba(245, 158, 11, 0.05);
-      color: var(--gold-accent);
-      text-align: center;
-      font-weight: bold;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
-    }
-
+    /* LOGO CENTRAL */
     .logo-center {
       text-align: center;
     }
 
     .brand-logo {
-      max-width: 160px;
+      max-width: 170px;
       height: auto;
       border-radius: 50%;
-      box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.8);
       transition: transform 0.3s ease;
     }
 
     .brand-logo:hover {
-      transform: scale(1.05);
+      transform: scale(1.08) rotate(2deg);
     }
 
-    /* BUSCADOR Y FILTROS */
+    /* SELLO OFICIAL MÁS GRANDE Y COLORIDO (DERECHA) */
+    .stamp-badge-large {
+      border: 3px double var(--gold-accent);
+      border-radius: 50%;
+      width: 125px;
+      height: 125px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(-6deg);
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(15, 23, 42, 0.9) 100%);
+      color: var(--gold-accent);
+      text-align: center;
+      font-weight: bold;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .stamp-badge-large:hover {
+      transform: rotate(0deg) scale(1.05);
+    }
+
+    .stamp-star {
+      font-size: 1.2rem;
+      margin: 2px 0;
+      display: inline-block;
+      animation: spinStar 10s linear infinite;
+    }
+
+    @keyframes spinStar {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* CONTROLES DE BÚSQUEDA Y FILTROS */
     .controls-container {
       max-width: 1100px;
       margin: 25px auto 10px auto;
@@ -239,7 +293,6 @@
 
     .btn-youtube { background: #ef4444; }
     .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-    .btn-tiktok { background: #000000; border: 1px solid #334155; }
 
     /* TARJETAS DE BITÁCORAS */
     .cards-section {
@@ -397,28 +450,32 @@
 </head>
 <body>
 
-  <!-- ENCABEZADO HERO PASSPORT -->
+  <!-- ENCABEZADO ILUMINADO Y DINÁMICO -->
   <header>
-    <div class="passport-header-container">
+    <div class="header-container">
       
-      <!-- Izquierda: Boarding Pass -->
-      <div class="passport-badge">
-        <h4>✈️ Boarding Pass</h4>
-        <p><b>Viajero:</b> Edgar Quiel</p>
-        <p><b>Ruta:</b> América & Europa</p>
-        <p><b>Estatus:</b> 🟢 Explorando el mundo</p>
+      <!-- Izquierda: Avión y Mochilero Animados -->
+      <div class="traveler-card">
+        <div class="flight-path">
+          <span class="hiker-icon">🥾</span>
+          <span style="color: #38bdf8; font-size: 0.8rem;">•••••••••</span>
+          <span class="plane-icon">✈️</span>
+        </div>
+        <h4>RUTAS & BITÁCORAS</h4>
+        <p>Explorando el Mundo en 360°</p>
       </div>
 
-      <!-- Centro: Logo Oficial -->
+      <!-- Centro: Logo Oficial con Neón Azul -->
       <div class="logo-center">
         <img src="logo.jpg.png" alt="EQ Travel 360 Logo" class="brand-logo">
       </div>
 
-      <!-- Derecha: Sello Oficial de Pasaporte -->
-      <div class="stamp-badge">
-        <span>EQ TRAVEL</span>
-        <span style="font-size: 1.1rem; margin: 2px 0;">★ 360 ★</span>
-        <span>VERIFICADO</span>
+      <!-- Derecha: Sello Oficial de Pasaporte Más Grande -->
+      <div class="stamp-badge-large">
+        <span style="letter-spacing: 1px;">EQ TRAVEL</span>
+        <span class="stamp-star">★</span>
+        <span style="font-size: 0.85rem; color: white;">360°</span>
+        <span style="font-size: 0.65rem; color: #94a3b8; margin-top: 3px;">VERIFICADO</span>
       </div>
 
     </div>
