@@ -98,7 +98,7 @@
     }
 
     #map {
-      height: 480px;
+      height: 500px;
       width: 100%;
       border-radius: 16px;
       border: 2px solid #334155;
@@ -227,12 +227,14 @@
 
   <div class="controls-container">
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="🔍 Buscar destino (ej. Tikal, Atacama, Chimborazo...)" onkeyup="buscarDestino()">
+      <input type="text" id="searchInput" placeholder="🔍 Buscar cualquier ciudad o destino..." onkeyup="buscarDestino()">
     </div>
     <div class="filter-bar">
       <button class="filter-btn active" onclick="filtrarRegión('todos', this)">Todos</button>
       <button class="filter-btn" onclick="filtrarRegión('Centroamérica', this)">Centroamérica</button>
       <button class="filter-btn" onclick="filtrarRegión('Sudamérica', this)">Sudamérica</button>
+      <button class="filter-btn" onclick="filtrarRegión('Norteamérica', this)">Norteamérica</button>
+      <button class="filter-btn" onclick="filtrarRegión('Europa', this)">Europa</button>
     </div>
   </div>
 
@@ -241,129 +243,258 @@
   </div>
 
   <div class="cards-section">
-    <h2 style="color: var(--text-bright); text-align: center; font-size: 1.8rem;">Rutas & Bitácoras Detalladas</h2>
+    <h2 style="color: var(--text-bright); text-align: center; font-size: 1.8rem;">Todas las Bitácoras de Viaje</h2>
     
     <div class="cards-grid">
       
-      <!-- Tajumulco -->
+      <!-- GUATEMALA: TAJUMULCO -->
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Guatemala • Techo de Centroamérica</span>
           <h3>Volcán Tajumulco (4,220m)</h3>
-          <p>La cumbre más alta de la región. Ruta de transporte desde Xela/San Marcos hasta el inicio en Tuichán.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaTajumulco', [15.0433, -91.9037])">Ver Ruta</button>
+          <p>Ascenso al punto más alto de la región. Ruta desde Xela y San Marcos hasta el punto base en Tuichán.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaTajumulco', [15.0433, -91.9037])">Ver Bitácora</button>
         </div>
       </div>
 
-      <!-- Chimborazo Condor Cocha -->
+      <!-- CHIMBORAZO -->
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Ecuador • Cumbres & Lagunas</span>
           <h3>Laguna Condor Cocha (Chimborazo)</h3>
-          <p>Trek sobre los 5,000m desde el refugio Hermanos Carrel hacia la laguna mística a los pies del volcán.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaCondorCocha', [-1.4693, -78.8169])">Ver Ruta</button>
+          <p>Trek místico a más de 5,000m sobre el nivel del mar partiendo desde el Refugio Carrel.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaCondorCocha', [-1.4693, -78.8169])">Ver Bitácora</button>
         </div>
       </div>
 
-      <!-- Tikal desde Zona 1 -->
+      <!-- TIKAL -->
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Guatemala • Mundo Maya</span>
-          <h3>Tikal en Bus desde Zona 1 (Guate)</h3>
-          <p>Ruta mochilera paso a paso desde la capital hasta Santa Elena, Flores y la entrada al parque maya.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaTikal', [17.2220, -89.6237])">Ver Ruta</button>
+          <h3>Tikal en Bus desde Zona 1</h3>
+          <p>Ruta mochilera nocturna desde la capital hacia Flores, Petén y las legendarias ruinas mayas.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaTikal', [17.2220, -89.6237])">Ver Bitácora</button>
         </div>
       </div>
 
-      <!-- Quito a Ipiales -->
+      <!-- QUITO A IPIALES -->
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Ecuador - Colombia • Frontera</span>
           <h3>De Quito a Ipiales por Tulcán</h3>
-          <p>Cruzando la frontera terrestre por Rumichaca para visitar el imponente Santuario de Las Lajas.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaIpiales', [0.8248, -77.6432])">Ver Ruta</button>
+          <p>Cruce terrestre por la frontera de Rumichaca para conocer el Santuario de Las Lajas.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaIpiales', [0.8248, -77.6432])">Ver Bitácora</button>
         </div>
       </div>
 
-      <!-- Salta a San Pedro de Atacama por Paso de Jama -->
+      <!-- SALTA A ATACAMA -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Argentina - Chile • Andes Transandinos</span>
-          <h3>Salta a San Pedro de Atacama en Bus</h3>
-          <p>Travesía mítica cruzando los Andes por el Paso de Jama a más de 4,800m entre salares y volcanes.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaAtacama', [-22.9087, -68.1997])">Ver Ruta</button>
+          <span class="card-tag">Argentina - Chile • Transandino</span>
+          <h3>Salta a San Pedro de Atacama</h3>
+          <p>Cruce cordillerano por el Paso de Jama (4,800m) entre Salinas Grandes y géiseres.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaAtacama', [-22.9087, -68.1997])">Ver Bitácora</button>
+        </div>
+      </div>
+
+      <!-- RUTA NICARAGUA -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Nicaragua • Historia & Volcanes</span>
+          <h3>León, Granada, Managua & Ometepe</h3>
+          <p>Circuito entre arquitectura colonial, las catedrales de León y la magia volcánica de la Isla de Ometepe.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaNicaragua', [11.5392, -85.5701])">Ver Bitácora</button>
+        </div>
+      </div>
+
+      <!-- RUTA CENTROAMÉRICA SUR -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Costa Rica - Panamá - El Salvador - Honduras</span>
+          <h3>San José, Panamá, San Salvador & Copán</h3>
+          <p>Ruta directa por el istmo: del Canal de Panamá y San José hasta los sitios arqueológicos de Copán y San Salvador.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaCentroamericaSur', [9.9281, -84.0907])">Ver Bitácora</button>
+        </div>
+      </div>
+
+      <!-- GUATEMALA CULTURAL -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Guatemala • Tradición</span>
+          <h3>Antigua, Atitlán & Quetzaltenango (Xela)</h3>
+          <p>El corazón cultural de Guatemala entre pueblos del lago, vulcanismo y las empedradas calles de Antigua.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaGuateCultural', [14.6906, -91.2025])">Ver Bitácora</button>
+        </div>
+      </div>
+
+      <!-- PERÚ & BOLIVIA -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Perú - Bolivia • Pacífico & Altiplano</span>
+          <h3>Lima, Huacachina, La Paz & Uyuni</h3>
+          <p>De los oasis del desierto de Ica a los teleféricos paceños y el espejo infinito del Salar de Uyuni.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaPeruBolivia', [-20.1338, -67.4891])">Ver Bitácora</button>
+        </div>
+      </div>
+
+      <!-- BRASIL & TRIPLE FRONTERA -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Brasil - Paraguay - Uruguay • Atlántico</span>
+          <h3>Río, Ilha Grande, Iguaçu & Colonia</h3>
+          <p>Las vistas del Corcovado, las aguas de Ilha Grande, la fuerza de las Cataratas del Iguazú y Colonia del Sacramento.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaBrasilFrontera', [-22.9068, -43.1729])">Ver Bitácora</button>
+        </div>
+      </div>
+
+      <!-- ARGENTINA DE SUR A NORTE -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Argentina • Del Fin del Mundo al Norte</span>
+          <h3>Ushuaia, Buenos Aires & Mendoza</h3>
+          <p>Navegación en el Canal Beagle, tango porteño y las cordilleras vinícolas mendocinas.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaArgentina', [-54.8019, -68.3030])">Ver Bitácora</button>
+        </div>
+      </div>
+
+      <!-- NORTEAMÉRICA & CARIBE -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Norteamérica & Caribe • Metrópolis</span>
+          <h3>México, EE. UU., Canadá, Belice & La Habana</h3>
+          <p>Un recorrido por grandes ciudades norteamericanas, el encanto retro de La Habana y el Caribe beliceño.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaNorteCaribe', [23.1136, -82.3666])">Ver Bitácora</button>
+        </div>
+      </div>
+
+      <!-- EUROPA CLÁSICA -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Europa • Capitales Históricas</span>
+          <h3>Londres, París, Barcelona & Roma</h3>
+          <p>Iconos de la arquitectura mundial: del Big Ben y la Torre Eiffel a la Sagrada Familia y el Coliseo Romano.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaEuropa', [48.8566, 2.3522])">Ver Bitácora</button>
         </div>
       </div>
 
     </div>
 
-    <!-- GUÍA 1: TAJUMULCO -->
+    <!-- GUÍAS DETALLADAS -->
+
     <div id="guiaTajumulco" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🌋 Guía: Cómo llegar al Volcán Tajumulco</h2>
+      <h2>🌋 Volcán Tajumulco (4,220m)</h2>
       <div class="guide-step">
-        <h4>Paso 1: Xela / San Marcos a Tuichán</h4>
-        <p>Toma un bus en la Terminal Minerva de Xela hacia San Marcos (1.5h). De ahí, aborda un camión hacia San Sebastián Coatán/Tacaná y bájate en el crucero de la <b>Aldea Tuichán</b>.</p>
-      </div>
-      <div class="guide-step">
-        <h4>Paso 2: Inicio del Trekking</h4>
-        <p>Regístrate en el puesto de Tuichán (3,000m) y sigue el sendero hacia la zona de campamento (3,800m) antes del ataque a la cumbre (4,220m).</p>
+        <h4>Ruta de Acceso</h4>
+        <p>Desde Xela toma bus a San Marcos y luego camión a Tuichán. Inicia el trekking a 3,000m atravesando bosques hasta el campamento base.</p>
       </div>
     </div>
 
-    <!-- GUÍA 2: CONDOR COCHA (CHIMBORAZO) -->
     <div id="guiaCondorCocha" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🏔️ Guía: Laguna Condor Cocha (Volcán Chimborazo)</h2>
+      <h2>🏔️ Laguna Condor Cocha (Chimborazo)</h2>
       <div class="guide-step">
-        <h4>Paso 1: Riobamba al Control Carrel</h4>
-        <p>Toma un bus en la Terminal Terrestre de Riobamba hacia Guaranda y pide bajar en el <b>Ingreso a la Reserva de Producción de Fauna Chimborazo</b>. Toma un transporte autorizado hasta el primer refugio (Hermanos Carrel a 4,800m).</p>
-      </div>
-      <div class="guide-step">
-        <h4>Paso 2: Trekking al Refugio Whymper y Laguna</h4>
-        <p>Asciende a pie desde Carrel hasta el segundo refugio (Whymper a 5,000m). Sigue el sendero señalizado hacia arriba durante 20-30 min hasta llegar a la <b>Laguna Condor Cocha (5,100m)</b>.</p>
+        <h4>Ruta de Acceso</h4>
+        <p>Desde Riobamba dirígete a la Reserva Chimborazo, sube al Refugio Carrel (4,800m) y camina hasta el Refugio Whymper para alcanzar la laguna a 5,100m.</p>
       </div>
     </div>
 
-    <!-- GUÍA 3: TIKAL DESDE ZONA 1 GUATEMALA -->
     <div id="guiaTikal" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🛕 Guía: De Zona 1 (Ciudad de Guatemala) a Tikal en Bus</h2>
+      <h2>🛕 Tikal desde Zona 1 (Ciudad de Guatemala)</h2>
       <div class="guide-step">
-        <h4>Paso 1: Bus Nocturno desde la Capital</h4>
-        <p>Dirígete a las estaciones de buses nocturnos cerca de la Zona 1 / Zona 4 (empresas como <i>Fuente del Norte</i>, <i>Maya de Oro</i> o <i>Cristóbal Colón</i>). Sal a las 9:00 PM o 10:00 PM para viajar de noche (aprox. 8 a 9 horas) hacia Petén.</p>
-      </div>
-      <div class="guide-step">
-        <h4>Paso 2: Santa Elena / Flores a Tikal</h4>
-        <p>Llegarás muy temprano en la mañana a la Terminal de <b>Santa Elena (Petén)</b>. Desde ahí o desde la Isla de Flores, toma un microbús colectivo directo a la entrada de las ruinas de <b>Tikal</b> (1 hora de trayecto).</p>
+        <h4>Ruta de Acceso</h4>
+        <p>Toma bus nocturno en la capital directo a Santa Elena (Petén). Desde la Isla de Flores aborda microbús colectivo hacia el Parque Nacional Tikal.</p>
       </div>
     </div>
 
-    <!-- GUÍA 4: QUITO A IPIALES POR TULCÁN -->
     <div id="guiaIpiales" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>⛪ Guía: De Quito a Ipiales (Santuario de Las Lajas)</h2>
+      <h2>⛪ De Quito a Ipiales por Tulcán</h2>
       <div class="guide-step">
-        <h4>Paso 1: Quito a Tulcán</h4>
-        <p>En Quito, ve a la <b>Terminal Terrestre Carcelén</b> (al norte). Toma un bus interprovincial directo hacia <b>Tulcán</b> (aprox. 4 a 5 horas de viaje).</p>
-      </div>
-      <div class="guide-step">
-        <h4>Paso 2: Frontera Rumichaca e Ipiales</h4>
-        <p>En la terminal de Tulcán, aborda un taxi o furgoneta compartida hacia la frontera en <b>Rumichaca</b>. Haz los trámites migratorios de salida de Ecuador e ingreso a Colombia. Al cruzar, toma un colectivo colombiano hacia el centro/terminal de <b>Ipiales</b> y luego un taxi corto directo al <b>Santuario de Las Lajas</b>.</p>
+        <h4>Ruta de Acceso</h4>
+        <p>Toma bus en Terminal Carcelén (Quito) hasta Tulcán. Cruza la frontera en Rumichaca y toma colectivo corto a Ipiales y Las Lajas.</p>
       </div>
     </div>
 
-    <!-- GUÍA 5: SALTA A SAN PEDRO DE ATACAMA POR PASO DE JAMA -->
     <div id="guiaAtacama" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🌵 Guía: De Salta (Argentina) a San Pedro de Atacama (Chile)</h2>
+      <h2>🌵 De Salta a San Pedro de Atacama</h2>
       <div class="guide-step">
-        <h4>Paso 1: Bus Internacional desde Salta</h4>
-        <p>En la Terminal de Ómnibus de Salta, toma un bus internacional directo (empresas como <i>Andesmar</i> o <i>Geminis</i>). Salen muy temprano en la mañana.</p>
+        <h4>Ruta de Acceso</h4>
+        <p>Bus internacional desde la terminal de Salta cruzando Purmamarca, Salinas Grandes y el Paso de Jama (4,800m) hasta el desierto chileno.</p>
       </div>
+    </div>
+
+    <div id="guiaNicaragua" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🌋 Ruta Nicaragua: León, Granada, Managua & Ometepe</h2>
       <div class="guide-step">
-        <h4>Paso 2: Travesía por Purmamarca, Salinas Grandes y Paso de Jama</h4>
-        <p>El bus sube por Jujuy, pasando por las Salinas Grandes y ascendiendo hasta el <b>Paso de Jama (4,200m)</b>, donde se encuentra el complejo fronterizo integrado para sellar pasaporte. Continúa descendiendo por el desierto hasta llegar a <b>San Pedro de Atacama</b> al atardecer.</p>
+        <h4>Ruta de Conexión</h4>
+        <p>Conecta la capital Managua con las ciudades coloniales de León y Granada. Toma el ferry desde el puerto de San Jorge (Rivas) para ingresar a la mística Isla de Ometepe entre los volcanes Concepción y Maderas.</p>
+      </div>
+    </div>
+
+    <div id="guiaCentroamericaSur" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🌴 Circuito Centroamérica: San José, Panamá, San Salvador & Copán</h2>
+      <div class="guide-step">
+        <h4>Puntos Clave</h4>
+        <p>Recorrido por la espina dorsal del istmo: la modernidad del Canal de Panamá, los valles de San José, la cultura urbana de San Salvador y las famosas estelas mayas en Copán Ruinas (Honduras).</p>
+      </div>
+    </div>
+
+    <div id="guiaGuateCultural" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇬🇹 Guatemala Cultural: Antigua, Atitlán & Xela</h2>
+      <div class="guide-step">
+        <h4>Conexión Local</h4>
+        <p>Tránsito fácil en buses "chicken bus" o shuttles turísticos entre las empedradas calles de Antigua, las villas que rodean el Lago Atitlán (Panajachel, San Pedro, San Juan) y la ciudad de Quetzaltenango (Xela).</p>
+      </div>
+    </div>
+
+    <div id="guiaPeruBolivia" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇵🇪🇧🇴 Perú & Bolivia: Lima, Huacachina, La Paz & Uyuni</h2>
+      <div class="guide-step">
+        <h4>Ruta del Altiplano</h4>
+        <p>Desde la gastronomía limeña y el oasis de Huacachina en Ica, subiendo a los teleféricos urbanos de La Paz y el cruce nocturno en bus hacia el inmenso Salar de Uyuni.</p>
+      </div>
+    </div>
+
+    <div id="guiaBrasilFrontera" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇧🇷🇵🇾🇺🇾 Brasil & Triple Frontera</h2>
+      <div class="guide-step">
+        <h4>Experiencia de Viaje</h4>
+        <p>Río de Janeiro (Corcovado y Copacabana) cruzando a la tranquilidad tropical de Ilha Grande y São Paulo. Conexión hacia las Cataratas del Iguazú, la frontera comercial en Ciudad del Este (Paraguay) y el toque histórico de Colonia del Sacramento (Uruguay).</p>
+      </div>
+    </div>
+
+    <div id="guiaArgentina" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇦🇷 Argentina: Ushuaia, Buenos Aires & Mendoza</h2>
+      <div class="guide-step">
+        <h4>Ruta del Sur</h4>
+        <p>Navegación austral por el Canal Beagle en Ushuaia, ambiente urbano y tanguero en Buenos Aires, e itinerario por los viñedos al pie del Aconcagua en Mendoza.</p>
+      </div>
+    </div>
+
+    <div id="guiaNorteCaribe" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇲🇽🇺🇸🇨🇦🇨🇺🇲🇿 Norteamérica, Belice & La Habana</h2>
+      <div class="guide-step">
+        <h4>Grandes Destinos</h4>
+        <p>Cultura e historia en México, metrópolis en EE. UU. y Canadá, calles coloniales e icónicos autos antiguos en La Habana (Cuba) y ambiente caribeño en Belize City.</p>
+      </div>
+    </div>
+
+    <div id="guiaEuropa" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇪🇺 Europa Clásica: Londres, París, Barcelona & Roma</h2>
+      <div class="guide-step">
+        <h4>Ruta Europea</h4>
+        <p>Conexión ágil en trenes de alta velocidad (Eurostar / TGV) entre el Big Ben de Londres, los bulevares de París, la arquitectura de Gaudí en Barcelona y la historia imperial del Coliseo en Roma.</p>
       </div>
     </div>
 
@@ -378,17 +509,60 @@
       attribution: 'Tiles &copy; Esri | EQ Travel 360'
     }).addTo(map);
 
+    // LISTA TOTAL DE TUS DESTINOS
     const destinos = [
-      { nombre: "Volcán Tajumulco, Guatemala", region: "Centroamérica", coords: [15.0433, -91.9037] },
-      { nombre: "Tikal (Petén), Guatemala", region: "Centroamérica", coords: [17.2220, -89.6237] },
-      { nombre: "Ciudad de Guatemala (Zona 1)", region: "Centroamérica", coords: [14.6349, -90.5069] },
-      { nombre: "Laguna Condor Cocha (Chimborazo), Ecuador", region: "Sudamérica", coords: [-1.4693, -78.8169] },
+      // Sudamérica
+      { nombre: "Lima, Perú", region: "Sudamérica", coords: [-12.0464, -77.0428] },
+      { nombre: "Ica & Huacachina, Perú", region: "Sudamérica", coords: [-14.0875, -75.7626] },
+      { nombre: "La Paz, Bolivia", region: "Sudamérica", coords: [-16.4897, -68.1193] },
+      { nombre: "Salar de Uyuni, Bolivia", region: "Sudamérica", coords: [-20.1338, -67.4891] },
+      { nombre: "Río de Janeiro, Brasil", region: "Sudamérica", coords: [-22.9068, -43.1729] },
+      { nombre: "Ilha Grande, Brasil", region: "Sudamérica", coords: [-23.1523, -44.2319] },
+      { nombre: "São Paulo, Brasil", region: "Sudamérica", coords: [-23.5505, -46.6333] },
+      { nombre: "Foz do Iguaçu / Cataratas", region: "Sudamérica", coords: [-25.6953, -54.4367] },
+      { nombre: "Ciudad del Este, Paraguay", region: "Sudamérica", coords: [-25.5097, -54.6111] },
+      { nombre: "Colonia del Sacramento, Uruguay", region: "Sudamérica", coords: [-34.4714, -57.8442] },
       { nombre: "Quito, Ecuador", region: "Sudamérica", coords: [-0.1807, -78.4678] },
+      { nombre: "Volcán Chimborazo & Laguna Condor Cocha", region: "Sudamérica", coords: [-1.4693, -78.8169] },
       { nombre: "Tulcán, Ecuador", region: "Sudamérica", coords: [0.8116, -77.7172] },
       { nombre: "Ipiales (Santuario Las Lajas), Colombia", region: "Sudamérica", coords: [0.8248, -77.6432] },
+      { nombre: "Bogotá, Colombia", region: "Sudamérica", coords: [4.7110, -74.0721] },
+      { nombre: "Buenos Aires, Argentina", region: "Sudamérica", coords: [-34.6037, -58.3816] },
+      { nombre: "Mendoza, Argentina", region: "Sudamérica", coords: [-32.8895, -68.8458] },
       { nombre: "Salta, Argentina", region: "Sudamérica", coords: [-24.7859, -65.4117] },
-      { nombre: "Paso de Jama, Frontera ARG-CHI", region: "Sudamérica", coords: [-23.2308, -67.0621] },
-      { nombre: "San Pedro de Atacama, Chile", region: "Sudamérica", coords: [-22.9087, -68.1997] }
+      { nombre: "Ushuaia, Argentina", region: "Sudamérica", coords: [-54.8019, -68.3030] },
+      { nombre: "Paso de Jama, Argentina-Chile", region: "Sudamérica", coords: [-23.2308, -67.0621] },
+      { nombre: "San Pedro de Atacama & Geysers del Tatio, Chile", region: "Sudamérica", coords: [-22.9087, -68.1997] },
+
+      // Centroamérica & Caribe
+      { nombre: "San José, Costa Rica", region: "Centroamérica", coords: [9.9281, -84.0907] },
+      { nombre: "Panamá", region: "Centroamérica", coords: [8.9824, -79.5199] },
+      { nombre: "Managua, Nicaragua", region: "Centroamérica", coords: [12.1149, -86.2362] },
+      { nombre: "León, Nicaragua", region: "Centroamérica", coords: [12.4379, -86.8780] },
+      { nombre: "Granada, Nicaragua", region: "Centroamérica", coords: [11.9299, -85.9560] },
+      { nombre: "Isla de Ometepe, Nicaragua", region: "Centroamérica", coords: [11.5392, -85.5701] },
+      { nombre: "San Pedro Sula, Honduras", region: "Centroamérica", coords: [15.5042, -88.0250] },
+      { nombre: "Copán Ruinas, Honduras", region: "Centroamérica", coords: [14.8394, -89.1432] },
+      { nombre: "Tikal (Petén), Guatemala", region: "Centroamérica", coords: [17.2220, -89.6237] },
+      { nombre: "Ciudad de Guatemala (Zona 1)", region: "Centroamérica", coords: [14.6349, -90.5069] },
+      { nombre: "Antigua Guatemala", region: "Centroamérica", coords: [14.5586, -90.7295] },
+      { nombre: "Lago Atitlán, Guatemala", region: "Centroamérica", coords: [14.6906, -91.2025] },
+      { nombre: "Quetzaltenango (Xela), Guatemala", region: "Centroamérica", coords: [14.8347, -91.5180] },
+      { nombre: "Volcán Tajumulco, Guatemala", region: "Centroamérica", coords: [15.0433, -91.9037] },
+      { nombre: "San Salvador, El Salvador", region: "Centroamérica", coords: [13.6929, -89.2182] },
+      { nombre: "Belize City, Belice", region: "Centroamérica", coords: [17.5046, -88.1962] },
+      { nombre: "La Habana, Cuba", region: "Centroamérica", coords: [23.1136, -82.3666] },
+
+      // Norteamérica
+      { nombre: "México", region: "Norteamérica", coords: [19.4326, -99.1332] },
+      { nombre: "Estados Unidos", region: "Norteamérica", coords: [40.7128, -74.0060] },
+      { nombre: "Canadá", region: "Norteamérica", coords: [45.4215, -75.6972] },
+
+      // Europa
+      { nombre: "Londres, Reino Unido", region: "Europa", coords: [51.5074, -0.1278] },
+      { nombre: "París, Francia", region: "Europa", coords: [48.8566, 2.3522] },
+      { nombre: "Barcelona, España", region: "Europa", coords: [41.3851, 2.1734] },
+      { nombre: "Roma, Italia", region: "Europa", coords: [41.9028, 12.4964] }
     ];
 
     let marcadores = [];
@@ -430,12 +604,13 @@
         const filtrados = destinos.filter(d => d.region === region);
         cargarMarcadores(filtrados);
         
-        if(region === 'Centroamérica') map.setView([14, -89], 6);
+        if(region === 'Centroamérica') map.setView([13, -85], 6);
         if(region === 'Sudamérica') map.setView([-20, -60], 3);
+        if(region === 'Norteamérica') map.setView([38, -95], 3);
+        if(region === 'Europa') map.setView([48, 10], 4);
       }
     }
 
-    /* Manejo de Guías Desplegables */
     function cerrarGuias() {
       document.querySelectorAll('.guide-modal').forEach(g => g.style.display = 'none');
     }
@@ -446,7 +621,7 @@
       if(el) {
         el.style.display = 'block';
         el.scrollIntoView({ behavior: 'smooth' });
-        map.setView(coords, 9);
+        map.setView(coords, 8);
       }
     }
   </script>
