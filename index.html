@@ -169,6 +169,7 @@
       border: none;
     }
 
+    /* Modal de Guías y Sub-bitácoras */
     .guide-modal {
       display: none;
       background: var(--panel-dark);
@@ -182,6 +183,32 @@
     .guide-modal h2 {
       color: var(--text-bright);
       margin-top: 0;
+    }
+
+    .sub-nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 15px 0 20px 0;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #334155;
+    }
+
+    .sub-link {
+      background: #0f172a;
+      border: 1px solid var(--accent-blue);
+      color: var(--text-bright);
+      padding: 6px 12px;
+      border-radius: 15px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .sub-link:hover {
+      background: var(--accent-blue);
+      color: white;
     }
 
     .guide-step {
@@ -243,258 +270,196 @@
   </div>
 
   <div class="cards-section">
-    <h2 style="color: var(--text-bright); text-align: center; font-size: 1.8rem;">Todas las Bitácoras de Viaje</h2>
+    <h2 style="color: var(--text-bright); text-align: center; font-size: 1.8rem;">Bitácoras Principales y Rutas</h2>
     
     <div class="cards-grid">
       
-      <!-- GUATEMALA: TAJUMULCO -->
+      <!-- GUATEMALA HIGHLANDS -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Guatemala • Techo de Centroamérica</span>
-          <h3>Volcán Tajumulco (4,220m)</h3>
-          <p>Ascenso al punto más alto de la región. Ruta desde Xela y San Marcos hasta el punto base en Tuichán.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaTajumulco', [15.0433, -91.9037])">Ver Bitácora</button>
+          <span class="card-tag">Guatemala • Cumbres & Ruinas</span>
+          <h3>Guatemala: Cumbres & Mundo Maya</h3>
+          <p>Explora el Volcán Tajumulco, Quetzaltenango (Xela), Antigua, Atitlán y Tikal con sus sub-bitácoras individuales.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaGuateGeneral', [15.0433, -91.9037])">Explorar Sub-bitácoras</button>
         </div>
       </div>
 
-      <!-- CHIMBORAZO -->
+      <!-- NICARAGUA -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Ecuador • Cumbres & Lagunas</span>
-          <h3>Laguna Condor Cocha (Chimborazo)</h3>
-          <p>Trek místico a más de 5,000m sobre el nivel del mar partiendo desde el Refugio Carrel.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaCondorCocha', [-1.4693, -78.8169])">Ver Bitácora</button>
+          <span class="card-tag">Nicaragua • Circuito Volcánico</span>
+          <h3>Ruta Nicaragua</h3>
+          <p>Acceso directo a las sub-bitácoras de Managua, León, Granada y la mágica Isla de Ometepe.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaNicaraguaGeneral', [11.5392, -85.5701])">Explorar Sub-bitácoras</button>
         </div>
       </div>
 
-      <!-- TIKAL -->
+      <!-- ECUADOR & COLOMBIA -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Guatemala • Mundo Maya</span>
-          <h3>Tikal en Bus desde Zona 1</h3>
-          <p>Ruta mochilera nocturna desde la capital hacia Flores, Petén y las legendarias ruinas mayas.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaTikal', [17.2220, -89.6237])">Ver Bitácora</button>
-        </div>
-      </div>
-
-      <!-- QUITO A IPIALES -->
-      <div class="card">
-        <div class="card-body">
-          <span class="card-tag">Ecuador - Colombia • Frontera</span>
-          <h3>De Quito a Ipiales por Tulcán</h3>
-          <p>Cruce terrestre por la frontera de Rumichaca para conocer el Santuario de Las Lajas.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaIpiales', [0.8248, -77.6432])">Ver Bitácora</button>
-        </div>
-      </div>
-
-      <!-- SALTA A ATACAMA -->
-      <div class="card">
-        <div class="card-body">
-          <span class="card-tag">Argentina - Chile • Transandino</span>
-          <h3>Salta a San Pedro de Atacama</h3>
-          <p>Cruce cordillerano por el Paso de Jama (4,800m) entre Salinas Grandes y géiseres.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaAtacama', [-22.9087, -68.1997])">Ver Bitácora</button>
-        </div>
-      </div>
-
-      <!-- RUTA NICARAGUA -->
-      <div class="card">
-        <div class="card-body">
-          <span class="card-tag">Nicaragua • Historia & Volcanes</span>
-          <h3>León, Granada, Managua & Ometepe</h3>
-          <p>Circuito entre arquitectura colonial, las catedrales de León y la magia volcánica de la Isla de Ometepe.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaNicaragua', [11.5392, -85.5701])">Ver Bitácora</button>
-        </div>
-      </div>
-
-      <!-- RUTA CENTROAMÉRICA SUR -->
-      <div class="card">
-        <div class="card-body">
-          <span class="card-tag">Costa Rica - Panamá - El Salvador - Honduras</span>
-          <h3>San José, Panamá, San Salvador & Copán</h3>
-          <p>Ruta directa por el istmo: del Canal de Panamá y San José hasta los sitios arqueológicos de Copán y San Salvador.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaCentroamericaSur', [9.9281, -84.0907])">Ver Bitácora</button>
-        </div>
-      </div>
-
-      <!-- GUATEMALA CULTURAL -->
-      <div class="card">
-        <div class="card-body">
-          <span class="card-tag">Guatemala • Tradición</span>
-          <h3>Antigua, Atitlán & Quetzaltenango (Xela)</h3>
-          <p>El corazón cultural de Guatemala entre pueblos del lago, vulcanismo y las empedradas calles de Antigua.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaGuateCultural', [14.6906, -91.2025])">Ver Bitácora</button>
+          <span class="card-tag">Ecuador & Colombia • Andes</span>
+          <h3>Ecuador & Colombia Andina</h3>
+          <p>Sub-guías para Quito, Chimborazo (Condor Cocha), Tulcán, Ipiales (Las Lajas) y Bogotá.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaEcuadorColombia', [-0.1807, -78.4678])">Explorar Sub-bitácoras</button>
         </div>
       </div>
 
       <!-- PERÚ & BOLIVIA -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Perú - Bolivia • Pacífico & Altiplano</span>
-          <h3>Lima, Huacachina, La Paz & Uyuni</h3>
-          <p>De los oasis del desierto de Ica a los teleféricos paceños y el espejo infinito del Salar de Uyuni.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaPeruBolivia', [-20.1338, -67.4891])">Ver Bitácora</button>
+          <span class="card-tag">Perú & Bolivia • Altiplano</span>
+          <h3>Ruta del Pacífico al Salar</h3>
+          <p>Sub-bitácoras de Lima, Huacachina (Ica), La Paz y la inmensidad del Salar de Uyuni.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaPeruBolivia', [-20.1338, -67.4891])">Explorar Sub-bitácoras</button>
         </div>
       </div>
 
       <!-- BRASIL & TRIPLE FRONTERA -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Brasil - Paraguay - Uruguay • Atlántico</span>
-          <h3>Río, Ilha Grande, Iguaçu & Colonia</h3>
-          <p>Las vistas del Corcovado, las aguas de Ilha Grande, la fuerza de las Cataratas del Iguazú y Colonia del Sacramento.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaBrasilFrontera', [-22.9068, -43.1729])">Ver Bitácora</button>
+          <span class="card-tag">Brasil - Paraguay - Uruguay</span>
+          <h3>Brasil & Ruta de Fronteras</h3>
+          <p>Sub-bitácoras de Río de Janeiro, Ilha Grande, São Paulo, Cataratas de Iguaçu, Ciudad del Este y Colonia.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaBrasil', [-22.9068, -43.1729])">Explorar Sub-bitácoras</button>
         </div>
       </div>
 
-      <!-- ARGENTINA DE SUR A NORTE -->
+      <!-- CONO SUR -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Argentina • Del Fin del Mundo al Norte</span>
-          <h3>Ushuaia, Buenos Aires & Mendoza</h3>
-          <p>Navegación en el Canal Beagle, tango porteño y las cordilleras vinícolas mendocinas.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaArgentina', [-54.8019, -68.3030])">Ver Bitácora</button>
-        </div>
-      </div>
-
-      <!-- NORTEAMÉRICA & CARIBE -->
-      <div class="card">
-        <div class="card-body">
-          <span class="card-tag">Norteamérica & Caribe • Metrópolis</span>
-          <h3>México, EE. UU., Canadá, Belice & La Habana</h3>
-          <p>Un recorrido por grandes ciudades norteamericanas, el encanto retro de La Habana y el Caribe beliceño.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaNorteCaribe', [23.1136, -82.3666])">Ver Bitácora</button>
-        </div>
-      </div>
-
-      <!-- EUROPA CLÁSICA -->
-      <div class="card">
-        <div class="card-body">
-          <span class="card-tag">Europa • Capitales Históricas</span>
-          <h3>Londres, París, Barcelona & Roma</h3>
-          <p>Iconos de la arquitectura mundial: del Big Ben y la Torre Eiffel a la Sagrada Familia y el Coliseo Romano.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaEuropa', [48.8566, 2.3522])">Ver Bitácora</button>
+          <span class="card-tag">Argentina & Chile</span>
+          <h3>Ruta del Cono Sur & Atacama</h3>
+          <p>Sub-bitácoras para Buenos Aires, Mendoza, Salta, Ushuaia y San Pedro de Atacama por Paso de Jama.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaConoSur', [-24.7859, -65.4117])">Explorar Sub-bitácoras</button>
         </div>
       </div>
 
     </div>
 
-    <!-- GUÍAS DETALLADAS -->
+    <!-- SECCIÓN DE SUB-BITÁCORAS DESPLEGABLES -->
 
-    <div id="guiaTajumulco" class="guide-modal">
+    <!-- GUATEMALA -->
+    <div id="guiaGuateGeneral" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🌋 Volcán Tajumulco (4,220m)</h2>
+      <h2>🇬🇹 Bitácora Principal: Guatemala</h2>
+      
+      <div class="sub-nav">
+        <span class="sub-link" onclick="enfocarDestino([15.0433, -91.9037], 'Volcán Tajumulco (4,220m)')">📍 Sub-bitácora: Volcán Tajumulco</span>
+        <span class="sub-link" onclick="enfocarDestino([17.2220, -89.6237], 'Tikal (Petén)')">📍 Sub-bitácora: Tikal en Bus</span>
+        <span class="sub-link" onclick="enfocarDestino([14.8347, -91.5180], 'Quetzaltenango (Xela)')">📍 Sub-bitácora: Xela</span>
+        <span class="sub-link" onclick="enfocarDestino([14.5586, -90.7295], 'Antigua Guatemala')">📍 Sub-bitácora: Antigua</span>
+        <span class="sub-link" onclick="enfocarDestino([14.6906, -91.2025], 'Lago Atitlán')">📍 Sub-bitácora: Lago Atitlán</span>
+      </div>
+
       <div class="guide-step">
-        <h4>Ruta de Acceso</h4>
-        <p>Desde Xela toma bus a San Marcos y luego camión a Tuichán. Inicia el trekking a 3,000m atravesando bosques hasta el campamento base.</p>
+        <h4>🌋 Volcán Tajumulco (4,220m)</h4>
+        <p><b>Cómo llegar:</b> Toma bus en Xela (Minerva) a San Marcos y luego camión a Tuichán. Registro e inicio de caminata hacia el campamento base.</p>
+      </div>
+      <div class="guide-step">
+        <h4>🛕 Tikal desde Zona 1</h4>
+        <p><b>Cómo llegar:</b> Bus nocturno de la capital a Santa Elena (Petén). Desde Flores, toma el transporte colectivo directo a las ruinas.</p>
       </div>
     </div>
 
-    <div id="guiaCondorCocha" class="guide-modal">
+    <!-- NICARAGUA -->
+    <div id="guiaNicaraguaGeneral" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🏔️ Laguna Condor Cocha (Chimborazo)</h2>
+      <h2>🇳🇮 Bitácora Principal: Ruta Nicaragua</h2>
+      
+      <div class="sub-nav">
+        <span class="sub-link" onclick="enfocarDestino([11.5392, -85.5701], 'Isla de Ometepe')">📍 Sub-bitácora: Isla de Ometepe</span>
+        <span class="sub-link" onclick="enfocarDestino([12.4379, -86.8780], 'León')">📍 Sub-bitácora: León & Volcano Boarding</span>
+        <span class="sub-link" onclick="enfocarDestino([11.9299, -85.9560], 'Granada')">📍 Sub-bitácora: Granada Colonial</span>
+        <span class="sub-link" onclick="enfocarDestino([12.1149, -86.2362], 'Managua')">📍 Sub-bitácora: Managua</span>
+      </div>
+
       <div class="guide-step">
-        <h4>Ruta de Acceso</h4>
-        <p>Desde Riobamba dirígete a la Reserva Chimborazo, sube al Refugio Carrel (4,800m) y camina hasta el Refugio Whymper para alcanzar la laguna a 5,100m.</p>
+        <h4>🌋 Isla de Ometepe</h4>
+        <p><b>Cómo llegar:</b> Viaja a Rivas y dirígete al Puerto de San Jorge. Toma el ferry a Moyogalpa para explorar los volcanes Concepción y Maderas.</p>
+      </div>
+      <div class="guide-step">
+        <h4>🏛️ León & Granada</h4>
+        <p><b>Cómo llegar:</b> Microbuses interurbanos conectan la Terminal UCA de Managua con León y Granada en recorridos de menos de 1.5 horas.</p>
       </div>
     </div>
 
-    <div id="guiaTikal" class="guide-modal">
+    <!-- ECUADOR Y COLOMBIA -->
+    <div id="guiaEcuadorColombia" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🛕 Tikal desde Zona 1 (Ciudad de Guatemala)</h2>
+      <h2>🇪🇨🇨🇴 Bitácora Principal: Ecuador & Colombia</h2>
+      
+      <div class="sub-nav">
+        <span class="sub-link" onclick="enfocarDestino([-1.4693, -78.8169], 'Volcán Chimborazo & Laguna Condor Cocha')">📍 Sub-bitácora: Condor Cocha (5,100m)</span>
+        <span class="sub-link" onclick="enfocarDestino([0.8248, -77.6432], 'Ipiales - Las Lajas')">📍 Sub-bitácora: Ipiales & Las Lajas</span>
+        <span class="sub-link" onclick="enfocarDestino([-0.1807, -78.4678], 'Quito Centro Histórico')">📍 Sub-bitácora: Quito</span>
+        <span class="sub-link" onclick="enfocarDestino([4.7110, -74.0721], 'Bogotá')">📍 Sub-bitácora: Bogotá</span>
+      </div>
+
       <div class="guide-step">
-        <h4>Ruta de Acceso</h4>
-        <p>Toma bus nocturno en la capital directo a Santa Elena (Petén). Desde la Isla de Flores aborda microbús colectivo hacia el Parque Nacional Tikal.</p>
+        <h4>🏔️ Condor Cocha (Chimborazo)</h4>
+        <p><b>Cómo llegar:</b> Bus de Riobamba al ingreso de la Reserva. Sube al Refugio Carrel (4,800m) y camina hacia la laguna a 5,100m.</p>
+      </div>
+      <div class="guide-step">
+        <h4>⛪ De Quito a Ipiales por Tulcán</h4>
+        <p><b>Cómo llegar:</b> Terminal Carcelén (Quito) a Tulcán. Cruza la frontera Rumichaca hacia Ipiales para visitar el Santuario de Las Lajas.</p>
       </div>
     </div>
 
-    <div id="guiaIpiales" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>⛪ De Quito a Ipiales por Tulcán</h2>
-      <div class="guide-step">
-        <h4>Ruta de Acceso</h4>
-        <p>Toma bus en Terminal Carcelén (Quito) hasta Tulcán. Cruza la frontera en Rumichaca y toma colectivo corto a Ipiales y Las Lajas.</p>
-      </div>
-    </div>
-
-    <div id="guiaAtacama" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🌵 De Salta a San Pedro de Atacama</h2>
-      <div class="guide-step">
-        <h4>Ruta de Acceso</h4>
-        <p>Bus internacional desde la terminal de Salta cruzando Purmamarca, Salinas Grandes y el Paso de Jama (4,800m) hasta el desierto chileno.</p>
-      </div>
-    </div>
-
-    <div id="guiaNicaragua" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🌋 Ruta Nicaragua: León, Granada, Managua & Ometepe</h2>
-      <div class="guide-step">
-        <h4>Ruta de Conexión</h4>
-        <p>Conecta la capital Managua con las ciudades coloniales de León y Granada. Toma el ferry desde el puerto de San Jorge (Rivas) para ingresar a la mística Isla de Ometepe entre los volcanes Concepción y Maderas.</p>
-      </div>
-    </div>
-
-    <div id="guiaCentroamericaSur" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🌴 Circuito Centroamérica: San José, Panamá, San Salvador & Copán</h2>
-      <div class="guide-step">
-        <h4>Puntos Clave</h4>
-        <p>Recorrido por la espina dorsal del istmo: la modernidad del Canal de Panamá, los valles de San José, la cultura urbana de San Salvador y las famosas estelas mayas en Copán Ruinas (Honduras).</p>
-      </div>
-    </div>
-
-    <div id="guiaGuateCultural" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇬🇹 Guatemala Cultural: Antigua, Atitlán & Xela</h2>
-      <div class="guide-step">
-        <h4>Conexión Local</h4>
-        <p>Tránsito fácil en buses "chicken bus" o shuttles turísticos entre las empedradas calles de Antigua, las villas que rodean el Lago Atitlán (Panajachel, San Pedro, San Juan) y la ciudad de Quetzaltenango (Xela).</p>
-      </div>
-    </div>
-
+    <!-- PERÚ Y BOLIVIA -->
     <div id="guiaPeruBolivia" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇵🇪🇧🇴 Perú & Bolivia: Lima, Huacachina, La Paz & Uyuni</h2>
+      <h2>🇵🇪🇧🇴 Bitácora Principal: Perú & Bolivia</h2>
+      
+      <div class="sub-nav">
+        <span class="sub-link" onclick="enfocarDestino([-20.1338, -67.4891], 'Salar de Uyuni')">📍 Sub-bitácora: Salar de Uyuni</span>
+        <span class="sub-link" onclick="enfocarDestino([-16.4897, -68.1193], 'La Paz')">📍 Sub-bitácora: La Paz & Teleféricos</span>
+        <span class="sub-link" onclick="enfocarDestino([-14.0875, -75.7626], 'Ica & Huacachina')">📍 Sub-bitácora: Huacachina</span>
+        <span class="sub-link" onclick="enfocarDestino([-12.0464, -77.0428], 'Lima')">📍 Sub-bitácora: Lima Gastronómica</span>
+      </div>
+
       <div class="guide-step">
-        <h4>Ruta del Altiplano</h4>
-        <p>Desde la gastronomía limeña y el oasis de Huacachina en Ica, subiendo a los teleféricos urbanos de La Paz y el cruce nocturno en bus hacia el inmenso Salar de Uyuni.</p>
+        <h4>🏜️ Salar de Uyuni</h4>
+        <p><b>Cómo llegar:</b> Bus nocturno directo desde la Terminal de La Paz hacia Uyuni. Tours de 1 o 3 días por el desierto de sal.</p>
+      </div>
+      <div class="guide-step">
+        <h4>🏜️ Oasis de Huacachina</h4>
+        <p><b>Cómo llegar:</b> Bus directo de Lima a Ica (4 horas) y mototaxi corto de 10 minutos hacia el oasis entre dunas.</p>
       </div>
     </div>
 
-    <div id="guiaBrasilFrontera" class="guide-modal">
+    <!-- BRASIL -->
+    <div id="guiaBrasil" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇧🇷🇵🇾🇺🇾 Brasil & Triple Frontera</h2>
+      <h2>🇧🇷 Bitácora Principal: Brasil & Fronteras</h2>
+      
+      <div class="sub-nav">
+        <span class="sub-link" onclick="enfocarDestino([-22.9068, -43.1729], 'Río de Janeiro')">📍 Sub-bitácora: Río de Janeiro</span>
+        <span class="sub-link" onclick="enfocarDestino([-23.1523, -44.2319], 'Ilha Grande')">📍 Sub-bitácora: Ilha Grande</span>
+        <span class="sub-link" onclick="enfocarDestino([-25.6953, -54.4367], 'Cataratas do Iguaçu')">📍 Sub-bitácora: Cataratas del Iguazú</span>
+        <span class="sub-link" onclick="enfocarDestino([-34.4714, -57.8442], 'Colonia del Sacramento')">📍 Sub-bitácora: Colonia (Uruguay)</span>
+      </div>
+
       <div class="guide-step">
-        <h4>Experiencia de Viaje</h4>
-        <p>Río de Janeiro (Corcovado y Copacabana) cruzando a la tranquilidad tropical de Ilha Grande y São Paulo. Conexión hacia las Cataratas del Iguazú, la frontera comercial en Ciudad del Este (Paraguay) y el toque histórico de Colonia del Sacramento (Uruguay).</p>
+        <h4>🏖️ Río de Janeiro & Ilha Grande</h4>
+        <p><b>Cómo llegar:</b> De Río toma un bus de la Terminal Novo Rio a Conceição de Jacareí y cruza en lancha rápida hacia Vila do Abraão en Ilha Grande.</p>
       </div>
     </div>
 
-    <div id="guiaArgentina" class="guide-modal">
+    <!-- CONO SUR -->
+    <div id="guiaConoSur" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇦🇷 Argentina: Ushuaia, Buenos Aires & Mendoza</h2>
-      <div class="guide-step">
-        <h4>Ruta del Sur</h4>
-        <p>Navegación austral por el Canal Beagle en Ushuaia, ambiente urbano y tanguero en Buenos Aires, e itinerario por los viñedos al pie del Aconcagua en Mendoza.</p>
+      <h2>🇦🇷🇨🇱 Bitácora Principal: Argentina & Chile</h2>
+      
+      <div class="sub-nav">
+        <span class="sub-link" onclick="enfocarDestino([-22.9087, -68.1997], 'San Pedro de Atacama')">📍 Sub-bitácora: Atacama por Paso de Jama</span>
+        <span class="sub-link" onclick="enfocarDestino([-54.8019, -68.3030], 'Ushuaia')">📍 Sub-bitácora: Ushuaia Fin del Mundo</span>
+        <span class="sub-link" onclick="enfocarDestino([-24.7859, -65.4117], 'Salta')">📍 Sub-bitácora: Salta la Linda</span>
+        <span class="sub-link" onclick="enfocarDestino([-32.8895, -68.8458], 'Mendoza')">📍 Sub-bitácora: Mendoza & Vino</span>
       </div>
-    </div>
 
-    <div id="guiaNorteCaribe" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇲🇽🇺🇸🇨🇦🇨🇺🇲🇿 Norteamérica, Belice & La Habana</h2>
       <div class="guide-step">
-        <h4>Grandes Destinos</h4>
-        <p>Cultura e historia en México, metrópolis en EE. UU. y Canadá, calles coloniales e icónicos autos antiguos en La Habana (Cuba) y ambiente caribeño en Belize City.</p>
-      </div>
-    </div>
-
-    <div id="guiaEuropa" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇪🇺 Europa Clásica: Londres, París, Barcelona & Roma</h2>
-      <div class="guide-step">
-        <h4>Ruta Europea</h4>
-        <p>Conexión ágil en trenes de alta velocidad (Eurostar / TGV) entre el Big Ben de Londres, los bulevares de París, la arquitectura de Gaudí en Barcelona y la historia imperial del Coliseo en Roma.</p>
+        <h4>🌵 Salta a Atacama por Paso de Jama</h4>
+        <p><b>Cómo llegar:</b> Bus internacional directo desde Salta atravesando Jujuy, Purmamarca, Salinas Grandes y el paso andino a 4,800m.</p>
       </div>
     </div>
 
@@ -509,7 +474,6 @@
       attribution: 'Tiles &copy; Esri | EQ Travel 360'
     }).addTo(map);
 
-    // LISTA TOTAL DE TUS DESTINOS
     const destinos = [
       // Sudamérica
       { nombre: "Lima, Perú", region: "Sudamérica", coords: [-12.0464, -77.0428] },
@@ -531,7 +495,6 @@
       { nombre: "Mendoza, Argentina", region: "Sudamérica", coords: [-32.8895, -68.8458] },
       { nombre: "Salta, Argentina", region: "Sudamérica", coords: [-24.7859, -65.4117] },
       { nombre: "Ushuaia, Argentina", region: "Sudamérica", coords: [-54.8019, -68.3030] },
-      { nombre: "Paso de Jama, Argentina-Chile", region: "Sudamérica", coords: [-23.2308, -67.0621] },
       { nombre: "San Pedro de Atacama & Geysers del Tatio, Chile", region: "Sudamérica", coords: [-22.9087, -68.1997] },
 
       // Centroamérica & Caribe
@@ -565,16 +528,16 @@
       { nombre: "Roma, Italia", region: "Europa", coords: [41.9028, 12.4964] }
     ];
 
-    let marcadores = [];
+    let marcadoresMap = {};
 
     function cargarMarcadores(lista) {
-      marcadores.forEach(m => map.removeLayer(m));
-      marcadores = [];
+      Object.values(marcadoresMap).forEach(m => map.removeLayer(m));
+      marcadoresMap = {};
 
       lista.forEach(punto => {
         const m = L.marker(punto.coords).addTo(map)
           .bindPopup(`<strong style="color: #38bdf8;">${punto.nombre}</strong><br><small style="color: #94a3b8;">${punto.region}</small>`);
-        marcadores.push(m);
+        marcadoresMap[punto.nombre] = m;
       });
     }
 
@@ -586,8 +549,8 @@
       cargarMarcadores(filtrados);
 
       if (filtrados.length === 1) {
-        map.setView(filtrados[0].coords, 8);
-        marcadores[0].openPopup();
+        map.setView(filtrados[0].coords, 9);
+        marcadoresMap[filtrados[0].nombre].openPopup();
       } else if (filtrados.length === 0) {
         map.setView([10, -30], 2);
       }
@@ -621,8 +584,14 @@
       if(el) {
         el.style.display = 'block';
         el.scrollIntoView({ behavior: 'smooth' });
-        map.setView(coords, 8);
+        map.setView(coords, 7);
       }
+    }
+
+    /* Navegación Interactiva de Sub-bitácoras */
+    function enfocarDestino(coords, nombrePunto) {
+      map.setView(coords, 10);
+      window.scrollTo({ top: 180, behavior: 'smooth' });
     }
   </script>
 </body>
