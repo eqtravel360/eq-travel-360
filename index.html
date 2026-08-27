@@ -68,10 +68,6 @@
       box-sizing: border-box;
     }
 
-    .search-box input:focus {
-      border-color: var(--text-bright);
-    }
-
     .filter-bar {
       display: flex;
       gap: 8px;
@@ -102,7 +98,7 @@
     }
 
     #map {
-      height: 500px;
+      height: 480px;
       width: 100%;
       border-radius: 16px;
       border: 2px solid #334155;
@@ -127,7 +123,7 @@
       border: 1px solid #334155;
       border-radius: 14px;
       overflow: hidden;
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
     .card:hover {
@@ -169,6 +165,48 @@
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+
+    /* Modal / Sección de Guía Desplegable */
+    .guide-modal {
+      display: none;
+      background: var(--panel-dark);
+      border: 2px solid var(--accent-blue);
+      border-radius: 16px;
+      padding: 25px;
+      margin-top: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+
+    .guide-modal h2 {
+      color: var(--text-bright);
+      margin-top: 0;
+    }
+
+    .guide-step {
+      background: #0f172a;
+      padding: 15px;
+      border-left: 4px solid var(--accent-blue);
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+
+    .guide-step h4 {
+      margin: 0 0 5px 0;
+      color: var(--text-bright);
+    }
+
+    .close-btn {
+      background: #ef4444;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      float: right;
+      cursor: pointer;
+      font-weight: bold;
     }
 
     .leaflet-popup-content-wrapper {
@@ -209,12 +247,13 @@
     <h2 style="color: var(--text-bright); text-align: center; font-size: 1.8rem;">Bitácoras de Viaje Destacadas</h2>
     
     <div class="cards-grid">
+      <!-- Tarjeta Tajumulco con Acción -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Centroamérica • Cumbres & Volcanes</span>
-          <h3>Volcán Tajumulco & Quetzaltenango</h3>
-          <p>Conquistando el punto más alto de Centroamérica y explorando la riqueza cultural de Xela y Guatemala.</p>
-          <a href="#" class="card-btn">Ver Bitácora 360°</a>
+          <span class="card-tag">Guatemala • Techo de Centroamérica</span>
+          <h3>Volcán Tajumulco (4,220m)</h3>
+          <p>La cumbre más alta de la región. Te explicamos paso a paso la ruta de transporte e inicio del ascensio desde Tuichán.</p>
+          <button class="card-btn" onclick="abrirGuiaTajumulco()">Ver Ruta: Cómo Llegar</button>
         </div>
       </div>
 
@@ -223,82 +262,69 @@
           <span class="card-tag">Sudamérica • Gran Altura</span>
           <h3>La Paz & Salar de Uyuni</h3>
           <p>Desde la capital más alta del mundo entre teleféricos y montañas, hasta el espejo infinito de Uyuni.</p>
-          <a href="#" class="card-btn">Ver Bitácora 360°</a>
+          <button class="card-btn">Próximamente</button>
         </div>
       </div>
 
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Centroamérica • Esencia Local</span>
-          <h3>Ruta del istmo: San José a Managua</h3>
-          <p>Senderos, montañas y el pulso urbano entre Costa Rica y Nicaragua.</p>
-          <a href="#" class="card-btn">Ver Bitácora 360°</a>
+          <span class="card-tag">Brasil • Costa</span>
+          <h3>Río de Janeiro e Ilha Grande</h3>
+          <p>Del esplendor del Corcovado y la energía de Copacabana a las playas vírgenes de Ilha Grande.</p>
+          <button class="card-btn">Próximamente</button>
         </div>
       </div>
     </div>
+
+    <!-- Guía Desplegable del Tajumulco -->
+    <div id="guiaTajumulco" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuiaTajumulco()">✕ Cerrar</button>
+      <h2>🌋 Guía Completa: Cómo llegar al Volcán Tajumulco</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Cota de inicio: Tuichán (3,000m) | Cumbre: 4,220m | Dificultad: Moderada-Alta</p>
+      
+      <div class="guide-step">
+        <h4>Paso 1: Llegar a Quetzaltenango (Xela) o San Marcos</h4>
+        <p>Tu base principal en el occidente de Guatemala es <b>Xela</b> (Quetzaltenango) o la ciudad de <b>San Marcos</b>. Desde la terminal de buses de Xela (Minerva), toma un autobús directo hacia San Marcos (aprox. 1.5 horas).</p>
+      </div>
+
+      <div class="guide-step">
+        <h4>Paso 2: Bus local hacia la Aldea Tuichán</h4>
+        <p>Desde San Marcos, toma un camión o "chicken bus" que vaya en dirección a <b>San Sebastián Coatán</b> o <b>Tacaná</b>. Pídele al ayudante del bus que te deje exactamente en el crucero de la <b>Aldea Tuichán</b>. Este es el punto oficial de inicio del ascenso.</p>
+      </div>
+
+      <div class="guide-step">
+        <h4>Paso 3: El Ascenso (Inicio del Trekking)</h4>
+        <p>En Tuichán encontrarás un puesto base donde registran visitantes. El sendero está bien marcado: la primera etapa atraviesa zonas boscosas de pino hasta llegar a la zona de acampar (La Base a ~3,800m), y luego el ataque final a la cumbre para ver el amanecer.</p>
+      </div>
+
+      <div class="guide-step">
+        <h4>💡 Consejos Clave EQ Travel 360:</h4>
+        <ul style="margin: 5px 0; padding-left: 20px; color: var(--text-muted); font-size: 0.9rem;">
+          <li><b>Ropa:</b> En la cumbre las temperaturas bajan de los 0°C de noche/madrugada. Lleva abrigo por capas.</li>
+          <li><b>Aclimatación:</b> Duerme al menos una noche en Xela (2,300m) antes de subir.</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    const map = L.map('map').setView([10, -30], 2);
+    const map = L.map('map').setView([15.0433, -91.9037], 7);
 
-    // Servidor Esri World Street Map: 100% gratuito, sin API Keys y en español/alfabeto latino
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
       maxZoom: 19,
       attribution: 'Tiles &copy; Esri | EQ Travel 360'
     }).addTo(map);
 
     const destinos = [
-      // Sudamérica
-      { nombre: "Lima, Perú", region: "Sudamérica", coords: [-12.0464, -77.0428] },
-      { nombre: "Ica & Huacachina, Perú", region: "Sudamérica", coords: [-14.0875, -75.7626] },
+      { nombre: "Volcán Tajumulco (4,220m), Guatemala", region: "Centroamérica", coords: [15.0433, -91.9037] },
+      { nombre: "Quetzaltenango (Xela), Guatemala", region: "Centroamérica", coords: [14.8347, -91.5180] },
+      { nombre: "San Marcos, Guatemala", region: "Centroamérica", coords: [14.9639, -91.7944] },
+      { nombre: "San José, Costa Rica", region: "Centroamérica", coords: [9.9281, -84.0907] },
       { nombre: "La Paz, Bolivia", region: "Sudamérica", coords: [-16.4897, -68.1193] },
       { nombre: "Salar de Uyuni, Bolivia", region: "Sudamérica", coords: [-20.1338, -67.4891] },
-      { nombre: "Río de Janeiro, Brasil", region: "Sudamérica", coords: [-22.9068, -43.1729] },
-      { nombre: "Ilha Grande, Brasil", region: "Sudamérica", coords: [-23.1523, -44.2319] },
-      { nombre: "São Paulo, Brasil", region: "Sudamérica", coords: [-23.5505, -46.6333] },
-      { nombre: "Foz do Iguaçu / Cataratas", region: "Sudamérica", coords: [-25.6953, -54.4367] },
-      { nombre: "Ciudad del Este, Paraguay", region: "Sudamérica", coords: [-25.5097, -54.6111] },
-      { nombre: "Colonia del Sacramento, Uruguay", region: "Sudamérica", coords: [-34.4714, -57.8442] },
-      { nombre: "Quito, Ecuador", region: "Sudamérica", coords: [-0.1807, -78.4678] },
-      { nombre: "Volcán Chimborazo, Ecuador", region: "Sudamérica", coords: [-1.4693, -78.8169] },
-      { nombre: "Ipiales, Colombia", region: "Sudamérica", coords: [0.8248, -77.6432] },
-      { nombre: "Bogotá, Colombia", region: "Sudamérica", coords: [4.7110, -74.0721] },
-      { nombre: "Buenos Aires, Argentina", region: "Sudamérica", coords: [-34.6037, -58.3816] },
-      { nombre: "Mendoza, Argentina", region: "Sudamérica", coords: [-32.8895, -68.8458] },
-      { nombre: "Salta, Argentina", region: "Sudamérica", coords: [-24.7859, -65.4117] },
-      { nombre: "Ushuaia, Argentina", region: "Sudamérica", coords: [-54.8019, -68.3030] },
-      { nombre: "San Pedro de Atacama & Geysers del Tatio, Chile", region: "Sudamérica", coords: [-22.9087, -68.1997] },
-
-      // Centroamérica & Caribe
-      { nombre: "San José, Costa Rica", region: "Centroamérica", coords: [9.9281, -84.0907] },
-      { nombre: "Panamá", region: "Centroamérica", coords: [8.9824, -79.5199] },
-      { nombre: "Managua, Nicaragua", region: "Centroamérica", coords: [12.1149, -86.2362] },
-      { nombre: "León, Nicaragua", region: "Centroamérica", coords: [12.4379, -86.8780] },
-      { nombre: "Granada, Nicaragua", region: "Centroamérica", coords: [11.9299, -85.9560] },
-      { nombre: "Isla de Ometepe, Nicaragua", region: "Centroamérica", coords: [11.5392, -85.5701] },
-      { nombre: "San Pedro Sula, Honduras", region: "Centroamérica", coords: [15.5042, -88.0250] },
-      { nombre: "Copán Ruinas, Honduras", region: "Centroamérica", coords: [14.8394, -89.1432] },
-      { nombre: "Tikal, Guatemala", region: "Centroamérica", coords: [17.2220, -89.6237] },
-      { nombre: "Ciudad de Guatemala", region: "Centroamérica", coords: [14.6349, -90.5069] },
-      { nombre: "Antigua Guatemala", region: "Centroamérica", coords: [14.5586, -90.7295] },
-      { nombre: "Lago Atitlán, Guatemala", region: "Centroamérica", coords: [14.6906, -91.2025] },
-      { nombre: "Quetzaltenango (Xela), Guatemala", region: "Centroamérica", coords: [14.8347, -91.5180] },
-      { nombre: "Volcán Tajumulco, Guatemala", region: "Centroamérica", coords: [15.0433, -91.9037] },
-      { nombre: "San Salvador, El Salvador", region: "Centroamérica", coords: [13.6929, -89.2182] },
-      { nombre: "Belize City, Belice", region: "Centroamérica", coords: [17.5046, -88.1962] },
-      { nombre: "La Habana, Cuba", region: "Centroamérica", coords: [23.1136, -82.3666] },
-
-      // Norteamérica
-      { nombre: "México", region: "Norteamérica", coords: [19.4326, -99.1332] },
-      { nombre: "Estados Unidos", region: "Norteamérica", coords: [40.7128, -74.0060] },
-      { nombre: "Canadá", region: "Norteamérica", coords: [45.4215, -75.6972] },
-
-      // Europa
-      { nombre: "Londres, Reino Unido", region: "Europa", coords: [51.5074, -0.1278] },
-      { nombre: "París, Francia", region: "Europa", coords: [48.8566, 2.3522] },
-      { nombre: "Barcelona, España", region: "Europa", coords: [41.3851, 2.1734] },
-      { nombre: "Roma, Italia", region: "Europa", coords: [41.9028, 12.4964] }
+      { nombre: "Río de Janeiro, Brasil", region: "Sudamérica", coords: [-22.9068, -43.1729] }
     ];
 
     let marcadores = [];
@@ -322,7 +348,7 @@
       cargarMarcadores(filtrados);
 
       if (filtrados.length === 1) {
-        map.setView(filtrados[0].coords, 7);
+        map.setView(filtrados[0].coords, 8);
         marcadores[0].openPopup();
       } else if (filtrados.length === 0) {
         map.setView([10, -30], 2);
@@ -340,11 +366,21 @@
         const filtrados = destinos.filter(d => d.region === region);
         cargarMarcadores(filtrados);
         
-        if(region === 'Centroamérica') map.setView([13, -85], 6);
+        if(region === 'Centroamérica') map.setView([14, -89], 6);
         if(region === 'Sudamérica') map.setView([-20, -60], 3);
-        if(region === 'Norteamérica') map.setView([38, -95], 3);
-        if(region === 'Europa') map.setView([48, 10], 4);
       }
+    }
+
+    /* Funciones para la guía desplegable */
+    function abrirGuiaTajumulco() {
+      const modal = document.getElementById('guiaTajumulco');
+      modal.style.display = 'block';
+      modal.scrollIntoView({ behavior: 'smooth' });
+      map.setView([15.0433, -91.9037], 10);
+    }
+
+    function cerrarGuiaTajumulco() {
+      document.getElementById('guiaTajumulco').style.display = 'none';
     }
   </script>
 </body>
