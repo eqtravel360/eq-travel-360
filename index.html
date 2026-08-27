@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EQ Travel 360 | by edgarquieltravel</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background: #0f172a; color: #f8fafc; }
+    header { text-align: center; padding: 2rem 1rem; background: #1e293b; border-bottom: 3px solid #0284c7; }
+    header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; color: #38bdf8; }
+    header p { margin: 5px 0 0; font-size: 0.9rem; color: #94a3b8; letter-spacing: 1px; }
+    #map { height: 500px; width: 90%; max-width: 1000px; margin: 30px auto; border-radius: 12px; border: 2px solid #334155; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>EQ TRAVEL 360</h1>
+    <p>by edgarquieltravel</p>
+  </header>
+
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([20, 0], 2);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap | EQ Travel 360'
+    }).addTo(map);
+  </script>
+</body>
+</html>
