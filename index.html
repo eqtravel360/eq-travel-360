@@ -40,7 +40,6 @@
       box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
     }
 
-    /* Buscador y Filtros */
     .controls-container {
       max-width: 1100px;
       margin: 20px auto 10px auto;
@@ -96,7 +95,6 @@
       border-color: var(--text-bright);
     }
 
-    /* Mapa */
     .map-section {
       max-width: 1100px;
       margin: 15px auto;
@@ -111,7 +109,6 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
 
-    /* Galería de Bitácoras */
     .cards-section {
       max-width: 1100px;
       margin: 40px auto;
@@ -191,10 +188,9 @@
     <img src="logo.jpg.png" alt="EQ Travel 360 Logo" class="brand-logo">
   </header>
 
-  <!-- Barra de Búsqueda y Filtros -->
   <div class="controls-container">
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="🔍 Buscar destino (ej. Uyuni, París, Río...)" onkeyup="buscarDestino()">
+      <input type="text" id="searchInput" placeholder="🔍 Buscar destino (ej. Tajumulco, San José, La Paz...)" onkeyup="buscarDestino()">
     </div>
     <div class="filter-bar">
       <button class="filter-btn active" onclick="filtrarRegión('todos', this)">Todos</button>
@@ -215,27 +211,27 @@
     <div class="cards-grid">
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Sudamérica • Desierto</span>
-          <h3>San Pedro de Atacama & Geysers</h3>
-          <p>Explorando el desierto más árido del mundo, valles lunares y los géiseres del Tatio a 4,300 metros de altura.</p>
+          <span class="card-tag">Centroamérica • Cumbres & Volcanes</span>
+          <h3>Volcán Tajumulco & Quetzaltenango</h3>
+          <p>Conquistando el punto más alto de Centroamérica y explorando la riqueza cultural de Xela y Guatemala.</p>
           <a href="#" class="card-btn">Ver Bitácora 360°</a>
         </div>
       </div>
 
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Brasil • Costa</span>
-          <h3>Río de Janeiro e Ilha Grande</h3>
-          <p>Del esplendor del Corcovado y la energía de Copacabana a las playas virgenes y la naturaleza de Ilha Grande.</p>
+          <span class="card-tag">Sudamérica • Gran Altura</span>
+          <h3>La Paz & Salar de Uyuni</h3>
+          <p>Desde la capital más alta del mundo entre teleféricos y montañas, hasta el espejo infinito de Uyuni.</p>
           <a href="#" class="card-btn">Ver Bitácora 360°</a>
         </div>
       </div>
 
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Centroamérica • Cultura</span>
-          <h3>Ruta de Volcanes y Misticismo</h3>
-          <p>Un recorrido por el histórico Lago Atitlán, las calles coloniales de Antigua, Granada y la mágica Isla de Ometepe.</p>
+          <span class="card-tag">Centroamérica • Esencia Local</span>
+          <h3>Ruta del itsmo: San José a Managua</h3>
+          <p>Senderos, montañas y el pulso urbano entre Costa Rica y Nicaragua.</p>
           <a href="#" class="card-btn">Ver Bitácora 360°</a>
         </div>
       </div>
@@ -246,7 +242,8 @@
   <script>
     const map = L.map('map').setView([10, -30], 2);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    // Servidor de mapas multilingüe con tipografía clara y estándar
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       maxZoom: 19,
       attribution: '© OpenStreetMap | EQ Travel 360'
     }).addTo(map);
@@ -255,12 +252,13 @@
       // Sudamérica
       { nombre: "Lima, Perú", region: "Sudamérica", coords: [-12.0464, -77.0428] },
       { nombre: "Ica & Huacachina, Perú", region: "Sudamérica", coords: [-14.0875, -75.7626] },
+      { nombre: "La Paz, Bolivia", region: "Sudamérica", coords: [-16.4897, -68.1193] },
+      { nombre: "Salar de Uyuni, Bolivia", region: "Sudamérica", coords: [-20.1338, -67.4891] },
       { nombre: "Río de Janeiro, Brasil", region: "Sudamérica", coords: [-22.9068, -43.1729] },
       { nombre: "Ilha Grande, Brasil", region: "Sudamérica", coords: [-23.1523, -44.2319] },
       { nombre: "São Paulo, Brasil", region: "Sudamérica", coords: [-23.5505, -46.6333] },
       { nombre: "Foz do Iguaçu / Cataratas", region: "Sudamérica", coords: [-25.6953, -54.4367] },
       { nombre: "Ciudad del Este, Paraguay", region: "Sudamérica", coords: [-25.5097, -54.6111] },
-      { nombre: "Salar de Uyuni, Bolivia", region: "Sudamérica", coords: [-20.1338, -67.4891] },
       { nombre: "Colonia del Sacramento, Uruguay", region: "Sudamérica", coords: [-34.4714, -57.8442] },
       { nombre: "Quito, Ecuador", region: "Sudamérica", coords: [-0.1807, -78.4678] },
       { nombre: "Volcán Chimborazo, Ecuador", region: "Sudamérica", coords: [-1.4693, -78.8169] },
@@ -273,16 +271,20 @@
       { nombre: "San Pedro de Atacama & Geysers del Tatio, Chile", region: "Sudamérica", coords: [-22.9087, -68.1997] },
 
       // Centroamérica & Caribe
+      { nombre: "San José, Costa Rica", region: "Centroamérica", coords: [9.9281, -84.0907] },
       { nombre: "Panamá", region: "Centroamérica", coords: [8.9824, -79.5199] },
-      { nombre: "San Pedro Sula, Honduras", region: "Centroamérica", coords: [15.5042, -88.0250] },
-      { nombre: "Copán Ruinas, Honduras", region: "Centroamérica", coords: [14.8394, -89.1432] },
+      { nombre: "Managua, Nicaragua", region: "Centroamérica", coords: [12.1149, -86.2362] },
       { nombre: "León, Nicaragua", region: "Centroamérica", coords: [12.4379, -86.8780] },
       { nombre: "Granada, Nicaragua", region: "Centroamérica", coords: [11.9299, -85.9560] },
       { nombre: "Isla de Ometepe, Nicaragua", region: "Centroamérica", coords: [11.5392, -85.5701] },
+      { nombre: "San Pedro Sula, Honduras", region: "Centroamérica", coords: [15.5042, -88.0250] },
+      { nombre: "Copán Ruinas, Honduras", region: "Centroamérica", coords: [14.8394, -89.1432] },
       { nombre: "Tikal, Guatemala", region: "Centroamérica", coords: [17.2220, -89.6237] },
       { nombre: "Ciudad de Guatemala", region: "Centroamérica", coords: [14.6349, -90.5069] },
       { nombre: "Antigua Guatemala", region: "Centroamérica", coords: [14.5586, -90.7295] },
       { nombre: "Lago Atitlán, Guatemala", region: "Centroamérica", coords: [14.6906, -91.2025] },
+      { nombre: "Quetzaltenango (Xela), Guatemala", region: "Centroamérica", coords: [14.8347, -91.5180] },
+      { nombre: "Volcán Tajumulco, Guatemala", region: "Centroamérica", coords: [15.0433, -91.9037] },
       { nombre: "San Salvador, El Salvador", region: "Centroamérica", coords: [13.6929, -89.2182] },
       { nombre: "Belize City, Belice", region: "Centroamérica", coords: [17.5046, -88.1962] },
       { nombre: "La Habana, Cuba", region: "Centroamérica", coords: [23.1136, -82.3666] },
@@ -301,9 +303,7 @@
 
     let marcadores = [];
 
-    // Cargar Marcadores
     function cargarMarcadores(lista) {
-      // Limpiar anteriores
       marcadores.forEach(m => map.removeLayer(m));
       marcadores = [];
 
@@ -316,7 +316,6 @@
 
     cargarMarcadores(destinos);
 
-    // Función de Búsqueda
     function buscarDestino() {
       const texto = document.getElementById('searchInput').value.toLowerCase();
       const filtrados = destinos.filter(d => d.nombre.toLowerCase().includes(texto));
@@ -330,7 +329,6 @@
       }
     }
 
-    // Función de Filtro por Región
     function filtrarRegión(region, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
@@ -342,8 +340,7 @@
         const filtrados = destinos.filter(d => d.region === region);
         cargarMarcadores(filtrados);
         
-        // Ajustar zoom según región
-        if(region === 'Centroamérica') map.setView([14, -86], 5);
+        if(region === 'Centroamérica') map.setView([13, -85], 6);
         if(region === 'Sudamérica') map.setView([-20, -60], 3);
         if(region === 'Norteamérica') map.setView([38, -95], 3);
         if(region === 'Europa') map.setView([48, 10], 4);
