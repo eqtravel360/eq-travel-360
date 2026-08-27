@@ -15,6 +15,7 @@
       --text-bright: #38bdf8;
       --text-light: #f8fafc;
       --text-muted: #94a3b8;
+      --gold-accent: #f59e0b;
     }
 
     body {
@@ -25,24 +26,101 @@
       color: var(--text-light);
     }
 
+    /* ENCABEZADO HERO PASSPORT */
     header {
-      background-color: var(--panel-dark);
-      padding: 2rem 1rem 1.5rem 1rem;
-      text-align: center;
+      background: linear-gradient(135deg, #0b1329 0%, #1e293b 50%, #0b1329 100%);
+      padding: 2.5rem 1rem;
       border-bottom: 3px solid var(--accent-blue);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Textura gráfica de fondo */
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: radial-gradient(#38bdf8 0.75px, transparent 0.75px);
+      background-size: 24px 24px;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    .passport-header-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .passport-badge {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px dashed var(--accent-blue);
+      border-radius: 12px;
+      padding: 12px 18px;
+      min-width: 200px;
+      backdrop-filter: blur(5px);
+    }
+
+    .passport-badge h4 {
+      margin: 0 0 5px 0;
+      font-size: 0.8rem;
+      color: var(--text-bright);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .passport-badge p {
+      margin: 3px 0;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .stamp-badge {
+      border: 2px solid var(--gold-accent);
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(-8deg);
+      background: rgba(245, 158, 11, 0.05);
+      color: var(--gold-accent);
+      text-align: center;
+      font-weight: bold;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+    }
+
+    .logo-center {
+      text-align: center;
     }
 
     .brand-logo {
-      max-width: 170px;
+      max-width: 160px;
       height: auto;
       border-radius: 50%;
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
+      transition: transform 0.3s ease;
     }
 
+    .brand-logo:hover {
+      transform: scale(1.05);
+    }
+
+    /* BUSCADOR Y FILTROS */
     .controls-container {
       max-width: 1100px;
-      margin: 20px auto 10px auto;
+      margin: 25px auto 10px auto;
       padding: 0 15px;
       display: flex;
       flex-wrap: wrap;
@@ -58,14 +136,15 @@
 
     .search-box input {
       width: 100%;
-      padding: 10px 15px;
-      border-radius: 20px;
+      padding: 12px 18px;
+      border-radius: 25px;
       border: 1px solid #334155;
       background: var(--panel-dark);
       color: white;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       outline: none;
       box-sizing: border-box;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
     }
 
     .filter-bar {
@@ -78,7 +157,7 @@
       background: var(--panel-dark);
       border: 1px solid #334155;
       color: var(--text-muted);
-      padding: 8px 14px;
+      padding: 8px 16px;
       border-radius: 20px;
       cursor: pointer;
       font-size: 0.85rem;
@@ -91,6 +170,7 @@
       border-color: var(--text-bright);
     }
 
+    /* MAPA */
     .map-section {
       max-width: 1100px;
       margin: 15px auto;
@@ -105,9 +185,66 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
 
+    /* SECCIÓN DE REDES SOCIALES */
+    .social-banner {
+      max-width: 1100px;
+      margin: 35px auto 10px auto;
+      padding: 20px;
+      background: linear-gradient(90deg, #1e293b 0%, #0f172a 100%);
+      border: 1px solid var(--accent-blue);
+      border-radius: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .social-info h3 {
+      margin: 0 0 5px 0;
+      color: var(--text-bright);
+      font-size: 1.2rem;
+    }
+
+    .social-info p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.85rem;
+      color: white;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .social-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .btn-youtube { background: #ef4444; }
+    .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .btn-tiktok { background: #000000; border: 1px solid #334155; }
+
+    /* TARJETAS DE BITÁCORAS */
     .cards-section {
       max-width: 1100px;
-      margin: 40px auto;
+      margin: 30px auto;
       padding: 0 15px;
     }
 
@@ -169,7 +306,7 @@
       border: none;
     }
 
-    /* Modal de Guías y Sub-bitácoras */
+    /* MODAL DE GUÍAS Y SUB-BITÁCORAS */
     .guide-modal {
       display: none;
       background: var(--panel-dark);
@@ -206,7 +343,7 @@
       font-weight: 500;
     }
 
-    .sub-link:hover, .sub-link.active-sub {
+    .sub-link:hover {
       background: var(--accent-blue);
       color: white;
     }
@@ -260,10 +397,34 @@
 </head>
 <body>
 
+  <!-- ENCABEZADO HERO PASSPORT -->
   <header>
-    <img src="logo.jpg.png" alt="EQ Travel 360 Logo" class="brand-logo">
+    <div class="passport-header-container">
+      
+      <!-- Izquierda: Boarding Pass -->
+      <div class="passport-badge">
+        <h4>✈️ Boarding Pass</h4>
+        <p><b>Viajero:</b> Edgar Quiel</p>
+        <p><b>Ruta:</b> América & Europa</p>
+        <p><b>Estatus:</b> 🟢 Explorando el mundo</p>
+      </div>
+
+      <!-- Centro: Logo Oficial -->
+      <div class="logo-center">
+        <img src="logo.jpg.png" alt="EQ Travel 360 Logo" class="brand-logo">
+      </div>
+
+      <!-- Derecha: Sello Oficial de Pasaporte -->
+      <div class="stamp-badge">
+        <span>EQ TRAVEL</span>
+        <span style="font-size: 1.1rem; margin: 2px 0;">★ 360 ★</span>
+        <span>VERIFICADO</span>
+      </div>
+
+    </div>
   </header>
 
+  <!-- BUSCADOR Y FILTROS POR REGIÓN -->
   <div class="controls-container">
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="🔍 Buscar cualquier ciudad o destino..." onkeyup="buscarDestino()">
@@ -277,12 +438,30 @@
     </div>
   </div>
 
+  <!-- MAPA INTERACTIVO -->
   <div class="map-section">
     <div id="map"></div>
   </div>
 
+  <!-- SECCIÓN DESTACADA DE REDES SOCIALES -->
+  <div class="social-banner">
+    <div class="social-info">
+      <h3>🎥 Sigue la Bitácora en Video</h3>
+      <p>Suscríbete al canal y acompaña las rutas completas en YouTube e Instagram.</p>
+    </div>
+    <div class="social-links">
+      <a href="https://www.youtube.com/@edgarquieltravel" target="_blank" class="social-btn btn-youtube">
+        ▶ YouTube
+      </a>
+      <a href="https://www.instagram.com/edgarquieltravel" target="_blank" class="social-btn btn-instagram">
+        📸 Instagram
+      </a>
+    </div>
+  </div>
+
+  <!-- BITÁCORAS DE VIAJE -->
   <div class="cards-section">
-    <h2 style="color: var(--text-bright); text-align: center; font-size: 1.8rem;">Bitácoras Principales y Rutas</h2>
+    <h2 style="color: var(--text-bright); text-align: center; font-size: 1.8rem; margin-bottom: 25px;">Bitácoras Principales y Rutas</h2>
     
     <div class="cards-grid">
       
@@ -358,7 +537,7 @@
 
     </div>
 
-    <!-- SUB-BITÁCORAS DESPLEGABLES CON FICHA TÉCNICA -->
+    <!-- SUB-BITÁCORAS DESPLEGABLES -->
 
     <!-- GUATEMALA -->
     <div id="guiaGuateGeneral" class="guide-modal">
@@ -377,33 +556,30 @@
         <h3>🌋 Volcán Tajumulco (4,220m)</h3>
         <span class="transport-tag">🚌 BUS / CAMIÓNETA LOCAL</span>
         <p><b>Cómo llegar desde Xela:</b> Toma un bus en la Terminal Minerva de Xela hacia San Marcos (1.5 hrs). En San Marcos aborda un "chicken bus" hacia Tacaná y pídele al chofer bajarte en el crucero de la <b>Aldea Tuichán (3,000m)</b>, punto exacto de inicio del trekking.</p>
-        <p><b>💡 Tip EQ:</b> Es ideal dormir la noche previa en Xela para aclimatarse antes de hacer cumbre.</p>
       </div>
 
       <div id="subTikal" class="sub-content-box" style="display:none;">
         <h3>🛕 Tikal (Petén) desde Zona 1</h3>
-        <span class="transport-tag">✈️ AVIÓN (AEROPUERTO MUNDO MAYA)</span> <span class="transport-tag">🚌 BUS NOCTURNO</span>
-        <p><b>Opción Terrestre:</b> Sal desde la capital (Zona 1/Zona 4) en buses nocturnos de <i>Fuente del Norte</i> o <i>Maya de Oro</i> (9 PM a 10 PM). Llegas en 8 horas a Santa Elena.</p>
-        <p><b>Desde Flores a Tikal:</b> En la terminal de Santa Elena o la Isla de Flores toma un microbús colectivo directo a la puerta del Parque Tikal (1 hora).</p>
+        <span class="transport-tag">✈️ AVIÓN</span> <span class="transport-tag">🚌 BUS NOCTURNO</span>
+        <p><b>Opción Terrestre:</b> Sal desde la capital en buses nocturnos de <i>Fuente del Norte</i> o <i>Maya de Oro</i> (8 horas) a Santa Elena. De ahí toma un colectivo directo al Parque Tikal.</p>
       </div>
 
       <div id="subXela" class="sub-content-box" style="display:none;">
         <h3>🏙️ Quetzaltenango (Xela)</h3>
         <span class="transport-tag">🚌 BUS DIRECTO</span>
-        <p><b>Cómo llegar:</b> Desde Ciudad de Guatemala (Terminal de Buses Zona 7/11) toma transporte directo con <i>Transportes Alamo</i> o <i>Línea Dorada</i> (aprox. 4 horas por la Panamericana).</p>
+        <p><b>Cómo llegar:</b> Desde Ciudad de Guatemala toma transporte directo con <i>Transportes Alamo</i> o <i>Línea Dorada</i> (aprox. 4 horas).</p>
       </div>
 
       <div id="subAntigua" class="sub-content-box" style="display:none;">
         <h3>🏛️ Antigua Guatemala</h3>
-        <span class="transport-tag">🚌 SHUTTLE / MICROBÚS</span>
-        <p><b>Desde el Aeropuerto La Aurora (GUA):</b> Toma un shuttle compartido directo que sale a la salida de la terminal aérea hacia Antigua (1 hora de trayecto).</p>
+        <span class="transport-tag">🚌 SHUTTLE</span>
+        <p><b>Desde el Aeropuerto La Aurora (GUA):</b> Toma un shuttle compartido directo hacia Antigua (1 hora de trayecto).</p>
       </div>
 
       <div id="subAtitlan" class="sub-content-box" style="display:none;">
         <h3>🌊 Lago Atitlán (Panajachel)</h3>
         <span class="transport-tag">🚌 BUS / SHUTTLE</span> <span class="transport-tag">🚤 LANCHA RÁPIDA</span>
-        <p><b>Llegada a Panajachel:</b> Toma un bus o shuttle desde Antigua o Xela hasta Panajachel.</p>
-        <p><b>Movilidad entre pueblos:</b> Muévete en lanchas públicas desde el embarcadero de Pana hacia San Pedro, San Juan La Laguna o Santiago Atitlán.</p>
+        <p><b>Llegada a Panajachel:</b> Toma un bus o shuttle desde Antigua o Xela. Muévete entre pueblos en lanchas públicas desde el embarcadero.</p>
       </div>
     </div>
 
@@ -421,19 +597,19 @@
       <div id="subOmetepe" class="sub-content-box">
         <h3>🌋 Isla de Ometepe</h3>
         <span class="transport-tag">🚌 BUS LOCAL</span> <span class="transport-tag">⛴️ FERRY OMETEPE</span>
-        <p><b>Paso a Paso:</b> Desde la Terminal Huembes en Managua toma bus a Rivas. En la terminal de Rivas toma un taxi corto de 10 min al <b>Puerto de San Jorge</b>. Aborda el ferry directo hacia Moyogalpa en la Isla de Ometepe (1 hora cruzando el Gran Lago de Nicaragua).</p>
+        <p><b>Paso a Paso:</b> Bus de Managua a Rivas, taxi de 10 min al <b>Puerto de San Jorge</b> y ferry hacia Moyogalpa en la Isla de Ometepe (1 hora cruzando el Gran Lago).</p>
       </div>
 
       <div id="subLeon" class="sub-content-box" style="display:none;">
         <h3>🏛️ León & Volcano Boarding</h3>
         <span class="transport-tag">🚌 MICROBÚS INTERURBANO</span>
-        <p><b>Cómo llegar:</b> Ve a la Terminal UCA en Managua y aborda los microbuses interurbanos rápidos hacia León (1 hora y 15 minutos).</p>
+        <p><b>Cómo llegar:</b> Microbuses interurbanos desde la Terminal UCA en Managua hacia León (1 hora y 15 minutos).</p>
       </div>
 
       <div id="subGranada" class="sub-content-box" style="display:none;">
         <h3>⛵ Granada Colonial</h3>
         <span class="transport-tag">🚌 MICROBÚS INTERURBANO</span>
-        <p><b>Cómo llegar:</b> Desde la Terminal UCA en Managua toman microbuses colectivos que te dejan en el parque central de Granada en 50 minutos.</p>
+        <p><b>Cómo llegar:</b> Microbuses desde la Terminal UCA en Managua directo al parque central de Granada (50 min).</p>
       </div>
     </div>
 
@@ -451,19 +627,19 @@
       <div id="subChimborazo" class="sub-content-box">
         <h3>🏔️ Laguna Condor Cocha (Chimborazo 5,100m)</h3>
         <span class="transport-tag">🚌 BUS DE RIOBAMBA</span> <span class="transport-tag">🥾 TREKKING</span>
-        <p><b>Paso a Paso:</b> Toma un bus en la Terminal de Riobamba hacia Guaranda y pide bajar en el Control de la Reserva Chimborazo. Toma transporte hasta el Refugio Hermanos Carrel (4,800m) y camina 45 minutos en ascenso hasta el Refugio Whymper y la Laguna Condor Cocha (5,100m).</p>
+        <p><b>Paso a Paso:</b> Bus de Riobamba al ingreso de la Reserva, subida al Refugio Carrel (4,800m) y caminata de 45 min hacia la Laguna Condor Cocha (5,100m).</p>
       </div>
 
       <div id="subIpiales" class="sub-content-box" style="display:none;">
         <h3>⛪ De Quito a Ipiales por Tulcán</h3>
         <span class="transport-tag">🚌 BUS INTERPROVINCIAL</span> <span class="transport-tag">🛃 CRUCE FRONTERIZO</span>
-        <p><b>Paso a Paso:</b> Toma bus en Terminal Carcelén (Quito) a Tulcán (5 horas). Toma taxi de Tulcán a la frontera Rumichaca. Realiza migración Ecuador/Colombia, toma colectivo a Ipiales y taxi directo al Santuario de Las Lajas.</p>
+        <p><b>Paso a Paso:</b> Bus en Terminal Carcelén (Quito) a Tulcán (5 hrs). Taxi a la frontera Rumichaca, migración y colectivo directo al Santuario de Las Lajas.</p>
       </div>
 
       <div id="subQuito" class="sub-content-box" style="display:none;">
         <h3>🏛️ Quito Centro Histórico</h3>
-        <span class="transport-tag">✈️ AEROPUERTO MARISCAL SUCRE (UIO)</span> <span class="transport-tag">🚌 METROBUS / METRO</span>
-        <p><b>Desde el Aeropuerto UIO:</b> Toma el bus directo Aeroservicios hasta la antigua terminal de Cumandá o usa el nuevo Metro de Quito para conectar de norte a sur.</p>
+        <span class="transport-tag">✈️ AEROPUERTO MARISCAL SUCRE</span> <span class="transport-tag">🚇 METRO DE QUITO</span>
+        <p><b>Movilidad:</b> Usa el nuevo Metro de Quito para conectar de norte a sur de manera rápida y segura.</p>
       </div>
     </div>
 
@@ -480,20 +656,20 @@
 
       <div id="subUyuni" class="sub-content-box">
         <h3>🏜️ Salar de Uyuni</h3>
-        <span class="transport-tag">🚌 BUS NOCTURNO DESDE LA PAZ</span> <span class="transport-tag">🚆 TREN DEL ALTO</span>
-        <p><b>Ruta desde La Paz:</b> Aborda un bus nocturno en la Terminal de La Paz (empresas como <i>Todo Turismo</i> o <i>Omar</i>). Viajas toda la noche (8 hrs) y amaneces directamente en Uyuni para iniciar el tour en 4x4 por el espejo de sal.</p>
+        <span class="transport-tag">🚌 BUS NOCTURNO DESDE LA PAZ</span>
+        <p><b>Ruta desde La Paz:</b> Bus nocturno de 8 horas directo desde la Terminal de La Paz amaneciendo en Uyuni para el tour 4x4.</p>
       </div>
 
       <div id="subLaPaz" class="sub-content-box" style="display:none;">
         <h3>🚡 La Paz</h3>
-        <span class="transport-tag">✈️ AEROPUERTO EL ALTO (LPB)</span> <span class="transport-tag">🚡 RED MI TELEFÉRICO</span>
-        <p><b>Movilidad Urbana:</b> Del Aeropuerto El Alto baja al centro en la línea Plateada/Roja del sistema Mi Teleférico. Es el mejor transporte para evitar el tráfico de la hoyada.</p>
+        <span class="transport-tag">🚡 RED MI TELEFÉRICO</span>
+        <p><b>Movilidad Urbana:</b> Del Aeropuerto El Alto baja al centro usando el sistema Mi Teleférico para evitar el tráfico.</p>
       </div>
 
       <div id="subHuacachina" class="sub-content-box" style="display:none;">
         <h3>🏜️ Oasis de Huacachina (Ica)</h3>
         <span class="transport-tag">🚌 BUS LIMA A ICA</span> <span class="transport-tag">🛺 MOTOTAXI</span>
-        <p><b>Cómo llegar:</b> Toma un bus en Lima con <i>Cruz del Sur</i> hacia Ica (4 horas). Al llegar a la terminal de Ica, toma una mototaxi o taxi por 10 minutos directo al oasis de Huacachina.</p>
+        <p><b>Cómo llegar:</b> Bus de Lima a Ica (4 horas) y mototaxi o taxi corto de 10 minutos directo al oasis.</p>
       </div>
     </div>
 
@@ -510,20 +686,20 @@
 
       <div id="subRio" class="sub-content-box">
         <h3>🏖️ Río de Janeiro</h3>
-        <span class="transport-tag">✈️ AEROPUERTO GALEÃO (GIG) / SDU</span> <span class="transport-tag">🚇 METRÔ RIO</span>
-        <p><b>Logística Urbana:</b> Muévete en las Líneas 1 y 2 del Metrô Rio para conectar Copacabana, Ipanema y el centro. Para el Corcovado, toma el tren del Corcovado en Cosme Velho.</p>
+        <span class="transport-tag">🚇 METRÔ RIO</span> <span class="transport-tag">🚆 TREN CORCOVADO</span>
+        <p><b>Logística Urbana:</b> Utiliza el Metrô Rio para conectar Copacabana e Ipanema. Para el Corcovado toma el tren en Cosme Velho.</p>
       </div>
 
       <div id="subIlhaGrande" class="sub-content-box" style="display:none;">
         <h3>🏝️ Ilha Grande (Vila do Abraão)</h3>
-        <span class="transport-tag">🚌 BUS DE RÍO DE JANEIRO</span> <span class="transport-tag">🚤 LANCHA FLEXBOAT</span>
-        <p><b>Ruta de Acceso:</b> Toma un bus de la Rodoviária Novo Rio hacia Conceição de Jacareí (2.5 hrs). De ahí aborda la lancha rápida Flexboat directa a Vila do Abraão en Ilha Grande (20 min de navegación).</p>
+        <span class="transport-tag">🚌 BUS DE RÍO</span> <span class="transport-tag">🚤 LANCHA FLEXBOAT</span>
+        <p><b>Ruta de Acceso:</b> Bus de la Rodoviária Novo Rio a Conceição de Jacareí y lancha rápida a Vila do Abraão (20 min).</p>
       </div>
 
       <div id="subIguazu" class="sub-content-box" style="display:none;">
         <h3>🌊 Cataratas do Iguaçu (Triple Frontera)</h3>
-        <span class="transport-tag">✈️ AEROPUERTO IGUASSU (IGU)</span> <span class="transport-tag">🚌 BUS INTERNACIONAL</span>
-        <p><b>Ruta Triple Frontera:</b> Buses locales frecuentes conectan Foz do Iguaçu (Brasil), Puerto Iguazú (Argentina) y Ciudad del Este (Paraguay) cruzando el Puente de la Amistad.</p>
+        <span class="transport-tag">🚌 BUS INTERNACIONAL</span>
+        <p><b>Triple Frontera:</b> Buses locales conectan Foz do Iguaçu (Brasil), Puerto Iguazú (Argentina) y Ciudad del Este (Paraguay).</p>
       </div>
     </div>
 
@@ -541,18 +717,18 @@
       <div id="subAtacama" class="sub-content-box">
         <h3>🌵 De Salta a San Pedro de Atacama en Bus</h3>
         <span class="transport-tag">🚌 BUS INTERNACIONAL</span> <span class="transport-tag">🏔️ PASO ANDINO (4,800m)</span>
-        <p><b>Travesía Transandina:</b> Aborda el bus internacional en la Terminal de Salta (empresas <i>Andesmar</i> o <i>Geminis</i>). El bus sube por Jujuy, Salinas Grandes y cruza el Paso de Jama (4,800m) antes de descender a San Pedro de Atacama.</p>
+        <p><b>Travesía Transandina:</b> Bus internacional de Salta cruzando Jujuy, Salinas Grandes y el Paso de Jama (4,800m) hacia Atacama.</p>
       </div>
 
       <div id="subUshuaia" class="sub-content-box" style="display:none;">
         <h3>🐧 Ushuaia (Fin del Mundo)</h3>
-        <span class="transport-tag">✈️ AEROPUERTO MALVINAS ARGENTINAS (USH)</span> <span class="transport-tag">🚢 CATAMARÁN BEAGLE</span>
-        <p><b>Cómo llegar:</b> Vuelo directo de 3.5 horas desde Buenos Aires (Aeroparque AEP o Ezeiza EZE) hacia el aeropuerto más austral del mundo.</p>
+        <span class="transport-tag">✈️ VUELO DIRECTO</span>
+        <p><b>Cómo llegar:</b> Vuelo de 3.5 horas desde Buenos Aires hacia el aeropuerto más austral del mundo.</p>
       </div>
 
       <div id="subSalta" class="sub-content-box" style="display:none;">
         <h3>🏜️ Salta la Linda</h3>
-        <span class="transport-tag">✈️ AEROPUERTO MARTÍN MIGUEL DE GÜEMES (SLA)</span> <span class="transport-tag">🚌 OMNIBUS TERRESTRE</span>
+        <span class="transport-tag">✈️ VUELO</span> <span class="transport-tag">🚌 BUS TERRESTRE</span>
         <p><b>Conexión:</b> Vuelos diarios desde Buenos Aires o buses directos desde la provincia de Jujuy.</p>
       </div>
     </div>
@@ -571,26 +747,26 @@
 
       <div id="subParis" class="sub-content-box">
         <h3>🗼 París</h3>
-        <span class="transport-tag">✈️ CHARLES DE GAULLE (CDG) / ORLY</span> <span class="transport-tag">🚆 TREN EUROSTAR / TGV</span>
-        <p><b>Conexión con Londres:</b> Toma el tren submarino de alta velocidad <b>Eurostar</b> desde la estación Gare du Nord en París directo a St Pancras en Londres en solo 2 horas y 15 minutos.</p>
+        <span class="transport-tag">🚆 TREN EUROSTAR / TGV</span>
+        <p><b>Conexión con Londres:</b> Tren de alta velocidad <b>Eurostar</b> desde la estación Gare du Nord en París a St Pancras en Londres en 2h 15m.</p>
       </div>
 
       <div id="subLondres" class="sub-content-box" style="display:none;">
         <h3>🇬🇧 Londres</h3>
-        <span class="transport-tag">✈️ HEATHROW (LHR) / GATWICK</span> <span class="transport-tag">🚇 UNDERGROUND (TUBE)</span>
-        <p><b>Desde Heathrow:</b> Utiliza la línea de metro <i>Piccadilly Line</i> o el tren rápido <i>Elizabeth Line</i> directo al centro de Londres.</p>
+        <span class="transport-tag">🚇 UNDERGROUND (TUBE)</span>
+        <p><b>Desde Heathrow:</b> Utiliza la línea de metro <i>Piccadilly Line</i> o la rápida <i>Elizabeth Line</i> directo al centro.</p>
       </div>
 
       <div id="subBarcelona" class="sub-content-box" style="display:none;">
         <h3>🎨 Barcelona</h3>
-        <span class="transport-tag">✈️ AEROPUERTO EL PRAT (BCN)</span> <span class="transport-tag">🚆 TREN AVE</span>
+        <span class="transport-tag">🚆 TREN AVE</span>
         <p><b>Conexión en Tren:</b> Conecta con París o Madrid a través del tren de alta velocidad AVE desde la estación de Sants.</p>
       </div>
 
       <div id="subRoma" class="sub-content-box" style="display:none;">
         <h3>🏛️ Roma</h3>
-        <span class="transport-tag">✈️ FIUMICINO (FCO)</span> <span class="transport-tag">🚆 LEONARDO EXPRESS</span>
-        <p><b>Desde Fiumicino:</b> Aborda el tren directo <i>Leonardo Express</i> que te deja en 32 minutos en la estación central Roma Termini.</p>
+        <span class="transport-tag">🚆 LEONARDO EXPRESS</span>
+        <p><b>Desde Fiumicino:</b> Tren directo <i>Leonardo Express</i> que te deja en 32 minutos en la estación central Roma Termini.</p>
       </div>
     </div>
 
@@ -606,7 +782,6 @@
     }).addTo(map);
 
     const destinos = [
-      // Sudamérica
       { nombre: "Lima, Perú", region: "Sudamérica", coords: [-12.0464, -77.0428] },
       { nombre: "Ica & Huacachina, Perú", region: "Sudamérica", coords: [-14.0875, -75.7626] },
       { nombre: "La Paz, Bolivia", region: "Sudamérica", coords: [-16.4897, -68.1193] },
@@ -627,8 +802,6 @@
       { nombre: "Salta, Argentina", region: "Sudamérica", coords: [-24.7859, -65.4117] },
       { nombre: "Ushuaia, Argentina", region: "Sudamérica", coords: [-54.8019, -68.3030] },
       { nombre: "San Pedro de Atacama & Geysers del Tatio, Chile", region: "Sudamérica", coords: [-22.9087, -68.1997] },
-
-      // Centroamérica & Caribe
       { nombre: "San José, Costa Rica", region: "Centroamérica", coords: [9.9281, -84.0907] },
       { nombre: "Panamá", region: "Centroamérica", coords: [8.9824, -79.5199] },
       { nombre: "Managua, Nicaragua", region: "Centroamérica", coords: [12.1149, -86.2362] },
@@ -646,13 +819,9 @@
       { nombre: "San Salvador, El Salvador", region: "Centroamérica", coords: [13.6929, -89.2182] },
       { nombre: "Belize City, Belice", region: "Centroamérica", coords: [17.5046, -88.1962] },
       { nombre: "La Habana, Cuba", region: "Centroamérica", coords: [23.1136, -82.3666] },
-
-      // Norteamérica
       { nombre: "México", region: "Norteamérica", coords: [19.4326, -99.1332] },
       { nombre: "Estados Unidos", region: "Norteamérica", coords: [40.7128, -74.0060] },
       { nombre: "Canadá", region: "Norteamérica", coords: [45.4215, -75.6972] },
-
-      // Europa
       { nombre: "Londres, Reino Unido", region: "Europa", coords: [51.5074, -0.1278] },
       { nombre: "París, Francia", region: "Europa", coords: [48.8566, 2.3522] },
       { nombre: "Barcelona, España", region: "Europa", coords: [41.3851, 2.1734] },
@@ -719,16 +888,10 @@
       }
     }
 
-    /* Alternar entre sub-bitácoras de una misma categoría */
     function mostrarSub(subId, coords) {
-      // Ocultar todas las sub-cajas dentro de la guía activa
       const modal = document.getElementById(subId).closest('.guide-modal');
       modal.querySelectorAll('.sub-content-box').forEach(box => box.style.display = 'none');
-      
-      // Mostrar la seleccionada
       document.getElementById(subId).style.display = 'block';
-      
-      // Mover el mapa suavemente
       map.setView(coords, 10);
     }
   </script>
