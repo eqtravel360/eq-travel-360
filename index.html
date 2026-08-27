@@ -169,7 +169,6 @@
       border: none;
     }
 
-    /* Modal / Sección de Guía Desplegable */
     .guide-modal {
       display: none;
       background: var(--panel-dark);
@@ -228,14 +227,12 @@
 
   <div class="controls-container">
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="🔍 Buscar destino (ej. Tajumulco, San José, La Paz...)" onkeyup="buscarDestino()">
+      <input type="text" id="searchInput" placeholder="🔍 Buscar destino (ej. Tikal, Atacama, Chimborazo...)" onkeyup="buscarDestino()">
     </div>
     <div class="filter-bar">
       <button class="filter-btn active" onclick="filtrarRegión('todos', this)">Todos</button>
       <button class="filter-btn" onclick="filtrarRegión('Centroamérica', this)">Centroamérica</button>
       <button class="filter-btn" onclick="filtrarRegión('Sudamérica', this)">Sudamérica</button>
-      <button class="filter-btn" onclick="filtrarRegión('Norteamérica', this)">Norteamérica</button>
-      <button class="filter-btn" onclick="filtrarRegión('Europa', this)">Europa</button>
     </div>
   </div>
 
@@ -244,65 +241,129 @@
   </div>
 
   <div class="cards-section">
-    <h2 style="color: var(--text-bright); text-align: center; font-size: 1.8rem;">Bitácoras de Viaje Destacadas</h2>
+    <h2 style="color: var(--text-bright); text-align: center; font-size: 1.8rem;">Rutas & Bitácoras Detalladas</h2>
     
     <div class="cards-grid">
-      <!-- Tarjeta Tajumulco con Acción -->
+      
+      <!-- Tajumulco -->
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Guatemala • Techo de Centroamérica</span>
           <h3>Volcán Tajumulco (4,220m)</h3>
-          <p>La cumbre más alta de la región. Te explicamos paso a paso la ruta de transporte e inicio del ascensio desde Tuichán.</p>
-          <button class="card-btn" onclick="abrirGuiaTajumulco()">Ver Ruta: Cómo Llegar</button>
+          <p>La cumbre más alta de la región. Ruta de transporte desde Xela/San Marcos hasta el inicio en Tuichán.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaTajumulco', [15.0433, -91.9037])">Ver Ruta</button>
         </div>
       </div>
 
+      <!-- Chimborazo Condor Cocha -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Sudamérica • Gran Altura</span>
-          <h3>La Paz & Salar de Uyuni</h3>
-          <p>Desde la capital más alta del mundo entre teleféricos y montañas, hasta el espejo infinito de Uyuni.</p>
-          <button class="card-btn">Próximamente</button>
+          <span class="card-tag">Ecuador • Cumbres & Lagunas</span>
+          <h3>Laguna Condor Cocha (Chimborazo)</h3>
+          <p>Trek sobre los 5,000m desde el refugio Hermanos Carrel hacia la laguna mística a los pies del volcán.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaCondorCocha', [-1.4693, -78.8169])">Ver Ruta</button>
         </div>
       </div>
 
+      <!-- Tikal desde Zona 1 -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Brasil • Costa</span>
-          <h3>Río de Janeiro e Ilha Grande</h3>
-          <p>Del esplendor del Corcovado y la energía de Copacabana a las playas vírgenes de Ilha Grande.</p>
-          <button class="card-btn">Próximamente</button>
+          <span class="card-tag">Guatemala • Mundo Maya</span>
+          <h3>Tikal en Bus desde Zona 1 (Guate)</h3>
+          <p>Ruta mochilera paso a paso desde la capital hasta Santa Elena, Flores y la entrada al parque maya.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaTikal', [17.2220, -89.6237])">Ver Ruta</button>
         </div>
+      </div>
+
+      <!-- Quito a Ipiales -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Ecuador - Colombia • Frontera</span>
+          <h3>De Quito a Ipiales por Tulcán</h3>
+          <p>Cruzando la frontera terrestre por Rumichaca para visitar el imponente Santuario de Las Lajas.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaIpiales', [0.8248, -77.6432])">Ver Ruta</button>
+        </div>
+      </div>
+
+      <!-- Salta a San Pedro de Atacama por Paso de Jama -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Argentina - Chile • Andes Transandinos</span>
+          <h3>Salta a San Pedro de Atacama en Bus</h3>
+          <p>Travesía mítica cruzando los Andes por el Paso de Jama a más de 4,800m entre salares y volcanes.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaAtacama', [-22.9087, -68.1997])">Ver Ruta</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GUÍA 1: TAJUMULCO -->
+    <div id="guiaTajumulco" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🌋 Guía: Cómo llegar al Volcán Tajumulco</h2>
+      <div class="guide-step">
+        <h4>Paso 1: Xela / San Marcos a Tuichán</h4>
+        <p>Toma un bus en la Terminal Minerva de Xela hacia San Marcos (1.5h). De ahí, aborda un camión hacia San Sebastián Coatán/Tacaná y bájate en el crucero de la <b>Aldea Tuichán</b>.</p>
+      </div>
+      <div class="guide-step">
+        <h4>Paso 2: Inicio del Trekking</h4>
+        <p>Regístrate en el puesto de Tuichán (3,000m) y sigue el sendero hacia la zona de campamento (3,800m) antes del ataque a la cumbre (4,220m).</p>
       </div>
     </div>
 
-    <!-- Guía Desplegable del Tajumulco -->
-    <div id="guiaTajumulco" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuiaTajumulco()">✕ Cerrar</button>
-      <h2>🌋 Guía Completa: Cómo llegar al Volcán Tajumulco</h2>
-      <p style="color: var(--text-muted); font-size: 0.9rem;">Cota de inicio: Tuichán (3,000m) | Cumbre: 4,220m | Dificultad: Moderada-Alta</p>
-      
+    <!-- GUÍA 2: CONDOR COCHA (CHIMBORAZO) -->
+    <div id="guiaCondorCocha" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🏔️ Guía: Laguna Condor Cocha (Volcán Chimborazo)</h2>
       <div class="guide-step">
-        <h4>Paso 1: Llegar a Quetzaltenango (Xela) o San Marcos</h4>
-        <p>Tu base principal en el occidente de Guatemala es <b>Xela</b> (Quetzaltenango) o la ciudad de <b>San Marcos</b>. Desde la terminal de buses de Xela (Minerva), toma un autobús directo hacia San Marcos (aprox. 1.5 horas).</p>
+        <h4>Paso 1: Riobamba al Control Carrel</h4>
+        <p>Toma un bus en la Terminal Terrestre de Riobamba hacia Guaranda y pide bajar en el <b>Ingreso a la Reserva de Producción de Fauna Chimborazo</b>. Toma un transporte autorizado hasta el primer refugio (Hermanos Carrel a 4,800m).</p>
       </div>
-
       <div class="guide-step">
-        <h4>Paso 2: Bus local hacia la Aldea Tuichán</h4>
-        <p>Desde San Marcos, toma un camión o "chicken bus" que vaya en dirección a <b>San Sebastián Coatán</b> o <b>Tacaná</b>. Pídele al ayudante del bus que te deje exactamente en el crucero de la <b>Aldea Tuichán</b>. Este es el punto oficial de inicio del ascenso.</p>
+        <h4>Paso 2: Trekking al Refugio Whymper y Laguna</h4>
+        <p>Asciende a pie desde Carrel hasta el segundo refugio (Whymper a 5,000m). Sigue el sendero señalizado hacia arriba durante 20-30 min hasta llegar a la <b>Laguna Condor Cocha (5,100m)</b>.</p>
       </div>
+    </div>
 
+    <!-- GUÍA 3: TIKAL DESDE ZONA 1 GUATEMALA -->
+    <div id="guiaTikal" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🛕 Guía: De Zona 1 (Ciudad de Guatemala) a Tikal en Bus</h2>
       <div class="guide-step">
-        <h4>Paso 3: El Ascenso (Inicio del Trekking)</h4>
-        <p>En Tuichán encontrarás un puesto base donde registran visitantes. El sendero está bien marcado: la primera etapa atraviesa zonas boscosas de pino hasta llegar a la zona de acampar (La Base a ~3,800m), y luego el ataque final a la cumbre para ver el amanecer.</p>
+        <h4>Paso 1: Bus Nocturno desde la Capital</h4>
+        <p>Dirígete a las estaciones de buses nocturnos cerca de la Zona 1 / Zona 4 (empresas como <i>Fuente del Norte</i>, <i>Maya de Oro</i> o <i>Cristóbal Colón</i>). Sal a las 9:00 PM o 10:00 PM para viajar de noche (aprox. 8 a 9 horas) hacia Petén.</p>
       </div>
-
       <div class="guide-step">
-        <h4>💡 Consejos Clave EQ Travel 360:</h4>
-        <ul style="margin: 5px 0; padding-left: 20px; color: var(--text-muted); font-size: 0.9rem;">
-          <li><b>Ropa:</b> En la cumbre las temperaturas bajan de los 0°C de noche/madrugada. Lleva abrigo por capas.</li>
-          <li><b>Aclimatación:</b> Duerme al menos una noche en Xela (2,300m) antes de subir.</li>
-        </ul>
+        <h4>Paso 2: Santa Elena / Flores a Tikal</h4>
+        <p>Llegarás muy temprano en la mañana a la Terminal de <b>Santa Elena (Petén)</b>. Desde ahí o desde la Isla de Flores, toma un microbús colectivo directo a la entrada de las ruinas de <b>Tikal</b> (1 hora de trayecto).</p>
+      </div>
+    </div>
+
+    <!-- GUÍA 4: QUITO A IPIALES POR TULCÁN -->
+    <div id="guiaIpiales" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>⛪ Guía: De Quito a Ipiales (Santuario de Las Lajas)</h2>
+      <div class="guide-step">
+        <h4>Paso 1: Quito a Tulcán</h4>
+        <p>En Quito, ve a la <b>Terminal Terrestre Carcelén</b> (al norte). Toma un bus interprovincial directo hacia <b>Tulcán</b> (aprox. 4 a 5 horas de viaje).</p>
+      </div>
+      <div class="guide-step">
+        <h4>Paso 2: Frontera Rumichaca e Ipiales</h4>
+        <p>En la terminal de Tulcán, aborda un taxi o furgoneta compartida hacia la frontera en <b>Rumichaca</b>. Haz los trámites migratorios de salida de Ecuador e ingreso a Colombia. Al cruzar, toma un colectivo colombiano hacia el centro/terminal de <b>Ipiales</b> y luego un taxi corto directo al <b>Santuario de Las Lajas</b>.</p>
+      </div>
+    </div>
+
+    <!-- GUÍA 5: SALTA A SAN PEDRO DE ATACAMA POR PASO DE JAMA -->
+    <div id="guiaAtacama" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🌵 Guía: De Salta (Argentina) a San Pedro de Atacama (Chile)</h2>
+      <div class="guide-step">
+        <h4>Paso 1: Bus Internacional desde Salta</h4>
+        <p>En la Terminal de Ómnibus de Salta, toma un bus internacional directo (empresas como <i>Andesmar</i> o <i>Geminis</i>). Salen muy temprano en la mañana.</p>
+      </div>
+      <div class="guide-step">
+        <h4>Paso 2: Travesía por Purmamarca, Salinas Grandes y Paso de Jama</h4>
+        <p>El bus sube por Jujuy, pasando por las Salinas Grandes y ascendiendo hasta el <b>Paso de Jama (4,200m)</b>, donde se encuentra el complejo fronterizo integrado para sellar pasaporte. Continúa descendiendo por el desierto hasta llegar a <b>San Pedro de Atacama</b> al atardecer.</p>
       </div>
     </div>
 
@@ -310,7 +371,7 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    const map = L.map('map').setView([15.0433, -91.9037], 7);
+    const map = L.map('map').setView([10, -30], 2);
 
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
       maxZoom: 19,
@@ -318,13 +379,16 @@
     }).addTo(map);
 
     const destinos = [
-      { nombre: "Volcán Tajumulco (4,220m), Guatemala", region: "Centroamérica", coords: [15.0433, -91.9037] },
-      { nombre: "Quetzaltenango (Xela), Guatemala", region: "Centroamérica", coords: [14.8347, -91.5180] },
-      { nombre: "San Marcos, Guatemala", region: "Centroamérica", coords: [14.9639, -91.7944] },
-      { nombre: "San José, Costa Rica", region: "Centroamérica", coords: [9.9281, -84.0907] },
-      { nombre: "La Paz, Bolivia", region: "Sudamérica", coords: [-16.4897, -68.1193] },
-      { nombre: "Salar de Uyuni, Bolivia", region: "Sudamérica", coords: [-20.1338, -67.4891] },
-      { nombre: "Río de Janeiro, Brasil", region: "Sudamérica", coords: [-22.9068, -43.1729] }
+      { nombre: "Volcán Tajumulco, Guatemala", region: "Centroamérica", coords: [15.0433, -91.9037] },
+      { nombre: "Tikal (Petén), Guatemala", region: "Centroamérica", coords: [17.2220, -89.6237] },
+      { nombre: "Ciudad de Guatemala (Zona 1)", region: "Centroamérica", coords: [14.6349, -90.5069] },
+      { nombre: "Laguna Condor Cocha (Chimborazo), Ecuador", region: "Sudamérica", coords: [-1.4693, -78.8169] },
+      { nombre: "Quito, Ecuador", region: "Sudamérica", coords: [-0.1807, -78.4678] },
+      { nombre: "Tulcán, Ecuador", region: "Sudamérica", coords: [0.8116, -77.7172] },
+      { nombre: "Ipiales (Santuario Las Lajas), Colombia", region: "Sudamérica", coords: [0.8248, -77.6432] },
+      { nombre: "Salta, Argentina", region: "Sudamérica", coords: [-24.7859, -65.4117] },
+      { nombre: "Paso de Jama, Frontera ARG-CHI", region: "Sudamérica", coords: [-23.2308, -67.0621] },
+      { nombre: "San Pedro de Atacama, Chile", region: "Sudamérica", coords: [-22.9087, -68.1997] }
     ];
 
     let marcadores = [];
@@ -371,16 +435,19 @@
       }
     }
 
-    /* Funciones para la guía desplegable */
-    function abrirGuiaTajumulco() {
-      const modal = document.getElementById('guiaTajumulco');
-      modal.style.display = 'block';
-      modal.scrollIntoView({ behavior: 'smooth' });
-      map.setView([15.0433, -91.9037], 10);
+    /* Manejo de Guías Desplegables */
+    function cerrarGuias() {
+      document.querySelectorAll('.guide-modal').forEach(g => g.style.display = 'none');
     }
 
-    function cerrarGuiaTajumulco() {
-      document.getElementById('guiaTajumulco').style.display = 'none';
+    function abrirGuia(idGuia, coords) {
+      cerrarGuias();
+      const el = document.getElementById(idGuia);
+      if(el) {
+        el.style.display = 'block';
+        el.scrollIntoView({ behavior: 'smooth' });
+        map.setView(coords, 9);
+      }
     }
   </script>
 </body>
