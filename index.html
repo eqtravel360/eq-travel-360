@@ -26,7 +26,6 @@
       color: var(--text-light);
     }
 
-    /* ENCABEZADO ESTILO TATTOO & VECTOR GRAPHICS */
     header {
       background: linear-gradient(135deg, #020617 0%, #0369a1 50%, #0f172a 100%);
       padding: 2.2rem 1rem;
@@ -58,7 +57,6 @@
       z-index: 1;
     }
 
-    /* SILUETAS VECTORIALES (IZQUIERDA) */
     .tattoo-header-card {
       background: rgba(15, 23, 42, 0.85);
       border: 1px solid rgba(56, 189, 248, 0.4);
@@ -129,7 +127,6 @@
       color: var(--text-muted);
     }
 
-    /* LOGO CENTRAL DESTACADO */
     .logo-center {
       text-align: center;
     }
@@ -146,7 +143,6 @@
       transform: scale(1.06) rotate(2deg);
     }
 
-    /* SELLO OFICIAL AMAPLIADO (DERECHA) */
     .stamp-badge-large {
       border: 3px double var(--gold-accent);
       border-radius: 50%;
@@ -183,7 +179,6 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* CONTROLES DE BÚSQUEDA Y FILTROS */
     .controls-container {
       max-width: 1100px;
       margin: 25px auto 10px auto;
@@ -236,7 +231,6 @@
       border-color: var(--text-bright);
     }
 
-    /* MAPA */
     .map-section {
       max-width: 1100px;
       margin: 15px auto;
@@ -251,7 +245,6 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
 
-    /* REDES SOCIALES */
     .social-banner {
       max-width: 1100px;
       margin: 35px auto 10px auto;
@@ -306,7 +299,6 @@
     .btn-youtube { background: #ef4444; }
     .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
 
-    /* TARJETAS DE BITÁCORAS */
     .cards-section {
       max-width: 1100px;
       margin: 30px auto;
@@ -371,7 +363,6 @@
       border: none;
     }
 
-    /* MODAL DE GUÍAS Y SUB-BITÁCORAS */
     .guide-modal {
       display: none;
       background: var(--panel-dark);
@@ -464,29 +455,23 @@
 
   <header>
     <div class="header-container">
-      
       <div class="tattoo-header-card">
         <div class="vector-monuments-row">
-          
           <svg class="svg-icon" viewBox="0 0 24 24">
             <path d="M12 2v20M8 22h8M9 15h6M10 9h4M7 22l3-14 2-6 2 6 3 14"/>
           </svg>
-
           <svg class="svg-icon" viewBox="0 0 24 24">
             <path d="M4 8h16M12 4v16M10 22h4"/>
           </svg>
-
           <svg class="svg-icon" viewBox="0 0 24 24">
             <path d="M3 20l7-12 4 6 3-3 4 9H3z"/>
           </svg>
-
           <div class="tattoo-flight-path">
             <div class="flight-dots"></div>
             <svg class="plane-svg" viewBox="0 0 24 24">
               <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
             </svg>
           </div>
-
         </div>
         <h4>EQ TRAVEL 360</h4>
         <p>París • Río • Machu Picchu</p>
@@ -502,7 +487,6 @@
         <span style="font-size: 0.85rem; color: white;">360°</span>
         <span style="font-size: 0.65rem; color: #94a3b8; margin-top: 3px;">PASAPORTE</span>
       </div>
-
     </div>
   </header>
 
@@ -600,3 +584,97 @@
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Europa • Trenes & Capitales</span>
+          <h3>Circuito Europa Clásica</h3>
+          <p>Guías para conectar en tren de alta velocidad París (Eiffel), Londres, Barcelona y Roma.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaEuropa', [48.8566, 2.3522])">Ver Sub-bitácoras</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="guiaCuscoGeneral" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇵🇪 Cusco & Ruta Inca: Selección de Sub-bitácora</h2>
+      
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subVinicunca', [-13.8693, -71.3029])">Montaña 7 Colores (5,200m)</span>
+        <span class="sub-link" onclick="mostrarSub('subHumantay', [-13.3361, -72.5694])">Laguna Humantay (4,200m)</span>
+        <span class="sub-link" onclick="mostrarSub('subMachuPicchu', [-13.1631, -72.5450])">Machu Picchu & Tren</span>
+        <span class="sub-link" onclick="mostrarSub('subCaminoInca', [-13.2263, -72.4184])">Camino Inca</span>
+        <span class="sub-link" onclick="mostrarSub('subCuscoCiudad', [-13.5320, -71.9675])">Cusco Imperial</span>
+      </div>
+
+      <div id="subVinicunca" class="sub-content-box">
+        <h3>Montaña de 7 Colores (Vinicunca - 5,200m)</h3>
+        <span class="transport-tag">BUS DE CUSCO</span> <span class="transport-tag">SENDERISMO DE ALTA MONTAÑA</span>
+        <p><b>Cómo llegar y Tips de Trekking:</b> Salida a las 3:00 AM de Cusco en minivan hacia Cusipata (3 hrs). Desayuno y traslado a Phulawasipata (inicio del trek). <br><b>Tip de Senderismo:</b> Aclimatarse mínimo 2 días en Cusco. Caminata de 1.5 a 2 horas sobre terreno empinado a 5,000m+. Llevar bastones de trekking, caramelos de coca y ropa de abrigo por capas.</p>
+      </div>
+
+      <div id="subHumantay" class="sub-content-box" style="display:none;">
+        <h3>Laguna Humantay (4,200m)</h3>
+        <span class="transport-tag">BUS A MOLLEPATA</span> <span class="transport-tag">SENDERISMO</span>
+        <p><b>Paso a Paso:</b> Traslado de Cusco a Mollepata y Soraypampa (3 hrs). <br><b>Tip de Trekking:</b> La subida desde Soraypampa dura aproximadamente 1.5 horas con pendiente pronunciada. Usar calzado con buen agarre y subir a ritmo constante.</p>
+      </div>
+
+      <div id="subMachuPicchu" class="sub-content-box" style="display:none;">
+        <h3>Machu Picchu desde Ollantaytambo</h3>
+        <span class="transport-tag">BUS OLLANTAYTAMBO</span> <span class="transport-tag">TREN PERURAIL/INCA RAIL</span>
+        <p><b>Logística:</b> Bus de Cusco a Ollantaytambo en el Valle Sagrado (1.5 hrs), tren hacia Aguas Calientes (Machu Picchu Pueblo) y bus de subida a la ciudadela Inca.</p>
+      </div>
+
+      <div id="subCaminoInca" class="sub-content-box" style="display:none;">
+        <h3>Camino Inca Clásico</h3>
+        <span class="transport-tag">TREKKING 4 DÍAS</span> <span class="transport-tag">PERMISO OBLIGATORIO</span>
+        <p><b>Tips de Ruta:</b> Inicia en el Km 82 de la vía férrea. Requiere reserva previa de boleto oficial con meses de anticipación con guía autorizado.</p>
+      </div>
+
+      <div id="subCuscoCiudad" class="sub-content-box" style="display:none;">
+        <h3>Cusco Imperial</h3>
+        <span class="transport-tag">AEROPUERTO VELAZCO ASTETE</span>
+        <p><b>Aclimatación:</b> Ciudad ubicada a 3,400 metros de altitud. Recomendado descansar el primer día y tomar té de coca.</p>
+      </div>
+    </div>
+
+    <div id="guiaAlaska" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇺🇸 Alaska: Selección de Sub-bitácora</h2>
+      
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subAnchorage', [61.2181, -149.9003])">Anchorage</span>
+        <span class="sub-link" onclick="mostrarSub('subDenali', [63.1148, -151.1926])">Parque Nacional Denali</span>
+      </div>
+
+      <div id="subAnchorage" class="sub-content-box">
+        <h3>Anchorage & Rutas de Glaciares</h3>
+        <span class="transport-tag">AEROPUERTO ANC</span> <span class="transport-tag">AUTO RENTADO / ALASKA RAILROAD</span>
+        <p><b>Logística:</b> Puerta de entrada a Alaska. Alquila un vehículo o usa el tren panorámico Alaska Railroad para recorrer Seward y la península de Kenai.</p>
+      </div>
+
+      <div id="subDenali" class="sub-content-box" style="display:none;">
+        <h3>Parque Nacional Denali</h3>
+        <span class="transport-tag">BUS DEL PARQUE</span> <span class="transport-tag">SENDERISMO SALVAJE</span>
+        <p><b>Tips de Visita:</b> La cumbre más alta de Norteamérica. El acceso interno al parque está restringido a autobuses autorizados para preservar la fauna salvaje.</p>
+      </div>
+    </div>
+
+    <div id="guiaGuateGeneral" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇬🇹 Guatemala: Selección de Sub-bitácora</h2>
+      
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subTajumulco', [15.0433, -91.9037])">Volcán Tajumulco</span>
+        <span class="sub-link" onclick="mostrarSub('subTikal', [17.2220, -89.6237])">Tikal Maya</span>
+        <span class="sub-link" onclick="mostrarSub('subXela', [14.8347, -91.5180])">Quetzaltenango (Xela)</span>
+        <span class="sub-link" onclick="mostrarSub('subAntigua', [14.5586, -90.7295])">Antigua Guatemala</span>
+        <span class="sub-link" onclick="mostrarSub('subAtitlan', [14.6906, -91.2025])">Lago Atitlán</span>
+      </div>
+
+      <div id="subTajumulco" class="sub-content-box">
+        <h3>Volcán Tajumulco (4,220m)</h3>
+        <span class="transport-tag">BUS LOCAL</span> <span class="transport-tag">SENDERISMO</span>
+        <p><b>Paso a Paso:</b> Bus de Xela a San Marcos y "chicken bus" a Tacaná hasta la <b>Aldea Tuichán (3,000m)</b>. Inicio del ascenso a la cima más alta de Centroamérica.</p>
+      </div>
+
+      <div id="subTikal" class="sub-content-box" style="display:none;">
+        <h3>Tikal (Petén) desde Zona 1</h3>
+        <span class="transport-tag">AV
