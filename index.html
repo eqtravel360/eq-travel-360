@@ -490,6 +490,36 @@
     
     <div class="cards-grid">
       
+      <!-- CHILE & ATACAMA -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Chile • Santiago, Atacama & Estrellas</span>
+          <h3>Chile: Santiago, Atacama, Calle Caracol & Tatio</h3>
+          <p>Santiago, San Pedro de Atacama, Calle Caracol, tours de observación de estrellas en el desierto y los Geysers del Tatio.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaChile', [-33.4489, -70.6693])">Ver Guías de Ruta</button>
+        </div>
+      </div>
+
+      <!-- BOLIVIA & SALAR DE UYUNI -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Bolivia • Salar de Uyuni & Cumbres</span>
+          <h3>Bolivia: Salar de Uyuni, La Paz & El Alto</h3>
+          <p>El majestuoso Salar de Uyuni, la cordillera andina, el teleférico de La Paz, Huayna Potosí y el Estadio Municipal de El Alto.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaBoliviaSalar', [-20.1338, -67.4891])">Ver Guías de Ruta</button>
+        </div>
+      </div>
+
+      <!-- PERÚ AMPLIADO -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Perú • Costa, Paracas, Lima & Cusco</span>
+          <h3>Perú: Paracas, Miraflores, Cusco & Machu Picchu</h3>
+          <p>Reserva Nacional de Paracas, Miraflores (Lima), Cusco Imperial, Machu Picchu, Salkantay, Camino Inca y Vinicunca.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaPeruAmpliado', [-12.0464, -77.0428])">Ver Guías de Ruta</button>
+        </div>
+      </div>
+
       <!-- ECUADOR & COLOMBIA SUR -->
       <div class="card">
         <div class="card-body">
@@ -540,16 +570,6 @@
         </div>
       </div>
 
-      <!-- PERÚ & CIRCUITO INCA -->
-      <div class="card">
-        <div class="card-body">
-          <span class="card-tag">Perú • Circuito Inca & Cumbres</span>
-          <h3>Perú: Cusco, Machu Picchu & Alturas</h3>
-          <p>Cusco, Machu Picchu, Trekking Salkantay, Camino Inca, Laguna Humantay, Vinicunca, Lima, Ica & Huacachina.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaPeru', [-13.5320, -71.9675])">Ver Guías de Ruta</button>
-        </div>
-      </div>
-
       <!-- COSTA RICA -->
       <div class="card">
         <div class="card-body">
@@ -560,12 +580,12 @@
         </div>
       </div>
 
-      <!-- ARGENTINA & CHILE -->
+      <!-- ARGENTINA & CHILE SUR -->
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Sudamérica • Fin del Mundo & Andes</span>
-          <h3>Argentina & Chile: Ushuaia, Atacama & Salta</h3>
-          <p>Ushuaia (Fin del Mundo), Salta la Linda, viñedos de Mendoza, Buenos Aires y el Desierto de Atacama.</p>
+          <h3>Argentina: Ushuaia, Atacama & Salta</h3>
+          <p>Ushuaia (Fin del Mundo), Salta la Linda, viñedos de Mendoza y Buenos Aires.</p>
           <button class="card-btn" onclick="abrirGuia('guiaArgentina', [-54.8019, -68.3030])">Ver Guías de Ruta</button>
         </div>
       </div>
@@ -660,16 +680,6 @@
         </div>
       </div>
 
-      <!-- BOLIVIA -->
-      <div class="card">
-        <div class="card-body">
-          <span class="card-tag">Bolivia • Cumbres & El Alto</span>
-          <h3>La Paz: Illimani, Huayna Potosí & El Alto</h3>
-          <p>Teleférico de La Paz, vista al Illimani, Estadio Municipal de El Alto (4,150m), Huayna Potosí (6,088m).</p>
-          <button class="card-btn" onclick="abrirGuia('guiaBolivia', [-16.5000, -68.1500])">Ver Guías de Ruta</button>
-        </div>
-      </div>
-
       <!-- URUGUAY & PARAGUAY -->
       <div class="card">
         <div class="card-body">
@@ -683,6 +693,114 @@
     </div>
 
     <!-- MODALES DE GUÍAS DETALLADAS -->
+
+    <!-- CHILE -->
+    <div id="guiaChile" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇨🇱 Chile: Santiago, Atacama, Estrellas & Tatio</h2>
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subSantiago', [-33.4489, -70.6693])">🏙️ Santiago & Calle Caracol</span>
+        <span class="sub-link" onclick="mostrarSub('subAtacamaChile', [-22.9087, -68.1997])">✨ San Pedro de Atacama & Observación de Estrellas</span>
+        <span class="sub-link" onclick="mostrarSub('subTatio', [-22.3333, -68.0167])">🌋 Geysers del Tatio</span>
+      </div>
+      <div id="subSantiago" class="sub-content-box">
+        <h3>🏙️ Santiago & Calle Caracol</h3>
+        <span class="transport-tag">🚇 METRO DE SANTIAGO</span>
+        <span class="stay-tag">🏨 HOSPEDAJE EN PROVIDENCIA O CENTRO</span>
+        <p><b>Qué hacer:</b> Recorrer la icónica <b>Calle Caracol</b> (Galería Caracol en Providencia), visitar el Cerro San Cristóbal, la Plaza de Armas y disfrutar de la gastronomía chilena en el Mercado Central.</p>
+      </div>
+      <div id="subAtacamaChile" class="sub-content-box" style="display:none;">
+        <h3>✨ San Pedro de Atacama & Observación de Estrellas</h3>
+        <span class="transport-tag">✈️ VUELO A CALAMA + 🚌 TRANSFER A SAN PEDRO</span>
+        <span class="stay-tag">🏨 ECO-HOSTALES EN SAN PEDRO DE ATACAMA</span>
+        <p><b>Qué hacer:</b> Caminatas por el Valle de la Luna y los tours nocturnos de <b>observación astronómica</b> aprovechando los cielos más limpios del planeta en el desierto de Atacama.</p>
+      </div>
+      <div id="subTatio" class="sub-content-box" style="display:none;">
+        <h3>🌋 Geysers del Tatio</h3>
+        <span class="transport-tag">🚐 TOUR MATUTINO EN 4x4 DESDE SAN PEDRO</span>
+        <p><b>Qué hacer:</b> Visita a más de 4,300 metros de altitud al amanecer para contemplar el impresionante campo geotérmico y sus fumarolas de vapor rodeadas de los Andes.</p>
+      </div>
+    </div>
+
+    <!-- BOLIVIA SALAR DE UYUNI -->
+    <div id="guiaBoliviaSalar" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇧🇴 Bolivia: Salar de Uyuni & Cumbres de La Paz</h2>
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subSalarUyuni', [-20.1338, -67.4891])">🧂 Salar de Uyuni</span>
+        <span class="sub-link" onclick="mostrarSub('subLaPazBolu', [-16.5000, -68.1500])">🚠 La Paz, Illimani, Huayna Potosí & El Alto</span>
+      </div>
+      <div id="subSalarUyuni" class="sub-content-box">
+        <h3>🧂 Salar de Uyuni: El Espejo del Mundo</h3>
+        <span class="transport-tag">✈️ VUELO A UYUNI / BUS DESDE LA PAZ O ORURO</span>
+        <span class="stay-tag">🏨 HOTELES DE SAL / HOSTALES EN PUEBLO DE UYUNI</span>
+        <p><b>Qué hacer:</b> Recorrido en 4x4 por la planicie de sal más grande del mundo, Isla Incahuasi (con cactus gigantes), el Cementerio de Trenes y los efectos fotográficos de perspectiva en temporada seca o el efecto espejo en época de lluvias.</p>
+      </div>
+      <div id="subLaPazBolu" class="sub-content-box" style="display:none;">
+        <h3>🚠 La Paz, Vista al Illimani, Huayna Potosí & Estadio El Alto (+4,150m)</h3>
+        <span class="transport-tag">🚠 MI TELEFÉRICO</span>
+        <p><b>Qué hacer:</b> Estadio Municipal de El Alto (4,150m), vista al imponente Cerro Illimani (6,438m), ascenso al Huayna Potosí (6,088m) y el místico Mercado de las Brujas.</p>
+      </div>
+    </div>
+
+    <!-- PERÚ AMPLIADO -->
+    <div id="guiaPeruAmpliado" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇵🇪 Perú: Paracas, Miraflores, Cusco & Machu Picchu</h2>
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subParacas', [-13.8398, -76.2517])">🌊 Paracas & Islas Ballestas</span>
+        <span class="sub-link" onclick="mostrarSub('subMiraflores', [-12.1111, -77.0329])">🌊 Miraflores & Costa Verde (Lima)</span>
+        <span class="sub-link" onclick="mostrarSub('subCuscoMain', [-13.5320, -71.9675])">🏛️ Cusco Imperial</span>
+        <span class="sub-link" onclick="mostrarSub('subMP', [-13.1631, -72.5450])">🛕 Machu Picchu & Tren</span>
+        <span class="sub-link" onclick="mostrarSub('subSalkantay', [-13.3361, -72.5694])">🥾 Salkantay Trek & Humantay</span>
+        <span class="sub-link" onclick="mostrarSub('subIncaTrail', [-13.2263, -72.4184])">🏕️ Camino Inca</span>
+        <span class="sub-link" onclick="mostrarSub('subVinicuncaP', [-13.8693, -71.3029])">🌈 Montaña 7 Colores</span>
+        <span class="sub-link" onclick="mostrarSub('subIcaLima', [-14.0875, -75.7626])">🏜️ Ica & Huacachina</span>
+      </div>
+      <div id="subParacas" class="sub-content-box">
+        <h3>🌊 Paracas & Islas Ballestas</h3>
+        <span class="transport-tag">🚌 BUS CRUZ DEL SUR DESDE LIMA</span>
+        <span class="stay-tag">🏨 HOTEL EN EL ACOGEDOR PUEBLO DE PARACAS</span>
+        <p><b>Qué hacer:</b> Tour en lancha hacia las Islas Ballestas para observar lobos marinos, aves guaneras y el famoso geoglifo "El Candelabro", además de recorrer los acantilados de la Reserva Nacional de Paracas donde el desierto se encuentra con el Océano Pacífico.</p>
+      </div>
+      <div id="subMiraflores" class="sub-content-box" style="display:none;">
+        <h3>🌊 Miraflores & Costa Verde (Lima)</h3>
+        <span class="transport-tag">🚇 METROPOLITANO / UBER</span>
+        <span class="stay-tag">🏨 B&B EN MIRAFLORES</span>
+        <p><b>Qué hacer:</b> Pasear por el Malecón de Miraflores frente al mar, el Parque del Amor, hacer parapente sobre la Costa Verde y disfrutar de la mejor gastronomía peruana.</p>
+      </div>
+      <div id="subCuscoMain" class="sub-content-box" style="display:none;">
+        <h3>🏛️ Cusco Imperial</h3>
+        <span class="transport-tag">✈️ AEROPUERTO VELAZCO ASTETE</span>
+        <span class="stay-tag">🏨 HOSPEDAJE EN BARRIO SAN BLAS O CENTRO HISTÓRICO</span>
+        <p><b>Qué hacer:</b> Aclimatar a 3,400m de altitud. Recorrer la Plaza de Armas, Sacsayhuamán, Mercado San Pedro y las calles artesanales de San Blas.</p>
+      </div>
+      <div id="subMP" class="sub-content-box" style="display:none;">
+        <h3>🛕 Machu Picchu & Ollantaytambo</h3>
+        <span class="transport-tag">🚆 TREN PERURAIL / INCA RAIL</span>
+        <p><b>Qué hacer:</b> Tren panorámico hacia Aguas Calientes y ascenso en bus a la ciudadela inca.</p>
+      </div>
+      <div id="subSalkantay" class="sub-content-box" style="display:none;">
+        <h3>🥾 Salkantay Trek & Laguna Humantay</h3>
+        <span class="transport-tag">🥾 TREKKING 4-5 DÍAS</span>
+        <p><b>Qué hacer:</b> Trekking rodeando el nevado Salkantay y visita a la turquesa Laguna Humantay.</p>
+      </div>
+      <div id="subIncaTrail" class="sub-content-box" style="display:none;">
+        <h3>🏕️ Camino Inca Clásico</h3>
+        <span class="transport-tag">🥾 TREKKING 4 DÍAS CON PERMISO</span>
+        <p><b>Qué hacer:</b> Caminata por la red vial incaica original hasta la Puerta del Sol (*Intipunku*).</p>
+      </div>
+      <div id="subVinicuncaP" class="sub-content-box" style="display:none;">
+        <h3>🌈 Montaña de 7 Colores (Vinicunca - 5,200m)</h3>
+        <span class="transport-tag">🚌 BUS DE CUSCO A CUSIPATA</span>
+        <p><b>Qué hacer:</b> Trekking de altura sobre los paisajes multicolores de los Andes peruanos.</p>
+      </div>
+      <div id="subIcaLima" class="sub-content-box" style="display:none;">
+        <h3>🏜️ Ica & Huacachina</h3>
+        <span class="transport-tag">🚌 BUS DESDE LIMA O PARACAS</span>
+        <p><b>Qué hacer:</b> Sandboarding y buggies en el oasis de Huacachina.</p>
+      </div>
+    </div>
 
     <!-- ECUADOR & COLOMBIA SUR -->
     <div id="guiaEcuadorColombia" class="guide-modal">
@@ -828,61 +946,12 @@
       </div>
     </div>
 
-    <!-- PERÚ -->
-    <div id="guiaPeru" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇵🇪 Perú: Cusco, Machu Picchu & Rutas de Montaña</h2>
-      <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subCuscoMain', [-13.5320, -71.9675])">🏛️ Cusco Imperial</span>
-        <span class="sub-link" onclick="mostrarSub('subMP', [-13.1631, -72.5450])">🛕 Machu Picchu & Tren</span>
-        <span class="sub-link" onclick="mostrarSub('subSalkantay', [-13.3361, -72.5694])">🥾 Salkantay Trek & Humantay</span>
-        <span class="sub-link" onclick="mostrarSub('subIncaTrail', [-13.2263, -72.4184])">🏕️ Camino Inca</span>
-        <span class="sub-link" onclick="mostrarSub('subVinicuncaP', [-13.8693, -71.3029])">🌈 Montaña 7 Colores</span>
-        <span class="sub-link" onclick="mostrarSub('subIcaLima', [-14.0875, -75.7626])">🏜️ Ica, Huacachina & Lima</span>
-      </div>
-      <div id="subCuscoMain" class="sub-content-box">
-        <h3>🏛️ Cusco Imperial</h3>
-        <span class="transport-tag">✈️ AEROPUERTO VELAZCO ASTETE</span>
-        <span class="stay-tag">🏨 HOSPEDAJE EN BARRIO SAN BLAS O CENTRO HISTÓRICO</span>
-        <p><b>Qué hacer:</b> Aclimatar a 3,400m de altitud. Recorrer la Plaza de Armas, Sacsayhuamán, Mercado San Pedro y las calles artesanales de San Blas.<br>
-        <b>Tip:</b> Descansar el primer día y tomar mate de coca.</p>
-      </div>
-      <div id="subMP" class="sub-content-box" style="display:none;">
-        <h3>🛕 Machu Picchu & Ollantaytambo</h3>
-        <span class="transport-tag">🚆 TREN PERURAIL / INCA RAIL</span>
-        <span class="stay-tag">🏨 ALOJAMIENTO EN AGUAS CALIENTES (MACHU PICCHU PUEBLO)</span>
-        <p><b>Qué hacer:</b> Bus de Cusco a Ollantaytambo (Valle Sagrado), tren panorámico hacia Aguas Calientes y ascenso en bus a la maravilla del mundo.</p>
-      </div>
-      <div id="subSalkantay" class="sub-content-box" style="display:none;">
-        <h3>🥾 Salkantay Trek & Laguna Humantay</h3>
-        <span class="transport-tag">🥾 TREKKING 4-5 DÍAS</span>
-        <span class="stay-tag">⛺ CAMPAMENTOS & DOMOS EN SORAYPAMPA</span>
-        <p><b>Qué hacer:</b> Alternativa espectacular al Camino Inca rodeando el imponente nevado Salkantay (6,271m) y visitando la turquesa Laguna Humantay (4,200m).</p>
-      </div>
-      <div id="subIncaTrail" class="sub-content-box" style="display:none;">
-        <h3>🏕️ Camino Inca Clásico</h3>
-        <span class="transport-tag">🥾 TREKKING 4 DÍAS CON PERMISO</span>
-        <p><b>Qué hacer:</b> Caminata por la red vial incaica original iniciando en el Km 82 hasta entrar a Machu Picchu por el *Intipunku* (Puerta del Sol).</p>
-      </div>
-      <div id="subVinicuncaP" class="sub-content-box" style="display:none;">
-        <h3>🌈 Montaña de 7 Colores (Vinicunca - 5,200m)</h3>
-        <span class="transport-tag">🚌 BUS DE CUSCO A CUSIPATA</span>
-        <p><b>Qué hacer:</b> Salida 3:00 AM desde Cusco. Trekking de 1.5 horas sobre terreno empinado a más de 5,000 metros de altitud.</p>
-      </div>
-      <div id="subIcaLima" class="sub-content-box" style="display:none;">
-        <h3>🏜️ Ica, Huacachina & Lima</h3>
-        <span class="transport-tag">🚌 BUS CRUZ DEL SUR DESDE LIMA</span>
-        <p><b>Qué hacer:</b> Sandboarding y tubular buggy en el Oasis de Huacachina (Ica) y recorrido gastronómico/marítimo por Miraflores y Barranco en Lima.</p>
-      </div>
-    </div>
-
-    <!-- ARGENTINA & CHILE -->
+    <!-- ARGENTINA & CHILE SUR -->
     <div id="guiaArgentina" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇦🇷🇨🇱 Argentina & Chile: Ushuaia & Atacama</h2>
+      <h2>🇦🇷 Argentina: Ushuaia, Salta & Mendoza</h2>
       <div class="sub-nav">
         <span class="sub-link" onclick="mostrarSub('subUshuaia', [-54.8019, -68.3030])">🐧 Ushuaia (Fin del Mundo)</span>
-        <span class="sub-link" onclick="mostrarSub('subAtacama', [-22.9087, -68.1997])">🌵 San Pedro de Atacama (Chile)</span>
         <span class="sub-link" onclick="mostrarSub('subSalta', [-24.7859, -65.4117])">🏜️ Salta & Mendoza</span>
         <span class="sub-link" onclick="mostrarSub('subBsAs', [-34.6037, -58.3816])">💃 Buenos Aires</span>
       </div>
@@ -891,12 +960,6 @@
         <span class="transport-tag">✈️ VUELO DESDE BUENOS AIRES</span>
         <span class="stay-tag">🏨 HOSTALES EN EL CENTRO DE USHUAIA</span>
         <p><b>Qué hacer:</b> Navegación por el Canal Beagle hacia el Faro del Fin del Mundo, caminata entre pingüinos en Isla Martillo y trekking en el Parque Nacional Tierra del Fuego.</p>
-      </div>
-      <div id="subAtacama" class="sub-content-box" style="display:none;">
-        <h3>🌵 San Pedro de Atacama (Chile)</h3>
-        <span class="transport-tag">🚌 BUS DESDE SALTA O VUELO A CALAMA</span>
-        <span class="stay-tag">🏨 ECO-HOSTALES EN SAN PEDRO</span>
-        <p><b>Qué hacer:</b> Recorrer el Valle de la Luna, los Geysers del Tatio al amanecer y la observación astronómica en el desierto más árido del mundo.</p>
       </div>
       <div id="subSalta" class="sub-content-box" style="display:none;">
         <h3>🏜️ Salta la Linda & Mendoza</h3>
@@ -1150,20 +1213,6 @@
       </div>
     </div>
 
-    <!-- BOLIVIA -->
-    <div id="guiaBolivia" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇧🇴 Bolivia: La Paz, Illimani & Estadio El Alto</h2>
-      <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subLaPaz', [-16.5000, -68.1500])">🚠 La Paz, Illimani, Huayna Potosí & Estadio El Alto</span>
-      </div>
-      <div id="subLaPaz" class="sub-content-box">
-        <h3>🚠 La Paz, Vista al Illimani, Huayna Potosí & Estadio El Alto (+4,150m)</h3>
-        <span class="transport-tag">🚠 MI TELEFÉRICO</span>
-        <p><b>Qué hacer:</b> Estadio Municipal de El Alto (4,150m), vista al Cerro Illimani (6,438m), ascenso al Huayna Potosí (6,088m) y Mercado de las Brujas.</p>
-      </div>
-    </div>
-
     <!-- URUGUAY & PARAGUAY -->
     <div id="guiaUruPara" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
@@ -1197,6 +1246,12 @@
       }).addTo(map);
 
       var destinos = [
+        { nombre: "Santiago & Calle Caracol, Chile", region: "Sudamérica", coords: [-33.4489, -70.6693] },
+        { nombre: "San Pedro de Atacama (Estrellas), Chile", region: "Sudamérica", coords: [-22.9087, -68.1997] },
+        { nombre: "Geysers del Tatio, Chile", region: "Sudamérica", coords: [-22.3333, -68.0167] },
+        { nombre: "Salar de Uyuni, Bolivia", region: "Sudamérica", coords: [-20.1338, -67.4891] },
+        { nombre: "Reserva Nacional de Paracas, Perú", region: "Sudamérica", coords: [-13.8398, -76.2517] },
+        { nombre: "Miraflores & Costa Verde (Lima), Perú", region: "Sudamérica", coords: [-12.1111, -77.0329] },
         { nombre: "Quito (Mitad del Mundo & Basílica), Ecuador", region: "Sudamérica", coords: [-0.1807, -78.4678] },
         { nombre: "Volcán Chimborazo & Condor Cocha (5,100m), Ecuador", region: "Sudamérica", coords: [-1.4693, -78.8169] },
         { nombre: "Tulcán, Ecuador", region: "Sudamérica", coords: [0.8116, -77.7172] },
@@ -1220,12 +1275,10 @@
         { nombre: "Camino Inca, Perú", region: "Sudamérica", coords: [-13.2263, -72.4184] },
         { nombre: "Montaña 7 Colores (Vinicunca), Perú", region: "Sudamérica", coords: [-13.8693, -71.3029] },
         { nombre: "Ica & Huacachina, Perú", region: "Sudamérica", coords: [-14.0875, -75.7626] },
-        { nombre: "Lima, Perú", region: "Sudamérica", coords: [-12.0464, -77.0428] },
         { nombre: "Ushuaia (Fin del Mundo), Argentina", region: "Sudamérica", coords: [-54.8019, -68.3030] },
         { nombre: "Buenos Aires, Argentina", region: "Sudamérica", coords: [-34.6037, -58.3816] },
         { nombre: "Mendoza, Argentina", region: "Sudamérica", coords: [-32.8895, -68.8458] },
         { nombre: "Salta la Linda, Argentina", region: "Sudamérica", coords: [-24.7859, -65.4117] },
-        { nombre: "San Pedro de Atacama, Chile", region: "Sudamérica", coords: [-22.9087, -68.1997] },
         { nombre: "Anchorage, Alaska (EE.UU.)", region: "Norteamérica", coords: [61.2181, -149.9003] },
         { nombre: "Parque Nacional Denali, Alaska", region: "Norteamérica", coords: [63.1148, -151.1926] },
         { nombre: "París (Torre Eiffel), Francia", region: "Europa", coords: [48.8566, 2.3522] },
