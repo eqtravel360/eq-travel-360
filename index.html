@@ -485,6 +485,16 @@
     
     <div class="cards-grid">
       
+      <!-- ECUADOR & COLOMBIA SUR -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Sudamérica • Andes, Volcanes & Mitad del Mundo</span>
+          <h3>Ecuador & Colombia Sur: Quito, Chimborazo & Ipiales</h3>
+          <p>Quito (Mitad del Mundo, Basílica del Voto Nacional), Volcán Chimborazo (Condor Cocha 5,100m), Tulcán e Ipiales (Santuario Las Lajas).</p>
+          <button class="card-btn" onclick="abrirGuia('guiaEcuadorColombia', [-0.1807, -78.4678])">Ver Guías de Ruta</button>
+        </div>
+      </div>
+
       <!-- BRASIL & TRIPLE FRONTERA -->
       <div class="card">
         <div class="card-body">
@@ -498,7 +508,7 @@
       <!-- MÉXICO -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Norteamérica • Pyramides & Caribe</span>
+          <span class="card-tag">Norteamérica • Pirámides & Caribe</span>
           <h3>México: Teotihuacán, Chichén Itzá & Cancún</h3>
           <p>Pirámides del Sol y de la Luna, la maravilla maya de Chichén Itzá, buceo en Cozumel y playas de Cancún.</p>
           <button class="card-btn" onclick="abrirGuia('guiaMexico', [19.6925, -98.8438])">Ver Guías de Ruta</button>
@@ -668,6 +678,36 @@
     </div>
 
     <!-- MODALES DE GUÍAS DETALLADAS -->
+
+    <!-- ECUADOR & COLOMBIA SUR -->
+    <div id="guiaEcuadorColombia" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇪🇨🇨🇴 Ecuador & Colombia Sur: Mitad del Mundo & Cumbres</h2>
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subQuitoP', [-0.1807, -78.4678])">🏛️ Quito, Mitad del Mundo & Basílica</span>
+        <span class="sub-link" onclick="mostrarSub('subChimborazoP', [-1.4693, -78.8169])">🌋 Volcán Chimborazo & Laguna Condor Cocha (5,100m)</span>
+        <span class="sub-link" onclick="mostrarSub('subIpialesP', [0.8248, -77.6432])">⛪ Ipiales (Santuario Las Lajas) & Tulcán</span>
+      </div>
+      <div id="subQuitoP" class="sub-content-box">
+        <h3>🏛️ Quito: Centro Histórico, Mitad del Mundo & Basílica del Voto Nacional</h3>
+        <span class="transport-tag">🚇 METRO DE QUITO / BUS CIENTÍFICO SAN ANTONIO</span>
+        <span class="stay-tag">🏨 HOSPEDAJE EN CENTRO HISTÓRICO O LA MARISCAL</span>
+        <p><b>Qué hacer:</b> Caminar por el Centro Histórico mejor conservado de América, subir a las torres neogóticas de la <b>Basílica del Voto Nacional</b>, tomar el bus hacia el monumento a la <b>Mitad del Mundo (Latitud 0°0'0")</b> y subir al Teleférico para ver los volcanes surrounding Quito.<br>
+        <b>Dónde quedarse:</b> Hoteles boutique en el Centro Histórico o hostales en La Mariscal.</p>
+      </div>
+      <div id="subChimborazoP" class="sub-content-box" style="display:none;">
+        <h3>🌋 Volcán Chimborazo & Laguna Condor Cocha (5,100m)</h3>
+        <span class="transport-tag">🚌 BUS DE RIOBAMBA A REFUGE CARREL</span>
+        <span class="stay-tag">🏠 HOSPEDAJE EN RIOBAMBA O CABAÑAS DE LA RESERVA</span>
+        <p><b>Qué hacer:</b> Subida en vehículo hasta el Refugio Hermanos Carrel (4,800m) e inicio de caminata exigente sobre piedra volcánica hasta la <b>Laguna Condor Cocha (5,100m)</b>. El punto más cercano al sol desde el centro de la Tierra.</p>
+      </div>
+      <div id="subIpialesP" class="sub-content-box" style="display:none;">
+        <h3>⛪ Ipiales (Santuario Las Lajas) & Tulcán</h3>
+        <span class="transport-tag">🚌 BUS DESDE QUITO A TULCÁN + 🚕 TAXI FRONTERA RUMICHACA</span>
+        <span class="stay-tag">🏨 HOSPEDAJE EN IPIALES O TULCÁN</span>
+        <p><b>Qué hacer:</b> Visitar el Cementerio de Tulcán famoso por sus esculturas en ciprés, cruzar el puente internacional Rumichaca e impactarse con el impresionante Santuario neogótico de Las Lajas construido sobre el cañón del río Guáitara.</p>
+      </div>
+    </div>
 
     <!-- BRASIL -->
     <div id="guiaBrasil" class="guide-modal">
@@ -1152,6 +1192,10 @@
       }).addTo(map);
 
       var destinos = [
+        { nombre: "Quito (Mitad del Mundo & Basílica), Ecuador", region: "Sudamérica", coords: [-0.1807, -78.4678] },
+        { nombre: "Volcán Chimborazo & Condor Cocha (5,100m), Ecuador", region: "Sudamérica", coords: [-1.4693, -78.8169] },
+        { nombre: "Tulcán, Ecuador", region: "Sudamérica", coords: [0.8116, -77.7172] },
+        { nombre: "Ipiales (Santuario Las Lajas), Colombia", region: "Sudamérica", coords: [0.8248, -77.6432] },
         { nombre: "Río de Janeiro (Cristo Redentor), Brasil", region: "Sudamérica", coords: [-22.9068, -43.1729] },
         { nombre: "Ilha Grande, Brasil", region: "Sudamérica", coords: [-23.1523, -44.2319] },
         { nombre: "Cataratas do Iguaçu, Brasil", region: "Sudamérica", coords: [-25.6953, -54.4367] },
