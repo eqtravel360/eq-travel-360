@@ -53,7 +53,6 @@
       z-index: 1;
     }
 
-    /* LOGO EN EL LADO IZQUIERDO */
     .logo-left {
       display: flex;
       align-items: center;
@@ -74,7 +73,6 @@
       transform: scale(1.05) rotate(2deg);
     }
 
-    /* TÍTULO CENTRAL CON EFECTO VIDRIO Y "GUÍAS DE RUTA" */
     .header-center-title {
       text-align: center;
       background: rgba(15, 23, 42, 0.75);
@@ -101,7 +99,6 @@
       letter-spacing: 1px;
     }
 
-    /* SELLO OFICIAL DE PASAPORTE EN EL LADO DERECHO */
     .stamp-badge-large {
       border: 3px double var(--gold-accent);
       border-radius: 50%;
@@ -389,6 +386,18 @@
       color: #38bdf8;
     }
 
+    .cultural-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      background: #7c3aed;
+      color: #ffffff;
+    }
+
     .close-btn {
       background: #ef4444;
       color: white;
@@ -417,18 +426,15 @@
   <header>
     <div class="header-container">
       
-      <!-- Logo Principal a la Izquierda -->
       <div class="logo-left">
         <img src="logo.jpg.png" alt="EQ Travel 360 Logo" class="brand-logo">
       </div>
 
-      <!-- Título Central en Caja Neón Vidrio -->
       <div class="header-center-title">
         <h1>EQ TRAVEL 360</h1>
         <p>Guías de Ruta por el Mundo</p>
       </div>
 
-      <!-- Sello de Pasaporte Verificado a la Derecha -->
       <div class="stamp-badge-large">
         <span style="letter-spacing: 1px;">EQ TRAVEL</span>
         <span class="stamp-star">★</span>
@@ -480,6 +486,16 @@
     
     <div class="cards-grid">
       
+      <!-- GUATEMALA HIGHLANDS & SINCRETISMO -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Guatemala • Sincretismo Maya & Cumbres</span>
+          <h3>Guatemala: Tradiciones Mayas & Cumbres</h3>
+          <p>Selecciona la guía para ver la logística y cosmovisión en Atitlán (Maximón), Chichicastenango (Santo Tomás), Tajumulco, Tikal y Antigua.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaGuateGeneral', [14.9444, -91.1125])">Ver Guías de Ruta</button>
+        </div>
+      </div>
+
       <!-- CUSCO & RUTA INCA -->
       <div class="card">
         <div class="card-body">
@@ -497,16 +513,6 @@
           <h3>Alaska & Norteamérica</h3>
           <p>Logística para Anchorage, glaciares de Denali y rutas por la gran naturaleza de Alaska.</p>
           <button class="card-btn" onclick="abrirGuia('guiaAlaska', [61.2181, -149.9003])">Ver Guías de Ruta</button>
-        </div>
-      </div>
-
-      <!-- GUATEMALA -->
-      <div class="card">
-        <div class="card-body">
-          <span class="card-tag">Guatemala • Cumbres & Ruinas</span>
-          <h3>Guatemala: Cumbres & Mundo Maya</h3>
-          <p>Selecciona la guía para ver detalles de cómo llegar a Tajumulco, Tikal, Xela, Antigua y Atitlán.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaGuateGeneral', [15.0433, -91.9037])">Ver Guías de Ruta</button>
         </div>
       </div>
 
@@ -553,6 +559,65 @@
     </div>
 
     <!-- MODALES DE GUÍAS DE RUTA -->
+
+    <!-- GUATEMALA (CON CHICHICASTENANGO Y ATITLÁN CON SINCRETISMO) -->
+    <div id="guiaGuateGeneral" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇬🇹 Guatemala: Cosmovisión Maya & Rutas Logísticas</h2>
+      
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subChichi', [14.9444, -91.1125])">🕯️ Santo Tomás Chichicastenango</span>
+        <span class="sub-link" onclick="mostrarSub('subAtitlan', [14.6906, -91.2025])">🌊 Lago Atitlán & Maximón</span>
+        <span class="sub-link" onclick="mostrarSub('subTajumulco', [15.0433, -91.9037])">🌋 Volcán Tajumulco</span>
+        <span class="sub-link" onclick="mostrarSub('subTikal', [17.2220, -89.6237])">🛕 Tikal Maya</span>
+        <span class="sub-link" onclick="mostrarSub('subAntigua', [14.5586, -90.7295])">🏛️ Antigua Guatemala</span>
+      </div>
+
+      <div id="subChichi" class="sub-content-box">
+        <h3>🕯️ Santo Tomás de Chichicastenango: Epicentro del Sincretismo Maya K'iche'</h3>
+        <span class="transport-tag">🚌 BUS / CHICKEN BUS DESDE XELA O PANAJACHEL</span>
+        <span class="cultural-tag">🔮 SINCRETISMO MAYA & CATÓLICO</span>
+        <p><b>Cómo llegar:</b> Toma un bus directo los días de mercado (Jueves y Domingos) desde la Terminal Minerva de Xela o desde Panajachel haciendo transbordo en Los Encuentros.</p>
+        <p><b>Ruta Cultural & Cosmovisión:</b> 
+        <ul>
+          <li><b>Iglesia de Santo Tomás (Construida en 1540):</b> Erigida sobre una antigua pirámide maya. Sus <b>18 escalones exteriores</b> representan los 18 meses del calendario solar maya (Winal). En la escalinata, los chamanes o <i>Ajq'ijab'</i> queman copal, mirra y aguardiente para invocar a las deidades ancestrales antes de ingresar al templo católico.</li>
+          <li><b>Popol Vuh:</b> Fue en el convento de este templo donde el fray Francisco Ximénez transcribió el libro sagrado de la creación maya K'iche'.</li>
+          <li><b>Altar de Pascual Abaj:</b> En la cima del cerro Turaj K'aj, se realizan ceremonias y ofrendas de fuego a la piedra sagrada dedicada al dios de la tierra.</li>
+        </ul>
+        </p>
+      </div>
+
+      <div id="subAtitlan" class="sub-content-box" style="display:none;">
+        <h3>🌊 Lago Atitlán: Culto a Rilaj Maam (Maximón) & Pueblos Tz'utujil</h3>
+        <span class="transport-tag">🚌 SHUTTLE / BUS</span> <span class="transport-tag">🚤 LANCHA PÚBLICA</span>
+        <span class="cultural-tag">🗿 TRADICIONES TZ'UTUJIL & KAQCHIKEL</span>
+        <p><b>Cómo moverse:</b> Desde Panajachel toma lanchas colectivas hacia los distintos pueblos ribereños.</p>
+        <p><b>Sincretismo & Cosmovisión en los Pueblos:</b>
+        <ul>
+          <li><b>Santiago Atitlán (Culto a Maximón / Rilaj Maam):</b> La máxima expresión de sincretismo maya. Maximón es un santo de madera venerado en cofradías rotativas, al cual los fieles le ofrecen puros, aguardiente Venado y velas de colores para pedir protección. Representa la fusión del conquistador con la antigua deidad de los caminos y la fertilidad.</li>
+          <li><b>San Juan La Laguna:</b> Epicentro del tejido con tintes naturales de plantas locales y del simbolismo maya reflejado en sus murales y cooperativas.</li>
+        </ul>
+        </p>
+      </div>
+
+      <div id="subTajumulco" class="sub-content-box" style="display:none;">
+        <h3>🌋 Volcán Tajumulco (4,220m)</h3>
+        <span class="transport-tag">🚌 BUS LOCAL</span> <span class="transport-tag">🥾 SENDERISMO</span>
+        <p><b>Paso a Paso:</b> Bus de Xela a San Marcos y "chicken bus" a Tacaná hasta la <b>Aldea Tuichán (3,000m)</b>. Inicio del ascenso a la cumbre más alta de Centroamérica.</p>
+      </div>
+
+      <div id="subTikal" class="sub-content-box" style="display:none;">
+        <h3>🛕 Tikal (Petén) desde Zona 1</h3>
+        <span class="transport-tag">✈️ AVIÓN</span> <span class="transport-tag">🚌 BUS NOCTURNO</span>
+        <p><b>Opción Terrestre:</b> Sal desde la capital en buses nocturnos de <i>Fuente del Norte</i> a Santa Elena (8 horas) y colectivo directo al parque arqueológico.</p>
+      </div>
+
+      <div id="subAntigua" class="sub-content-box" style="display:none;">
+        <h3>🏛️ Antigua Guatemala</h3>
+        <span class="transport-tag">🚌 SHUTTLE</span>
+        <p><b>Desde Aeropuerto La Aurora:</b> Shuttle compartido directo a Antigua (1 hora).</p>
+      </div>
+    </div>
 
     <!-- CUSCO -->
     <div id="guiaCuscoGeneral" class="guide-modal">
@@ -618,50 +683,6 @@
         <h3>Parque Nacional Denali</h3>
         <span class="transport-tag">BUS DEL PARQUE</span> <span class="transport-tag">SENDERISMO SALVAJE</span>
         <p><b>Tips de Visita:</b> La cumbre más alta de Norteamérica. El acceso interno al parque está restringido a autobuses autorizados para preservar la fauna salvaje.</p>
-      </div>
-    </div>
-
-    <!-- GUATEMALA -->
-    <div id="guiaGuateGeneral" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇬🇹 Guatemala: Selección de Guía de Ruta</h2>
-      
-      <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subTajumulco', [15.0433, -91.9037])">Volcán Tajumulco</span>
-        <span class="sub-link" onclick="mostrarSub('subTikal', [17.2220, -89.6237])">Tikal Maya</span>
-        <span class="sub-link" onclick="mostrarSub('subXela', [14.8347, -91.5180])">Quetzaltenango (Xela)</span>
-        <span class="sub-link" onclick="mostrarSub('subAntigua', [14.5586, -90.7295])">Antigua Guatemala</span>
-        <span class="sub-link" onclick="mostrarSub('subAtitlan', [14.6906, -91.2025])">Lago Atitlán</span>
-      </div>
-
-      <div id="subTajumulco" class="sub-content-box">
-        <h3>Volcán Tajumulco (4,220m)</h3>
-        <span class="transport-tag">BUS LOCAL</span> <span class="transport-tag">SENDERISMO</span>
-        <p><b>Paso a Paso:</b> Bus de Xela a San Marcos y "chicken bus" a Tacaná hasta la <b>Aldea Tuichán (3,000m)</b>. Inicio del ascenso a la cima más alta de Centroamérica.</p>
-      </div>
-
-      <div id="subTikal" class="sub-content-box" style="display:none;">
-        <h3>Tikal (Petén) desde Zona 1</h3>
-        <span class="transport-tag">AVIÓN</span> <span class="transport-tag">BUS NOCTURNO</span>
-        <p><b>Opción Terrestre:</b> Sal desde la capital en buses nocturnos de <i>Fuente del Norte</i> a Santa Elena (8 horas) y colectivo directo al parque arqueológico.</p>
-      </div>
-
-      <div id="subXela" class="sub-content-box" style="display:none;">
-        <h3>Quetzaltenango (Xela)</h3>
-        <span class="transport-tag">BUS DIRECTO</span>
-        <p><b>Transporte:</b> Salidas desde la capital en <i>Transportes Alamo</i> o <i>Línea Dorada</i> (4 horas).</p>
-      </div>
-
-      <div id="subAntigua" class="sub-content-box" style="display:none;">
-        <h3>Antigua Guatemala</h3>
-        <span class="transport-tag">SHUTTLE</span>
-        <p><b>Desde Aeropuerto La Aurora:</b> Shuttle compartido directo a Antigua (1 hora).</p>
-      </div>
-
-      <div id="subAtitlan" class="sub-content-box" style="display:none;">
-        <h3>Lago Atitlán (Panajachel)</h3>
-        <span class="transport-tag">SHUTTLE</span> <span class="transport-tag">LANCHAS PUBLICAS</span>
-        <p><b>Movilidad:</b> Lanchas rápidas conectan Panajachel con San Juan, San Pedro y Santiago Atitlán.</p>
       </div>
     </div>
 
@@ -805,6 +826,13 @@
       }).addTo(map);
 
       var destinos = [
+        { nombre: "Santo Tomás de Chichicastenango, Guatemala", region: "Centroamérica", coords: [14.9444, -91.1125] },
+        { nombre: "Lago Atitlán & Santiago Atitlán, Guatemala", region: "Centroamérica", coords: [14.6906, -91.2025] },
+        { nombre: "Volcán Tajumulco, Guatemala", region: "Centroamérica", coords: [15.0433, -91.9037] },
+        { nombre: "Tikal (Petén), Guatemala", region: "Centroamérica", coords: [17.2220, -89.6237] },
+        { nombre: "Ciudad de Guatemala (Zona 1)", region: "Centroamérica", coords: [14.6349, -90.5069] },
+        { nombre: "Antigua Guatemala", region: "Centroamérica", coords: [14.5586, -90.7295] },
+        { nombre: "Quetzaltenango (Xela), Guatemala", region: "Centroamérica", coords: [14.8347, -91.5180] },
         { nombre: "Anchorage, Alaska (EE.UU.)", region: "Norteamérica", coords: [61.2181, -149.9003] },
         { nombre: "Parque Nacional Denali, Alaska", region: "Norteamérica", coords: [63.1148, -151.1926] },
         { nombre: "Cusco Imperial, Perú", region: "Sudamérica", coords: [-13.5320, -71.9675] },
@@ -836,12 +864,6 @@
         { nombre: "León, Nicaragua", region: "Centroamérica", coords: [12.4379, -86.8780] },
         { nombre: "Granada, Nicaragua", region: "Centroamérica", coords: [11.9299, -85.9560] },
         { nombre: "Isla de Ometepe, Nicaragua", region: "Centroamérica", coords: [11.5392, -85.5701] },
-        { nombre: "Tikal (Petén), Guatemala", region: "Centroamérica", coords: [17.2220, -89.6237] },
-        { nombre: "Ciudad de Guatemala (Zona 1)", region: "Centroamérica", coords: [14.6349, -90.5069] },
-        { nombre: "Antigua Guatemala", region: "Centroamérica", coords: [14.5586, -90.7295] },
-        { nombre: "Lago Atitlán, Guatemala", region: "Centroamérica", coords: [14.6906, -91.2025] },
-        { nombre: "Quetzaltenango (Xela), Guatemala", region: "Centroamérica", coords: [14.8347, -91.5180] },
-        { nombre: "Volcán Tajumulco, Guatemala", region: "Centroamérica", coords: [15.0433, -91.9037] },
         { nombre: "Londres, Reino Unido", region: "Europa", coords: [51.5074, -0.1278] },
         { nombre: "París (Torre Eiffel), Francia", region: "Europa", coords: [48.8566, 2.3522] },
         { nombre: "Barcelona, España", region: "Europa", coords: [41.3851, 2.1734] },
@@ -887,7 +909,7 @@
           var filtrados = destinos.filter(function(d) { return d.region === region; });
           cargarMarcadores(filtrados);
           
-          if(region === 'Centroamérica') map.setView([13, -85], 6);
+          if(region === 'Centroamérica') map.setView([14.5, -90.5], 7);
           if(region === 'Sudamérica') map.setView([-20, -60], 3);
           if(region === 'Norteamérica') map.setView([55, -120], 3);
           if(region === 'Europa') map.setView([48, 10], 4);
@@ -904,7 +926,7 @@
         if(el) {
           el.style.display = 'block';
           el.scrollIntoView({ behavior: 'smooth' });
-          map.setView(coords, 7);
+          map.setView(coords, 8);
         }
       };
 
