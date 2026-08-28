@@ -26,7 +26,6 @@
       color: var(--text-light);
     }
 
-    /* ENCABEZADO CON TITULO ABAJO PARA MOSTRAR LAS MONTAÑAS */
     header {
       background: linear-gradient(rgba(11, 19, 41, 0.4), rgba(11, 19, 41, 0.7)), 
                   url('banner.jpg') center/cover no-repeat, 
@@ -37,7 +36,7 @@
       position: relative;
       min-height: 280px;
       display: flex;
-      align-items: flex-end; /* Mueve el contenido a la parte inferior del banner */
+      align-items: flex-end;
     }
 
     .header-container {
@@ -73,7 +72,6 @@
       transform: scale(1.05) rotate(2deg);
     }
 
-    /* CAJA DEL TITULO UBICADA EN LA PARTE INFERIOR (ZONA X) */
     .header-center-title {
       text-align: center;
       background: rgba(15, 23, 42, 0.85);
@@ -487,6 +485,36 @@
     
     <div class="cards-grid">
       
+      <!-- MÉXICO -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Norteamérica • Pyramides & Caribe</span>
+          <h3>México: Teotihuacán, Chichén Itzá & Cancún</h3>
+          <p>Pirámides del Sol y de la Luna, la maravilla maya de Chichén Itzá, buceo en Cozumel y playas de Cancún.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaMexico', [19.6925, -98.8438])">Ver Guías de Ruta</button>
+        </div>
+      </div>
+
+      <!-- CANADÁ -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Norteamérica • Lagos & Auroras</span>
+          <h3>Canadá: Auroras Boreales, Toronto & Montreal</h3>
+          <p>Tierras del Norte (Northern Lights), Toronto con su Torre CN y Lago Ontario, y el encanto francés de Montreal.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaCanada', [43.6426, -79.3871])">Ver Guías de Ruta</button>
+        </div>
+      </div>
+
+      <!-- ESTADOS UNIDOS -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Norteamérica • Metrópolis & Costa Este</span>
+          <h3>EE. UU.: New York, Florida & Tradiciones del Sur</h3>
+          <p>Nueva York, Miami (South Beach), Tampa, Georgia y Carolina del Sur con sus tradiciones e historia sureña.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaEEUU', [40.7128, -74.0060])">Ver Guías de Ruta</button>
+        </div>
+      </div>
+
       <!-- PERÚ & CIRCUITO INCA -->
       <div class="card">
         <div class="card-body">
@@ -517,7 +545,7 @@
         </div>
       </div>
 
-      <!-- ALASKA & NORTEAMÉRICA -->
+      <!-- ALASKA -->
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Norteamérica • Rutas del Norte</span>
@@ -630,6 +658,91 @@
     </div>
 
     <!-- MODALES DE GUÍAS DETALLADAS -->
+
+    <!-- MÉXICO -->
+    <div id="guiaMexico" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇲🇽 México: Arqueología Maya & Caribe</h2>
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subTeotihuacan', [19.6925, -98.8438])">🛕 Teotihuacán (PIRÁMIDES)</span>
+        <span class="sub-link" onclick="mostrarSub('subChichen', [20.6843, -88.5678])">🗿 Chichén Itzá Maya</span>
+        <span class="sub-link" onclick="mostrarSub('subCancunCozumel', [21.1619, -86.8515])">🏝️ Cancún & Cozumel</span>
+      </div>
+      <div id="subTeotihuacan" class="sub-content-box">
+        <h3>🛕 Teotihuacán: Ciudad de los Dioses</h3>
+        <span class="transport-tag">🚌 BUS DESDE TERMINAL CENTRAL DEL NORTE (CDMX)</span>
+        <span class="stay-tag">🏨 HOSPEDAJE EN CDMX (ROMA / CONDESA)</span>
+        <p><b>Qué hacer:</b> Recorrer la Calzada de los Muertos, admirar la Pirámide del Sol y la Pirámide de la Luna. <br><b>Tip:</b> Salir temprano a las 7 AM para evitar el calor excesivo y las aglomeraciones.</p>
+      </div>
+      <div id="subChichen" class="sub-content-box" style="display:none;">
+        <h3>🗿 Chichén Itzá: Maravilla Maya</h3>
+        <span class="transport-tag">🚆 TREN MAYA / 🚌 BUS ADO DESDE MERIDA O CANCÚN</span>
+        <span class="stay-tag">🏨 POSADAS EN VALLADOLID O PISTÉ</span>
+        <p><b>Qué hacer:</b> Maravillarse con el Templo de Kukulcán, el Juego de Pelota y nadar en cenotes cercanos como el Cenote Ik Kil.</p>
+      </div>
+      <div id="subCancunCozumel" class="sub-content-box" style="display:none;">
+        <h3>🏝️ Cancún & Isla Cozumel</h3>
+        <span class="transport-tag">⛴️ FERRY DESDE PLAYA DEL CARMEN A COZUMEL</span>
+        <span class="stay-tag">🏨 HOSTALES EN CANCÚN CENTRO O COZUMEL</span>
+        <p><b>Qué hacer:</b> Disfrutar de las playas de agua turquesa en Cancún y hacer snorkel/buceo de clase mundial en el arrecife de Palancar en Cozumel.</p>
+      </div>
+    </div>
+
+    <!-- CANADÁ -->
+    <div id="guiaCanada" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇨🇦 Canadá: Auroras Boreales, Toronto & Montreal</h2>
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subToronto', [43.6426, -79.3871])">🏙️ Toronto, CN Tower & Lago Ontario</span>
+        <span class="sub-link" onclick="mostrarSub('subMontreal', [45.5017, -73.5673])">⚜️ Montreal</span>
+        <span class="sub-link" onclick="mostrarSub('subAurora', [62.4540, -114.3718])">🌌 Tierras del Norte & Northern Lights</span>
+      </div>
+      <div id="subToronto" class="sub-content-box">
+        <h3>🏙️ Toronto, CN Tower & Lago Ontario</h3>
+        <span class="transport-tag">🚆 VIA RAIL / SUBWAY TTC</span>
+        <span class="stay-tag">🏨 DOWNTOWN TORONTO</span>
+        <p><b>Qué hacer:</b> Subir al mirador de cristal de la famosa CN Tower, caminar por el malecón del Lago Ontario y tomar el ferry a las Toronto Islands.</p>
+      </div>
+      <div id="subMontreal" class="sub-content-box" style="display:none;">
+        <h3>⚜️ Montreal: Encanto Francés</h3>
+        <span class="transport-tag">🚇 METRO DE MONTREAL</span>
+        <p><b>Qué hacer:</b> Recorrer el centro histórico (Vieux-Montréal), la Basílica de Notre-Dame y probar el platillo típico *Poutine*.</p>
+      </div>
+      <div id="subAurora" class="sub-content-box" style="display:none;">
+        <h3>🌌 Tierras del Norte (Northern Lights / Yellowknife)</h3>
+        <span class="transport-tag">✈️ VUELO A YELLOWKNIFE (YZF)</span>
+        <span class="stay-tag">🏠 CABAÑAS NÓRDICAS</span>
+        <p><b>Qué hacer:</b> Expedición en invierno (septiembre a abril) para presenciar las auroras boreales en el cielo nocturno del Ártico canadiense.</p>
+      </div>
+    </div>
+
+    <!-- ESTADOS UNIDOS -->
+    <div id="guiaEEUU" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇺🇸 EE. UU.: New York, Florida & Tradiciones del Sur</h2>
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subNY', [40.7128, -74.0060])">🗽 Nueva York</span>
+        <span class="sub-link" onclick="mostrarSub('subMiamiTampa', [25.7617, -80.1918])">🌴 Miami (South Beach) & Tampa</span>
+        <span class="sub-link" onclick="mostrarSub('subSouth', [32.0809, -81.0912])">🍗 Georgia & South Carolina (Tradiciones del Sur)</span>
+      </div>
+      <div id="subNY" class="sub-content-box">
+        <h3>🗽 Nueva York</h3>
+        <span class="transport-tag">🚇 MTA SUBWAY (M24/7)</span>
+        <span class="stay-tag">🏨 HOTELS/HOSTELS EN MANHATTAN O QUEENS</span>
+        <p><b>Qué hacer:</b> Times Square, Central Park, estatua de la Libertad (Ferry gratuito de Staten Island) y vistas nocturnas desde la cima del Empire State o Summit One Vanderbilt.</p>
+      </div>
+      <div id="subMiamiTampa" class="sub-content-box" style="display:none;">
+        <h3>🌴 Miami (South Beach) & Tampa</h3>
+        <span class="transport-tag">🚆 TREN BRIGHTLINE / AUTO RENTADO</span>
+        <p><b>Qué hacer:</b> Arquitectura Art Déco en Ocean Drive (South Beach Miami), paseos por Wynwood Walls y parque temático Busch Gardens en Tampa.</p>
+      </div>
+      <div id="subSouth" class="sub-content-box" style="display:none;">
+        <h3>🍗 Georgia & South Carolina (Tradiciones del Sur)</h3>
+        <span class="transport-tag">🚗 RUTA EN AUTO / AMTRAK</span>
+        <span class="cultural-tag">🎻 HOSPITALIDAD & GASTRONOMÍA SOUTHERN</span>
+        <p><b>Qué hacer:</b> Recorrer las icónicas calles históricas cubiertas de musgo español en Savannah (Georgia) y Charleston (South Carolina). Probar la auténtica gastronomía sureña (poblano barbecue, biscuits con gravy y sweet tea) impregnada de profundas tradiciones históricas y música local.</p>
+      </div>
+    </div>
 
     <!-- PERÚ -->
     <div id="guiaPeru" class="guide-modal">
@@ -958,11 +1071,11 @@
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
       <h2>🇧🇴 Bolivia: La Paz, Illimani & Estadio El Alto</h2>
       <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subLaPaz', [-16.5000, -68.1500])">缆 La Paz, Illimani, Huayna Potosí & Estadio El Alto</span>
+        <span class="sub-link" onclick="mostrarSub('subLaPaz', [-16.5000, -68.1500])">🚠 La Paz, Illimani, Huayna Potosí & Estadio El Alto</span>
       </div>
       <div id="subLaPaz" class="sub-content-box">
-        <h3>缆 La Paz, Vista al Illimani, Huayna Potosí & Estadio El Alto (+4,150m)</h3>
-        <span class="transport-tag">缆 MI TELEFÉRICO</span>
+        <h3>🚠 La Paz, Vista al Illimani, Huayna Potosí & Estadio El Alto (+4,150m)</h3>
+        <span class="transport-tag">🚠 MI TELEFÉRICO</span>
         <p><b>Qué hacer:</b> Estadio Municipal de El Alto (4,150m), vista al Cerro Illimani (6,438m), ascenso al Huayna Potosí (6,088m) y Mercado de las Brujas.</p>
       </div>
     </div>
@@ -1000,6 +1113,15 @@
       }).addTo(map);
 
       var destinos = [
+        { nombre: "Teotihuacán (Pirámides), México", region: "Norteamérica", coords: [19.6925, -98.8438] },
+        { nombre: "Chichén Itzá, México", region: "Norteamérica", coords: [20.6843, -88.5678] },
+        { nombre: "Cancún & Cozumel, México", region: "Norteamérica", coords: [21.1619, -86.8515] },
+        { nombre: "Toronto (CN Tower & Lago Ontario), Canadá", region: "Norteamérica", coords: [43.6426, -79.3871] },
+        { nombre: "Montreal, Canadá", region: "Norteamérica", coords: [45.5017, -73.5673] },
+        { nombre: "Tierras del Norte (Auroras Boreales), Canadá", region: "Norteamérica", coords: [62.4540, -114.3718] },
+        { nombre: "Nueva York, EE. UU.", region: "Norteamérica", coords: [40.7128, -74.0060] },
+        { nombre: "Miami (South Beach) & Tampa, Florida, EE. UU.", region: "Norteamérica", coords: [25.7617, -80.1918] },
+        { nombre: "Georgia & South Carolina (Tradiciones del Sur), EE. UU.", region: "Norteamérica", coords: [32.0809, -81.0912] },
         { nombre: "Cusco Imperial, Perú", region: "Sudamérica", coords: [-13.5320, -71.9675] },
         { nombre: "Machu Picchu, Perú", region: "Sudamérica", coords: [-13.1631, -72.5450] },
         { nombre: "Salkantay Trek & Laguna Humantay, Perú", region: "Sudamérica", coords: [-13.3361, -72.5694] },
@@ -1098,7 +1220,7 @@
           
           if(region === 'Centroamérica') map.setView([12.5, -85], 6);
           if(region === 'Sudamérica') map.setView([-25, -65], 3);
-          if(region === 'Norteamérica') map.setView([55, -120], 3);
+          if(region === 'Norteamérica') map.setView([40, -100], 3);
           if(region === 'Europa') map.setView([48, 10], 4);
         }
       };
