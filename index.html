@@ -26,7 +26,6 @@
       color: var(--text-light);
     }
 
-    /* ENCABEZADO CON BANNER DE YOUTUBE DE FONDO */
     header {
       background: linear-gradient(rgba(11, 19, 41, 0.5), rgba(11, 19, 41, 0.8)), 
                   url('banner.jpg') center/cover no-repeat, 
@@ -398,6 +397,18 @@
       color: #ffffff;
     }
 
+    .stay-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      background: #059669;
+      color: #ffffff;
+    }
+
     .close-btn {
       background: #ef4444;
       color: white;
@@ -422,33 +433,27 @@
 </head>
 <body>
 
-  <!-- ENCABEZADO CON BANNER DE YOUTUBE AL FONDO -->
   <header>
     <div class="header-container">
-      
       <div class="logo-left">
         <img src="logo.jpg.png" alt="EQ Travel 360 Logo" class="brand-logo">
       </div>
-
       <div class="header-center-title">
         <h1>EQ TRAVEL 360</h1>
         <p>Guías de Ruta por el Mundo</p>
       </div>
-
       <div class="stamp-badge-large">
         <span style="letter-spacing: 1px;">EQ TRAVEL</span>
         <span class="stamp-star">★</span>
         <span style="font-size: 0.95rem; color: white;">360°</span>
         <span style="font-size: 0.7rem; color: #94a3b8; margin-top: 3px;">PASAPORTE</span>
       </div>
-
     </div>
   </header>
 
-  <!-- BUSCADOR Y FILTROS -->
   <div class="controls-container">
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="🔍 Buscar cualquier ciudad, montaña o destino..." onkeyup="buscarDestino()">
+      <input type="text" id="searchInput" placeholder="🔍 Buscar cualquier ciudad, volcán o país..." onkeyup="buscarDestino()">
     </div>
     <div class="filter-bar">
       <button class="filter-btn active" onclick="filtrarRegión('todos', this)">Todos</button>
@@ -459,358 +464,384 @@
     </div>
   </div>
 
-  <!-- MAPA INTERACTIVO -->
   <div class="map-section">
     <div id="map"></div>
   </div>
 
-  <!-- BANNER REDES SOCIALES -->
   <div class="social-banner">
     <div class="social-info">
       <h3>🎥 Sigue las Guías de Ruta en Video</h3>
       <p>Suscríbete al canal y acompaña los recorridos completos en YouTube e Instagram.</p>
     </div>
     <div class="social-links">
-      <a href="https://www.youtube.com/@edgarquieltravel" target="_blank" class="social-btn btn-youtube">
-        ▶ YouTube
-      </a>
-      <a href="https://www.instagram.com/edgarquieltravel" target="_blank" class="social-btn btn-instagram">
-        📸 Instagram
-      </a>
+      <a href="https://www.youtube.com/@edgarquieltravel" target="_blank" class="social-btn btn-youtube">▶ YouTube</a>
+      <a href="https://www.instagram.com/edgarquieltravel" target="_blank" class="social-btn btn-instagram">📸 Instagram</a>
     </div>
   </div>
 
-  <!-- SECCIÓN DE GUÍAS DE RUTA -->
   <div class="cards-section">
     <h2 style="color: var(--text-bright); text-align: center; font-size: 1.8rem; margin-bottom: 25px;">Guías de Ruta Principales</h2>
     
     <div class="cards-grid">
       
-      <!-- GUATEMALA HIGHLANDS & SINCRETISMO -->
+      <!-- COSTA RICA -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Guatemala • Cosmovisión Maya & Cumbres</span>
-          <h3>Guatemala: Tradiciones Mayas & Cumbres</h3>
-          <p>Selecciona la guía para ver la logística y cosmovisión en San Juan La Laguna (Cacao y Fuego), Chichicastenango (Santo Tomás), Tajumulco, Tikal y Antigua.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaGuateGeneral', [14.6906, -91.2881])">Ver Guías de Ruta</button>
+          <span class="card-tag">Costa Rica • Cumbres & Capital</span>
+          <h3>Costa Rica: Chirripó & San José</h3>
+          <p>Logística para conquistar la cima más alta (Cerro Chirripó 3,820m) y recorrer la historia del San José Free Walking Tour.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaCostaRica', [9.4842, -83.4886])">Ver Guías de Ruta</button>
         </div>
       </div>
 
-      <!-- CUSCO & RUTA INCA -->
+      <!-- EL SALVADOR -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Perú • Circuito Inca & Cumbres</span>
-          <h3>Cusco, Machu Picchu & Alturas</h3>
-          <p>Guías de ruta completas para Cusco, Machu Picchu, Camino Inca, Laguna Humantay y la Montaña de 7 Colores.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaCuscoGeneral', [-13.5320, -71.9675])">Ver Guías de Ruta</button>
+          <span class="card-tag">El Salvador • Volcanes & Historia</span>
+          <h3>El Salvador: Volcanes & BINAES</h3>
+          <p>San Salvador (BINAES), Santa Ana (Catedral Gótica), Lagos de Coatepeque, Volcán Santa Ana e Izalco.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaElSalvador', [13.8541, -89.6293])">Ver Guías de Ruta</button>
         </div>
       </div>
 
-      <!-- ALASKA -->
+      <!-- PANAMÁ -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Norteamérica • Rutas del Norte</span>
-          <h3>Alaska & Norteamérica</h3>
-          <p>Logística para Anchorage, glaciares de Denali y rutas por la gran naturaleza de Alaska.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaAlaska', [61.2181, -149.9003])">Ver Guías de Ruta</button>
+          <span class="card-tag">Panamá • Canal, Cumbres & Caribe</span>
+          <h3>Panamá: Canal, Volcán Barú & Bocas</h3>
+          <p>Cinta Costera, Canal de Panamá (Esclusas de Miraflores), Albrook Mall, ascenso al Volcán Barú (3,475m) y Bocas del Toro.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaPanama', [8.8082, -82.5422])">Ver Guías de Ruta</button>
         </div>
       </div>
 
       <!-- NICARAGUA -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Nicaragua • Circuito Volcánico</span>
-          <h3>Ruta Nicaragua</h3>
-          <p>Detalles de logística para Managua, León, Granada y la Isla de Ometepe en bus y ferry.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaNicaraguaGeneral', [11.5392, -85.5701])">Ver Guías de Ruta</button>
+          <span class="card-tag">Nicaragua • Volcanes & Flor de Caña</span>
+          <h3>Nicaragua: Sandboarding & Fuego</h3>
+          <p>León, Sandboarding en Cerro Negro, Tour Flor de Caña, Volcán San Cristóbal, Volcán Masaya y Volcán Concepción.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaNicaraguaGeneral', [12.5061, -86.7022])">Ver Guías de Ruta</button>
         </div>
       </div>
 
-      <!-- ECUADOR & COLOMBIA -->
+      <!-- GUATEMALA -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Ecuador & Colombia • Andes</span>
-          <h3>Ecuador & Colombia Andina</h3>
-          <p>Guías con ruta en bus para Quito, Chimborazo (Condor Cocha), Tulcán, Ipiales (Las Lajas) y Bogotá.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaEcuadorColombia', [-0.1807, -78.4678])">Ver Guías de Ruta</button>
+          <span class="card-tag">Guatemala • Flores, Cacao & Cumbres</span>
+          <h3>Guatemala: Isla de Flores & Mayas</h3>
+          <p>Isla de Flores (Petén), San Juan La Laguna (Cacao/Fuego), Chichicastenango, Tajumulco, Tikal y Antigua.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaGuateGeneral', [16.9304, -89.8906])">Ver Guías de Ruta</button>
         </div>
       </div>
 
-      <!-- BRASIL & TRIPLE FRONTERA -->
+      <!-- HONDURAS -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Brasil - Paraguay - Uruguay</span>
-          <h3>Brasil & Ruta de Fronteras</h3>
-          <p>Guías para conectar Río de Janeiro (Cristo Redentor), Ilha Grande, São Paulo y Cataratas.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaBrasil', [-22.9068, -43.1729])">Ver Guías de Ruta</button>
+          <span class="card-tag">Honduras • Costa & Ruinas</span>
+          <h3>Honduras: Caribe & Copán Maya</h3>
+          <p>Playa Omoa, Puerto Cortés, Puerto Corinto, San Pedro Sula y las Ruinas de Copán.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaHonduras', [14.8388, -89.1411])">Ver Guías de Ruta</button>
         </div>
       </div>
 
-      <!-- EUROPA -->
+      <!-- BELICE -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Europa • Trenes & Capitales</span>
-          <h3>Circuito Europa Clásica</h3>
-          <p>Guías para conectar en tren de alta velocidad París (Eiffel), Londres, Barcelona y Roma.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaEuropa', [48.8566, 2.3522])">Ver Guías de Ruta</button>
+          <span class="card-tag">Belice • Cayos & Ruinas</span>
+          <h3>Belice: Cayo Caulker & Ruinas</h3>
+          <p>Cayo Caulker, Belice City, Belmopán, San Ignacio y los sitios arqueológicos Cahal Pech y Xunantunich.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaBelice', [17.7431, -88.0261])">Ver Guías de Ruta</button>
+        </div>
+      </div>
+
+      <!-- BOGOTÁ & COLOMBIA -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Colombia • Monserrate & Bohemia</span>
+          <h3>Bogotá: Monserrate & La Candelaria</h3>
+          <p>Cerro Monserrate, el ambiente bohemio de La Candelaria / La Macarena, Chorro de Quevedo y el Centro Histórico.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaBogota', [4.6058, -74.0555])">Ver Guías de Ruta</button>
+        </div>
+      </div>
+
+      <!-- BOLIVIA -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Bolivia • Cumbres & El Alto</span>
+          <h3>La Paz: Illimani, Huayna Potosí & El Alto</h3>
+          <p>Teleférico de La Paz, vista al Illimani, trekking Huayna Potosí (6,088m) y el Estadio Municipal de El Alto (4,150m).</p>
+          <button class="card-btn" onclick="abrirGuia('guiaBolivia', [-16.5000, -68.1500])">Ver Guías de Ruta</button>
+        </div>
+      </div>
+
+      <!-- URUGUAY & PARAGUAY -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Uruguay & Paraguay • Comercio & Guaraní</span>
+          <h3>Uruguay & Paraguay: Colonia & Tereré</h3>
+          <p>Colonia del Sacramento (Uruguay), Ciudad del Este (Paraguay), compras, cultura del Tereré y tradiciones Guaraníes.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaUruPara', [-34.4714, -57.8442])">Ver Guías de Ruta</button>
         </div>
       </div>
 
     </div>
 
-    <!-- MODALES DE GUÍAS DE RUTA -->
+    <!-- MODALES DE GUÍAS DETALLADAS -->
 
-    <!-- GUATEMALA (CON SAN JUAN LA LAGUNA Y SANTO TOMÁS) -->
-    <div id="guiaGuateGeneral" class="guide-modal">
+    <!-- COSTA RICA -->
+    <div id="guiaCostaRica" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇬🇹 Guatemala: Cosmovisión Maya & Rutas Logísticas</h2>
-      
+      <h2>🇨🇷 Costa Rica: Cerro Chirripó & San José</h2>
       <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subSanJuan', [14.6906, -91.2881])">🍫 San Juan La Laguna: Cacao & Fuego</span>
-        <span class="sub-link" onclick="mostrarSub('subChichi', [14.9444, -91.1125])">🕯️ Santo Tomás Chichicastenango</span>
-        <span class="sub-link" onclick="mostrarSub('subTajumulco', [15.0433, -91.9037])">VOLCÁN TAJUMULCO</span>
-        <span class="sub-link" onclick="mostrarSub('subTikal', [17.2220, -89.6237])">TIKAL MAYA</span>
-        <span class="sub-link" onclick="mostrarSub('subAntigua', [14.5586, -90.7295])">ANTIGUA GUATEMALA</span>
+        <span class="sub-link" onclick="mostrarSub('subChirripo', [9.4842, -83.4886])">🏔️ Cerro Chirripó (3,820m)</span>
+        <span class="sub-link" onclick="mostrarSub('subSanJose', [9.9333, -84.0833])">🏛️ San José Free Walking Tour</span>
       </div>
-
-      <div id="subSanJuan" class="sub-content-box">
-        <h3>🍫 San Juan La Laguna: Ceremonia del Cacao Sagrado & Ritual del Fuego Maya</h3>
-        <span class="transport-tag">🚤 LANCHA DESDE PANAJACHEL</span>
-        <span class="cultural-tag">🔥 CEREMONIAS & TRADICIONES TZ'UTUJIL</span>
-        <p><b>Cómo llegar:</b> Lancha colectiva de Panajachel a San Juan La Laguna (20 minutos).</p>
-        <p><b>Ruta Cultural & Espiritual Tz'utujil:</b>
-        <ul>
-          <li><b>Ceremonia del Cacao Sagrado:</b> Práctica espiritual ancestral donde el cacao 100% puro y artesanal se prepara como una medicina para abrir el corazón, conectar con la Madre Tierra (*Pachamama*) y sintonizar la intención del viajero.</li>
-          <li><b>Ceremonia del Fuego Maya:</b> Guiada por un guía espiritual o *Ajq'ij*, se prepara un altar sagrado circular con azúcar, flores, resina de copal, candelas de colores y ocote. El fuego actúa como canal directo para agradecer, transmutar energía y consultar al calendario maya (*Cholq'ij*).</li>
-          <li><b>Arte & Tintes Naturales:</b> Visita las cooperativas de mujeres artesanas que elaboran textiles utilizando exclusivamente tintes botánicos extraídos de plantas y corteza de árboles.</li>
-        </ul>
-        </p>
+      <div id="subChirripo" class="sub-content-box">
+        <h3>🏔️ Cerro Chirripó: La Cima de Costa Rica</h3>
+        <span class="transport-tag">🚌 BUS DESDE SAN JOSÉ A PÉREZ ZELEDÓN Y SAN GERARDO DE RIVAS</span>
+        <span class="stay-tag">🏠 ALOJAMIENTO EN SAN GERARDO / REFUGIO BASE CRESTONES</span>
+        <p><b>Qué hacer:</b> Senderismo exigente de 14.5 km hasta Base Crestones y remate a la cumbre (3,820m). En días despejados se observan ambos océanos.<br>
+        <b>Dónde quedarse:</b> Hostales en San Gerardo de Rivas la noche previa y reserva previa obligatoria en el Refugio Crestones de SINAC.<br>
+        <b>Tip:</b> Entrenar la resistencia de piernas y llevar ropa térmica por capas (temperaturas bajo cero en la noche).</p>
       </div>
-
-      <div id="subChichi" class="sub-content-box" style="display:none;">
-        <h3>🕯️ Santo Tomás de Chichicastenango: Epicentro del Sincretismo Maya K'iche'</h3>
-        <span class="transport-tag">🚌 BUS / CHICKEN BUS DESDE XELA O PANAJACHEL</span>
-        <span class="cultural-tag">🔮 SINCRETISMO MAYA & CATÓLICO</span>
-        <p><b>Cómo llegar:</b> Toma un bus directo los días de mercado (Jueves y Domingos) desde la Terminal Minerva de Xela o desde Panajachel haciendo transbordo en Los Encuentros.</p>
-        <p><b>Ruta Cultural & Cosmovisión:</b> 
-        <ul>
-          <li><b>Iglesia de Santo Tomás (Construida en 1540):</b> Erigida sobre una antigua pirámide maya. Sus <b>18 escalones exteriores</b> representan los 18 meses del calendario solar maya (Winal). En la escalinata, los chamanes o <i>Ajq'ijab'</i> queman copal, mirra y aguardiente para invocar a las deidades ancestrales antes de ingresar al templo católico.</li>
-          <li><b>Popol Vuh:</b> Fue en el convento de este templo donde el fray Francisco Ximénez transcribió el libro sagrado de la creación maya K'iche'.</li>
-          <li><b>Altar de Pascual Abaj:</b> En la cima del cerro Turaj K'aj, se realizan ceremonias y ofrendas de fuego a la piedra sagrada dedicada al dios de la tierra.</li>
-        </ul>
-        </p>
-      </div>
-
-      <div id="subTajumulco" class="sub-content-box" style="display:none;">
-        <h3>🌋 Volcán Tajumulco (4,220m)</h3>
-        <span class="transport-tag">🚌 BUS LOCAL</span> <span class="transport-tag">🥾 SENDERISMO</span>
-        <p><b>Paso a Paso:</b> Bus de Xela a San Marcos y "chicken bus" a Tacaná hasta la <b>Aldea Tuichán (3,000m)</b>. Inicio del ascenso a la cumbre más alta de Centroamérica.</p>
-      </div>
-
-      <div id="subTikal" class="sub-content-box" style="display:none;">
-        <h3>🛕 Tikal (Petén) desde Zona 1</h3>
-        <span class="transport-tag">✈️ AVIÓN</span> <span class="transport-tag">🚌 BUS NOCTURNO</span>
-        <p><b>Opción Terrestre:</b> Sal desde la capital en buses nocturnos de <i>Fuente del Norte</i> a Santa Elena (8 horas) y colectivo directo al parque arqueológico.</p>
-      </div>
-
-      <div id="subAntigua" class="sub-content-box" style="display:none;">
-        <h3>🏛️ Antigua Guatemala</h3>
-        <span class="transport-tag">🚌 SHUTTLE</span>
-        <p><b>Desde Aeropuerto La Aurora:</b> Shuttle compartido directo a Antigua (1 hora).</p>
+      <div id="subSanJose" class="sub-content-box" style="display:none;">
+        <h3>🏛️ San José Free Walking Tour</h3>
+        <span class="transport-tag">🚶 A PIE DESDE TEATRO NACIONAL</span>
+        <span class="stay-tag">🏨 HOSPEDAJE EN BARRIO AMÓN O ESCALANTE</span>
+        <p><b>Qué hacer:</b> Recorrido a pie por la Avenida Central, Teatro Nacional, Mercado Central (café con chorreador), Parque Nacional y Barrio Escalante.<br>
+        <b>Dónde quedarse:</b> Hoteles boutique en Barrio Amón o hostels juveniles en San Pedro/Escalante.</p>
       </div>
     </div>
 
-    <!-- CUSCO -->
-    <div id="guiaCuscoGeneral" class="guide-modal">
+    <!-- EL SALVADOR -->
+    <div id="guiaElSalvador" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇵🇪 Cusco & Ruta Inca: Selección de Guía de Ruta</h2>
-      
+      <h2>🇸🇻 El Salvador: Volcanes, Historia & BINAES</h2>
       <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subVinicunca', [-13.8693, -71.3029])">Montaña 7 Colores (5,200m)</span>
-        <span class="sub-link" onclick="mostrarSub('subHumantay', [-13.3361, -72.5694])">Laguna Humantay (4,200m)</span>
-        <span class="sub-link" onclick="mostrarSub('subMachuPicchu', [-13.1631, -72.5450])">Machu Picchu & Tren</span>
-        <span class="sub-link" onclick="mostrarSub('subCaminoInca', [-13.2263, -72.4184])">Camino Inca</span>
-        <span class="sub-link" onclick="mostrarSub('subCuscoCiudad', [-13.5320, -71.9675])">Cusco Imperial</span>
+        <span class="sub-link" onclick="mostrarSub('subSanSal', [13.6989, -89.1914])">🏛️ BINAES & Centro Histórico</span>
+        <span class="sub-link" onclick="mostrarSub('subSantaAna', [13.9942, -89.5597])">⛪ Santa Ana & Catedral Gótica</span>
+        <span class="sub-link" onclick="mostrarSub('subVolcanes', [13.8541, -89.6293])">🌋 Volcán Santa Ana, Izalco & Coatepeque</span>
       </div>
-
-      <div id="subVinicunca" class="sub-content-box">
-        <h3>Montaña de 7 Colores (Vinicunca - 5,200m)</h3>
-        <span class="transport-tag">BUS DE CUSCO</span> <span class="transport-tag">SENDERISMO DE ALTA MONTAÑA</span>
-        <p><b>Cómo llegar y Tips de Trekking:</b> Salida a las 3:00 AM de Cusco en minivan hacia Cusipata (3 hrs). Desayuno y traslado a Phulawasipata (inicio del trek). <br><b>Tip de Senderismo:</b> Aclimatarse mínimo 2 días en Cusco. Caminata de 1.5 a 2 horas sobre terreno empinado a 5,000m+. Llevar bastones de trekking, caramelos de coca y ropa de abrigo por capas.</p>
+      <div id="subSanSal" class="sub-content-box">
+        <h3>🏛️ BINAES & Centro de San Salvador</h3>
+        <span class="transport-tag">🚕 UBER / RUTA 44</span>
+        <span class="stay-tag">🏨 HOSPEDAJE EN SAN BENITO O ZONA ROSA</span>
+        <p><b>Qué hacer:</b> Visita a la ultra moderna Biblioteca Nacional (BINAES) abierta 24/7, Palacio Nacional y Plaza Libertad.<br>
+        <b>Dónde quedarse:</b> Zona Rosa o San Benito por seguridad y oferta gastronómica.</p>
       </div>
-
-      <div id="subHumantay" class="sub-content-box" style="display:none;">
-        <h3>Laguna Humantay (4,200m)</h3>
-        <span class="transport-tag">BUS A MOLLEPATA</span> <span class="transport-tag">SENDERISMO</span>
-        <p><b>Paso a Paso:</b> Traslado de Cusco a Mollepata y Soraypampa (3 hrs). <br><b>Tip de Trekking:</b> La subida desde Soraypampa dura aproximadamente 1.5 horas con pendiente pronunciada. Usar calzado con buen agarre y subir a ritmo constante.</p>
+      <div id="subSantaAna" class="sub-content-box" style="display:none;">
+        <h3>⛪ Santa Ana & Catedral Gótica</h3>
+        <span class="transport-tag">🚌 BUS 201 DESDE SAN SALVADOR</span>
+        <span class="stay-tag">🏨 HOSPEDAJE CERCA DE PLAZA LIBERTAD SANTA ANA</span>
+        <p><b>Qué hacer:</b> Recorrer la imponente Catedral Neogótica de Santa Ana, el Teatro de Santa Ana y comer pupusas en el parque céntrico.</p>
       </div>
-
-      <div id="subMachuPicchu" class="sub-content-box" style="display:none;">
-        <h3>Machu Picchu desde Ollantaytambo</h3>
-        <span class="transport-tag">BUS OLLANTAYTAMBO</span> <span class="transport-tag">TREN PERURAIL/INCA RAIL</span>
-        <p><b>Logística:</b> Bus de Cusco a Ollantaytambo en el Valle Sagrado (1.5 hrs), tren hacia Aguas Calientes (Machu Picchu Pueblo) y bus de subida a la ciudadela Inca.</p>
-      </div>
-
-      <div id="subCaminoInca" class="sub-content-box" style="display:none;">
-        <h3>Camino Inca Clásico</h3>
-        <span class="transport-tag">TREKKING 4 DÍAS</span> <span class="transport-tag">PERMISO OBLIGATORIO</span>
-        <p><b>Tips de Ruta:</b> Inicia en el Km 82 de la vía férrea. Requiere reserva previa de boleto oficial con meses de anticipación con guía autorizado.</p>
-      </div>
-
-      <div id="subCuscoCiudad" class="sub-content-box" style="display:none;">
-        <h3>Cusco Imperial</h3>
-        <span class="transport-tag">AEROPUERTO VELAZCO ASTETE</span>
-        <p><b>Aclimatación:</b> Ciudad ubicada a 3,400 metros de altitud. Recomendado descansar el primer día y tomar té de coca.</p>
+      <div id="subVolcanes" class="sub-content-box" style="display:none;">
+        <h3>🌋 Complejo Los Volcanes & Lago Coatepeque</h3>
+        <span class="transport-tag">🚌 BUS 248 DESDE SANTA ANA</span>
+        <span class="stay-tag">🏨 HOSTALES CON VISTA AL LAGO COATEPEQUE</span>
+        <p><b>Qué hacer:</b> Caminata al cráter turquesa del Volcán de Santa Ana (Ilamatepec), vista al faro del Volcán Izalco y almuerzo en el Lago Coatepeque.</p>
       </div>
     </div>
 
-    <!-- ALASKA -->
-    <div id="guiaAlaska" class="guide-modal">
+    <!-- PANAMÁ -->
+    <div id="guiaPanama" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇺🇸 Alaska: Selección de Guía de Ruta</h2>
-      
+      <h2>🇵🇦 Panamá: Canal, Cumbres & Caribe</h2>
       <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subAnchorage', [61.2181, -149.9003])">Anchorage</span>
-        <span class="sub-link" onclick="mostrarSub('subDenali', [63.1148, -151.1926])">Parque Nacional Denali</span>
+        <span class="sub-link" onclick="mostrarSub('subPanamaCity', [8.9558, -79.5342])">🏙️ Ciudad de Panamá, Canal & Albrook</span>
+        <span class="sub-link" onclick="mostrarSub('subBaru', [8.8082, -82.5422])">🌋 Volcán Barú (3,475m) & David</span>
+        <span class="sub-link" onclick="mostrarSub('subBocas', [9.3402, -82.2420])">🏝️ Bocas del Toro</span>
       </div>
-
-      <div id="subAnchorage" class="sub-content-box">
-        <h3>Anchorage & Rutas de Glaciares</h3>
-        <span class="transport-tag">AEROPUERTO ANC</span> <span class="transport-tag">AUTO RENTADO / ALASKA RAILROAD</span>
-        <p><b>Logística:</b> Puerta de entrada a Alaska. Alquila un vehículo o usa el tren panorámico Alaska Railroad para recorrer Seward y la península de Kenai.</p>
+      <div id="subPanamaCity" class="sub-content-box">
+        <h3>🏙️ Canal de Panamá, Cinta Costera & Albrook Mall</h3>
+        <span class="transport-tag">🚇 METRO DE PANAMÁ / METROBÚS</span>
+        <span class="stay-tag">🏨 HOSPEDAJE EN CASCO VIEJO O EL CANGREJO</span>
+        <p><b>Qué hacer:</b> Ver los buques en las Esclusas de Miraflores del Canal de Panamá, caminar por la Cinta Costera con vista a los rascacielos y compras masivas en Albrook Mall.<br>
+        <b>Dónde quedarse:</b> Hostales en Casco Viejo para ambiente nocturno o El Cangrejo por conectividad de Metro.</p>
       </div>
-
-      <div id="subDenali" class="sub-content-box" style="display:none;">
-        <h3>Parque Nacional Denali</h3>
-        <span class="transport-tag">BUS DEL PARQUE</span> <span class="transport-tag">SENDERISMO SALVAJE</span>
-        <p><b>Tips de Visita:</b> La cumbre más alta de Norteamérica. El acceso interno al parque está restringido a autobuses autorizados para preservar la fauna salvaje.</p>
+      <div id="subBaru" class="sub-content-box" style="display:none;">
+        <h3>🌋 Volcán Barú (3,475m) desde David & Boquete</h3>
+        <span class="transport-tag">🚌 BUS TERMINAL ALBROOK A DAVID / BOQUETE</span>
+        <span class="stay-tag">🏠 HOSTALES EN BOQUETE O PASO ANCHO</span>
+        <p><b>Qué hacer:</b> Ascent nocturno de 13 km al pico más alto de Panamá para ver el amanecer sobre ambos océanos. <br>
+        <b>Dónde quedarse:</b> Boquete por clima fresco y tours de café Geisha.</p>
+      </div>
+      <div id="subBocas" class="sub-content-box" style="display:none;">
+        <h3>🏝️ Bocas del Toro</h3>
+        <span class="transport-tag">🚌 BUS A ALMIRANTE + 🚤 LANCHA A ISLA COLÓN</span>
+        <span class="stay-tag">🏨 OVERWATER HOSTELS EN ISLA COLÓN O BASTIMENTOS</span>
+        <p><b>Qué hacer:</b> Tour de lancha por Red Frog Beach, Cayo Zapatilla y vida nocturna caribeña sobre el agua.</p>
       </div>
     </div>
 
     <!-- NICARAGUA -->
     <div id="guiaNicaraguaGeneral" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇳🇮 Nicaragua: Selección de Guía de Ruta</h2>
-      
+      <h2>🇳🇮 Nicaragua: Sandboarding & Circuito Volcánico</h2>
       <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subOmetepe', [11.5392, -85.5701])">Isla de Ometepe</span>
-        <span class="sub-link" onclick="mostrarSub('subLeon', [12.4379, -86.8780])">León</span>
-        <span class="sub-link" onclick="mostrarSub('subGranada', [11.9299, -85.9560])">Granada</span>
+        <span class="sub-link" onclick="mostrarSub('subLeonVolcanes', [12.5061, -86.7022])">🏂 Sandboarding Cerro Negro & Flor de Caña</span>
+        <span class="sub-link" onclick="mostrarSub('subMasaya', [11.9853, -86.1608])">🔥 Volcán Masaya (Lava activa)</span>
+        <span class="sub-link" onclick="mostrarSub('subOmetepe2', [11.5392, -85.5701])">🌋 Volcán Concepción & Ometepe</span>
       </div>
-
-      <div id="subOmetepe" class="sub-content-box">
-        <h3>Isla de Ometepe</h3>
-        <span class="transport-tag">BUS LOCAL</span> <span class="transport-tag">FERRY</span>
-        <p><b>Ruta:</b> Bus de Managua a Rivas, taxi a Puerto de San Jorge y ferry de 1 hora a Moyogalpa.</p>
+      <div id="subLeonVolcanes" class="sub-content-box">
+        <h3>🏂 Sandboarding Cerro Negro, Flor de Caña & Volcán San Cristóbal</h3>
+        <span class="transport-tag">🚌 SHUTTLE DESDE LEÓN</span>
+        <span class="stay-tag">🏨 HOSTALES EN EL CENTRO DE LEÓN</span>
+        <p><b>Qué hacer:</b> Deslizarse en tabla a más de 60 km/h por las laderas de ceniza negra del Cerro Negro. Visita guiada a la fábrica de Ron Flor de Caña en Chichigalpa y trekking al gigantesco Volcán San Cristóbal.<br>
+        <b>Dónde quedarse:</b> Hostales coloniales en León Centro (cerca de la catedral).</p>
       </div>
-
-      <div id="subLeon" class="sub-content-box" style="display:none;">
-        <h3>León</h3>
-        <span class="transport-tag">MICROBÚS</span>
-        <p><b>Ruta:</b> Microbuses desde la Terminal UCA en Managua (1h 15m).</p>
+      <div id="subMasaya" class="sub-content-box" style="display:none;">
+        <h3>🔥 Volcán Masaya</h3>
+        <span class="transport-tag">🚌 BUS MANAGUA-MASAYA</span>
+        <span class="stay-tag">🏨 HOSPEDAJE EN GRANADA O MASAYA</span>
+        <p><b>Qué hacer:</b> Visita nocturna para observar el lago de lava ardiente directo desde el borde del cráter Santiago.</p>
       </div>
-
-      <div id="subGranada" class="sub-content-box" style="display:none;">
-        <h3>Granada</h3>
-        <span class="transport-tag">MICROBÚS</span>
-        <p><b>Ruta:</b> Microbuses desde la Terminal UCA directo al parque central de Granada (50 min).</p>
+      <div id="subOmetepe2" class="sub-content-box" style="display:none;">
+        <h3>🌋 Volcán Concepción (Isla de Ometepe)</h3>
+        <span class="transport-tag">🚌 BUS A RIVAS + ⛴️ FERRY SAN JORGE</span>
+        <span class="stay-tag">🏡 ECO-LODGES EN MOYOGALPA O SANTA CRUZ</span>
+        <p><b>Qué hacer:</b> Ascenso técnico de 8 horas al cono perfecto del Volcán Concepción rodeado por el Lago Cocibolca.</p>
       </div>
     </div>
 
-    <!-- ECUADOR Y COLOMBIA -->
-    <div id="guiaEcuadorColombia" class="guide-modal">
+    <!-- GUATEMALA -->
+    <div id="guiaGuateGeneral" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇪🇨🇨🇴 Ecuador & Colombia: Selección de Guía de Ruta</h2>
-      
+      <h2>🇬🇹 Guatemala: Flores, Cacao, Fuego & Cumbres</h2>
       <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subChimborazo', [-1.4693, -78.8169])">Chimborazo (Condor Cocha)</span>
-        <span class="sub-link" onclick="mostrarSub('subIpiales', [0.8248, -77.6432])">Ipiales & Las Lajas</span>
-        <span class="sub-link" onclick="mostrarSub('subQuito', [-0.1807, -78.4678])">Quito</span>
+        <span class="sub-link" onclick="mostrarSub('subFlores', [16.9304, -89.8906])">🏝️ Isla de Flores (Petén)</span>
+        <span class="sub-link" onclick="mostrarSub('subSanJuan', [14.6906, -91.2881])">🍫 San Juan La Laguna (Cacao & Fuego)</span>
+        <span class="sub-link" onclick="mostrarSub('subChichi', [14.9444, -91.1125])">🕯️ Chichicastenango</span>
+        <span class="sub-link" onclick="mostrarSub('subTajumulco', [15.0433, -91.9037])">🌋 Volcán Tajumulco</span>
       </div>
-
-      <div id="subChimborazo" class="sub-content-box">
-        <h3>Laguna Condor Cocha (Chimborazo 5,100m)</h3>
-        <span class="transport-tag">BUS DE RIOBAMBA</span> <span class="transport-tag">TREKKING</span>
-        <p><b>Paso a Paso:</b> Bus de Riobamba al ingreso de la Reserva, subida al Refugio Carrel (4,800m) y caminata a Condor Cocha (5,100m).</p>
+      <div id="subFlores" class="sub-content-box">
+        <h3>🏝️ Isla de Flores & Base para Tikal</h3>
+        <span class="transport-tag">🚌 BUS NOCTURNO / ✈️ VUELO A FLORES (FRS)</span>
+        <span class="stay-tag">🏨 HOSTALES A ORILLAS DEL LAGO PETÉN ITZÁ</span>
+        <p><b>Qué hacer:</b> Recorrer las pintorescas calles de la isla en medio del lago Petén Itzá, atardecer en lancha hacia Jorge's Rope Swing y salida temprana hacia las ruinas mayas de Tikal.<br>
+        <b>Dónde quedarse:</b> Hostales con terraza en la Isla de Flores.</p>
       </div>
-
-      <div id="subIpiales" class="sub-content-box" style="display:none;">
-        <h3>De Quito a Ipiales por Tulcán</h3>
-        <span class="transport-tag">BUS</span> <span class="transport-tag">FRONTERA RUMICHACA</span>
-        <p><b>Ruta:</b> Bus de Quito a Tulcán (5 hrs), taxi a la frontera Rumichaca y colectivo al Santuario de Las Lajas.</p>
+      <div id="subSanJuan" class="sub-content-box" style="display:none;">
+        <h3>🍫 San Juan La Laguna: Cacao Sagrado & Fuego Maya</h3>
+        <span class="transport-tag">🚤 LANCHA DESDE PANAJACHEL</span>
+        <span class="cultural-tag">🔥 CEREMONIAS TZ'UTUJIL</span>
+        <p><b>Qué hacer:</b> Ceremonia del Cacao puro para abrir la intención del viaje y Ceremonia del Fuego Maya con un *Ajq'ij* (guía espiritual) ofreciendo copal y candelas coloridas.</p>
       </div>
-
-      <div id="subQuito" class="sub-content-box" style="display:none;">
-        <h3>Quito</h3>
-        <span class="transport-tag">METRO DE QUITO</span>
-        <p><b>Movilidad:</b> Usa el nuevo Metro de Quito para conectar de norte a sur.</p>
+      <div id="subChichi" class="sub-content-box" style="display:none;">
+        <h3>🕯️ Chichicastenango: Sincretismo K'iche'</h3>
+        <span class="transport-tag">🚌 BUS DÍAS DE MERCADO (JUE/DOM)</span>
+        <p><b>Qué hacer:</b> Ceremonias en las escalinatas de la Iglesia de Santo Tomás (18 escalones del calendario maya) y mercado de artesanías.</p>
+      </div>
+      <div id="subTajumulco" class="sub-content-box" style="display:none;">
+        <h3>🌋 Volcán Tajumulco (4,220m)</h3>
+        <span class="transport-tag">🚌 BUS XELA A ALDEA TUICHÁN</span>
+        <p><b>Qué hacer:</b> Cumbre más alta de Centroamérica. Noche de campamento cerca de la cima para ver las luces de Tapachula (México) y Guatemala.</p>
       </div>
     </div>
 
-    <!-- BRASIL & FRONTERAS -->
-    <div id="guiaBrasil" class="guide-modal">
+    <!-- HONDURAS -->
+    <div id="guiaHonduras" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇧🇷 Brasil & Fronteras: Selección de Guía de Ruta</h2>
-      
+      <h2>🇭🇳 Honduras: Caribe & Copán Ruinas</h2>
       <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subRio', [-22.9068, -43.1729])">Río (Cristo Redentor)</span>
-        <span class="sub-link" onclick="mostrarSub('subIlhaGrande', [-23.1523, -44.2319])">Ilha Grande</span>
-        <span class="sub-link" onclick="mostrarSub('subIguazu', [-25.6953, -54.4367])">Cataratas del Iguazú</span>
+        <span class="sub-link" onclick="mostrarSub('subCopan', [14.8388, -89.1411])">🛕 Copán Ruinas & Copán Pueblo</span>
+        <span class="sub-link" onclick="mostrarSub('subCostaHonduras', [15.7922, -87.8864])">🏖️ Omoa, Puerto Cortés, Corinto & San Pedro Sula</span>
       </div>
-
-      <div id="subRio" class="sub-content-box">
-        <h3>Río de Janeiro & Cristo Redentor</h3>
-        <span class="transport-tag">METRÔ RIO</span> <span class="transport-tag">TREN CORCOVADO</span>
-        <p><b>Logística:</b> Tren del Corcovado desde Cosme Velho para subir al Cristo Redentor.</p>
+      <div id="subCopan" class="sub-content-box">
+        <h3>🛕 Copán Ruinas & Copán Pueblo</h3>
+        <span class="transport-tag">🚌 BUS CASASOLA DESDE SAN PEDRO SULA / FRONTERA GUATEMALA</span>
+        <span class="stay-tag">🏨 HOTELITOS COLONIALES EN COPÁN RUINAS</span>
+        <p><b>Qué hacer:</b> Explorar la "Atenas del Mundo Maya", famosas por sus estelas esculpidas y la escalinata de jeroglíficos. Pasear por el pueblo empedrado y probar el café de montaña local.<br>
+        <b>Dónde quedarse:</b> Posadas coloniales cerca de la plaza central de Copán Ruinas.</p>
       </div>
-
-      <div id="subIlhaGrande" class="sub-content-box" style="display:none;">
-        <h3>Ilha Grande (Vila do Abraão)</h3>
-        <span class="transport-tag">BUS</span> <span class="transport-tag">FLEXBOAT</span>
-        <p><b>Ruta:</b> Bus de Río a Conceição de Jacareí y lancha rápida a Abraão (20 min).</p>
-      </div>
-
-      <div id="subIguazu" class="sub-content-box" style="display:none;">
-        <h3>Cataratas do Iguaçu</h3>
-        <span class="transport-tag">BUS INTERNACIONAL</span>
-        <p><b>Frontera:</b> Buses locales conectan Foz do Iguaçu, Puerto Iguazú y Ciudad del Este.</p>
+      <div id="subCostaHonduras" class="sub-content-box" style="display:none;">
+        <h3>🏖️ Playa Omoa, Puerto Cortés, Corinto & San Pedro Sula</h3>
+        <span class="transport-tag">🚌 BUSES CARIBE DESDE TERMINAL SAN PEDRO SULA</span>
+        <span class="stay-tag">🏨 HOTELS EN SAN PEDRO SULA / CABAÑAS EN OMOA</span>
+        <p><b>Qué hacer:</b> Visitar la Fortaleza de San Fernando en Omoa, comer pescado frito en las playas de Puerto Cortés y cruzar hacia Guatemala por el paso fronterizo de Corinto.</p>
       </div>
     </div>
 
-    <!-- EUROPA -->
-    <div id="guiaEuropa" class="guide-modal">
+    <!-- BELICE -->
+    <div id="guiaBelice" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇪🇺 Europa Clásica: Selección de Guía de Ruta</h2>
-      
+      <h2>🇧🇿 Belice: Cayos, Belmopán & Mayas</h2>
       <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subParis', [48.8566, 2.3522])">París (Torre Eiffel)</span>
-        <span class="sub-link" onclick="mostrarSub('subLondres', [51.5074, -0.1278])">Londres</span>
-        <span class="sub-link" onclick="mostrarSub('subBarcelona', [41.3851, 2.1734])">Barcelona</span>
-        <span class="sub-link" onclick="mostrarSub('subRoma', [41.9028, 12.4964])">Roma</span>
+        <span class="sub-link" onclick="mostrarSub('subCaulker', [17.7431, -88.0261])">🏝️ Cayo Caulker & Belice City</span>
+        <span class="sub-link" onclick="mostrarSub('subSanIgnacio', [17.1583, -89.0696])">🛕 San Ignacio, Belmopán, Cahal Pech & Xunantunich</span>
       </div>
-
-      <div id="subParis" class="sub-content-box">
-        <h3>París & Torre Eiffel</h3>
-        <span class="transport-tag">EUROSTAR / TGV</span>
-        <p><b>Conexión:</b> Tren de alta velocidad Eurostar conecta París (Gare du Nord) con Londres en 2h 15m.</p>
+      <div id="subCaulker" class="sub-content-box">
+        <h3>🏝️ Cayo Caulker ("Go Slow") & Belice City</h3>
+        <span class="transport-tag">⛴️ WATER TAXI DESDE BELICE CITY (45 MIN)</span>
+        <span class="stay-tag">🏨 RASTA HOSTELS EN CAYO CAULKER</span>
+        <p><b>Qué hacer:</b> Snorkel en Hol Chan con tiburones nodriza y rayas, relajarse en "The Split" disfrutando de la vibra Garífuna/Rasta.<br>
+        <b>Tip:</b> Belice City se usa principalmente como nexo de transporte marítimo.</p>
       </div>
-
-      <div id="subLondres" class="sub-content-box" style="display:none;">
-        <h3>Londres</h3>
-        <span class="transport-tag">UNDERGROUND</span>
-        <p><b>Desde Heathrow:</b> Usa la línea <i>Piccadilly Line</i> o <i>Elizabeth Line</i> al centro.</p>
+      <div id="subSanIgnacio" class="sub-content-box" style="display:none;">
+        <h3>🛕 San Ignacio, Belmopán, Cahal Pech & Xunantunich</h3>
+        <span class="transport-tag">🚌 CHICKEN BUS DESDE BELICE CITY</span>
+        <span class="stay-tag">🏨 ECO-HOSTALS EN SAN IGNACIO</span>
+        <p><b>Qué hacer:</b> Cruzar el río en el transbordador manual para subir al templo "El Castillo" en Xunantunich y explorar el sitio arqueológico de Cahal Pech.</p>
       </div>
+    </div>
 
-      <div id="subBarcelona" class="sub-content-box" style="display:none;">
-        <h3>Barcelona</h3>
-        <span class="transport-tag">TREN AVE</span>
-        <p><b>Conexión:</b> Trenes AVE conectan la estación Sants con Madrid y Francia.</p>
+    <!-- BOGOTÁ -->
+    <div id="guiaBogota" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇨🇴 Bogotá: Monserrate & La Candelaria</h2>
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subMonserrate', [4.6058, -74.0555])">⛰️ Cerro Monserrate & Centro Bohemio</span>
       </div>
+      <div id="subMonserrate" class="sub-content-box">
+        <h3>⛰️ Cerro Monserrate, La Candelaria, La Macarena & Chorro de Quevedo</h3>
+        <span class="transport-tag">🚡 TELEFÉRICO / FUNICULAR A MONSERRATE</span>
+        <span class="stay-tag">🏨 HOSTALES HISTÓRICOS EN LA CANDELARIA O LA MACARENA</span>
+        <p><b>Qué hacer:</b> Subir al Santuario de Monserrate (3,152m) para la mejor vista panorámica de Bogotá. Caminar por los callejones empedrados de La Candelaria, tomar chicha en el Chorro de Quevedo y cenar en la zona bohemia de La Macarena.<br>
+        <b>Dónde quedarse:</b> Casas coloniales adaptadas a hostales boutique en La Candelaria o La Macarena (al pie del cerro Monserrate).</p>
+      </div>
+    </div>
 
-      <div id="subRoma" class="sub-content-box" style="display:none;">
-        <h3>Roma</h3>
-        <span class="transport-tag">LEONARDO EXPRESS</span>
-        <p><b>Desde Fiumicino:</b> Tren directo <i>Leonardo Express</i> a Roma Termini (32 min).</p>
+    <!-- BOLIVIA -->
+    <div id="guiaBolivia" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇧🇴 Bolivia: La Paz, Illimani & Estadio El Alto</h2>
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subLaPaz', [-16.5000, -68.1500])">🚠 La Paz, Illimani, Huayna Potosí & Estadio El Alto</span>
+      </div>
+      <div id="subLaPaz" class="sub-content-box">
+        <h3>🚠 La Paz, Vista al Illimani, Huayna Potosí & Estadio El Alto (+4,150m)</h3>
+        <span class="transport-tag">🚠 MI TELEFÉRICO (LÍNEA ROJA / AZUL)</span>
+        <span class="stay-tag">🏨 HOSPEDAJE EN CALLE SAGÁRNAGA O SOPOCACHI</span>
+        <p><b>Qué hacer:</b> 
+        <ul>
+          <li><b>Estadio Municipal de El Alto (Villa Ingenio - 4,150m):</b> El estadio a mayor altitud del mundo para fútbol profesional, la temible fortaleza donde las potencias sudamericanas como Brasil y Argentina sufren por la falta de oxígeno.</li>
+          <li><b>Montañismo:</b> Vista espectacular al imponente Cerro Illimani (6,438m) y campo base para escalar el Huayna Potosí (6,088m).</li>
+          <li><b>Ciudad:</b> Mercado de las Brujas, Teleférico urbano y ambiente bohemio de Sopocachi.</li>
+        </ul>
+        </p>
+      </div>
+    </div>
+
+    <!-- URUGUAY & PARAGUAY -->
+    <div id="guiaUruPara" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇺🇾🇵🇾 Uruguay & Paraguay: Colonia & Tradición Guaraní</h2>
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subColonia', [-34.4714, -57.8442])">🏛️ Colonia del Sacramento (Uruguay)</span>
+        <span class="sub-link" onclick="mostrarSub('subCiudadEste', [-25.5097, -54.6111])">🛍️ Ciudad del Este, Tereré & Guaraní (Paraguay)</span>
+      </div>
+      <div id="subColonia" class="sub-content-box">
+        <h3>🏛️ Colonia del Sacramento (Uruguay)</h3>
+        <span class="transport-tag">⛴️ BUQUEBUS / COLONIA EXPRESS DESDE BUENOS AIRES (1 HR)</span>
+        <span class="stay-tag">🏨 POSADAS COLONIALES EN EL CASCO HISTÓRICO</span>
+        <p><b>Qué hacer:</b> Caminar por la "Calle de los Suspiros", subir al faro histórico y disfrutar del atardecer portugués sobre el Río de la Plata.</p>
+      </div>
+      <div id="subCiudadEste" class="sub-content-box" style="display:none;">
+        <h3>🛍️ Ciudad del Este, Cultura del Tereré & Herencia Guaraní</h3>
+        <span class="transport-tag">🚌 BUS INTERNACIONAL DESDE FOZ DO IGUAÇU</span>
+        <span class="cultural-tag">🌿 TERERÉ CON HIERBAS (POHÃ ÑAÑA)</span>
+        <p><b>Qué hacer:</b> Meca del comercio fronterizo sin impuestos. Aprender y compartir la tradición nacional del **Tereré** (infusión fría de yerba mate servida en guampa con hierbas medicinales guaraníes *pohã ñaña*) ideal para combatir el calor tropical.<br>
+        <b>Dónde quedarse:</b> Zona microcentro de Ciudad del Este o en Foz do Iguaçu.</p>
       </div>
     </div>
 
@@ -827,49 +858,46 @@
       }).addTo(map);
 
       var destinos = [
-        { nombre: "San Juan La Laguna (Cacao & Fuego Maya), Guatemala", region: "Centroamérica", coords: [14.6906, -91.2881] },
+        { nombre: "Cerro Chirripó (3,820m), Costa Rica", region: "Centroamérica", coords: [9.4842, -83.4886] },
+        { nombre: "San José, Costa Rica", region: "Centroamérica", coords: [9.9333, -84.0833] },
+        { nombre: "Biblioteca Nacional (BINAES), El Salvador", region: "Centroamérica", coords: [13.6989, -89.1914] },
+        { nombre: "Santa Ana & Catedral Gótica, El Salvador", region: "Centroamérica", coords: [13.9942, -89.5597] },
+        { nombre: "Volcán Santa Ana & Lago Coatepeque, El Salvador", region: "Centroamérica", coords: [13.8541, -89.6293] },
+        { nombre: "Volcán Izalco, El Salvador", region: "Centroamérica", coords: [13.8133, -89.6331] },
+        { nombre: "Canal de Panamá (Miraflores) & Cinta Costera", region: "Centroamérica", coords: [8.9558, -79.5342] },
+        { nombre: "Albrook Mall, Panamá", region: "Centroamérica", coords: [8.9728, -79.5521] },
+        { nombre: "Volcán Barú (3,475m) & Boquete, Panamá", region: "Centroamérica", coords: [8.8082, -82.5422] },
+        { nombre: "David, Chiriquí, Panamá", region: "Centroamérica", coords: [8.4273, -82.4308] },
+        { nombre: "Bocas del Toro, Panamá", region: "Centroamérica", coords: [9.3402, -82.2420] },
+        { nombre: "León & Sandboarding Cerro Negro, Nicaragua", region: "Centroamérica", coords: [12.5061, -86.7022] },
+        { nombre: "Fábrica Ron Flor de Caña, Nicaragua", region: "Centroamérica", coords: [12.5283, -87.0261] },
+        { nombre: "Volcán San Cristóbal, Nicaragua", region: "Centroamérica", coords: [12.7025, -87.0042] },
+        { nombre: "Volcán Masaya (Lava), Nicaragua", region: "Centroamérica", coords: [11.9853, -86.1608] },
+        { nombre: "Volcán Concepción (Ometepe), Nicaragua", region: "Centroamérica", coords: [11.5392, -85.5701] },
+        { nombre: "Isla de Flores (Petén), Guatemala", region: "Centroamérica", coords: [16.9304, -89.8906] },
+        { nombre: "San Juan La Laguna (Cacao & Fuego), Guatemala", region: "Centroamérica", coords: [14.6906, -91.2881] },
         { nombre: "Santo Tomás de Chichicastenango, Guatemala", region: "Centroamérica", coords: [14.9444, -91.1125] },
-        { nombre: "Lago Atitlán (Panajachel), Guatemala", region: "Centroamérica", coords: [14.7408, -91.1578] },
         { nombre: "Volcán Tajumulco, Guatemala", region: "Centroamérica", coords: [15.0433, -91.9037] },
-        { nombre: "Tikal (Petén), Guatemala", region: "Centroamérica", coords: [17.2220, -89.6237] },
-        { nombre: "Ciudad de Guatemala (Zona 1)", region: "Centroamérica", coords: [14.6349, -90.5069] },
+        { nombre: "Tikal, Guatemala", region: "Centroamérica", coords: [17.2220, -89.6237] },
         { nombre: "Antigua Guatemala", region: "Centroamérica", coords: [14.5586, -90.7295] },
-        { nombre: "Quetzaltenango (Xela), Guatemala", region: "Centroamérica", coords: [14.8347, -91.5180] },
-        { nombre: "Anchorage, Alaska (EE.UU.)", region: "Norteamérica", coords: [61.2181, -149.9003] },
-        { nombre: "Parque Nacional Denali, Alaska", region: "Norteamérica", coords: [63.1148, -151.1926] },
-        { nombre: "Cusco Imperial, Perú", region: "Sudamérica", coords: [-13.5320, -71.9675] },
-        { nombre: "Machu Picchu, Perú", region: "Sudamérica", coords: [-13.1631, -72.5450] },
-        { nombre: "Montaña de 7 Colores (Vinicunca), Perú", region: "Sudamérica", coords: [-13.8693, -71.3029] },
-        { nombre: "Laguna Humantay, Perú", region: "Sudamérica", coords: [-13.3361, -72.5694] },
-        { nombre: "Camino Inca, Perú", region: "Sudamérica", coords: [-13.2263, -72.4184] },
-        { nombre: "Lima, Perú", region: "Sudamérica", coords: [-12.0464, -77.0428] },
-        { nombre: "Ica & Huacachina, Perú", region: "Sudamérica", coords: [-14.0875, -75.7626] },
-        { nombre: "La Paz, Bolivia", region: "Sudamérica", coords: [-16.4897, -68.1193] },
-        { nombre: "Salar de Uyuni, Bolivia", region: "Sudamérica", coords: [-20.1338, -67.4891] },
-        { nombre: "Río de Janeiro (Cristo Redentor), Brasil", region: "Sudamérica", coords: [-22.9068, -43.1729] },
-        { nombre: "Ilha Grande, Brasil", region: "Sudamérica", coords: [-23.1523, -44.2319] },
-        { nombre: "São Paulo, Brasil", region: "Sudamérica", coords: [-23.5505, -46.6333] },
-        { nombre: "Foz do Iguaçu / Cataratas", region: "Sudamérica", coords: [-25.6953, -54.4367] },
-        { nombre: "Quito, Ecuador", region: "Sudamérica", coords: [-0.1807, -78.4678] },
-        { nombre: "Volcán Chimborazo & Laguna Condor Cocha", region: "Sudamérica", coords: [-1.4693, -78.8169] },
-        { nombre: "Tulcán, Ecuador", region: "Sudamérica", coords: [0.8116, -77.7172] },
-        { nombre: "Ipiales (Santuario Las Lajas), Colombia", region: "Sudamérica", coords: [0.8248, -77.6432] },
-        { nombre: "Bogotá, Colombia", region: "Sudamérica", coords: [4.7110, -74.0721] },
-        { nombre: "Buenos Aires, Argentina", region: "Sudamérica", coords: [-34.6037, -58.3816] },
-        { nombre: "Mendoza, Argentina", region: "Sudamérica", coords: [-32.8895, -68.8458] },
-        { nombre: "Salta, Argentina", region: "Sudamérica", coords: [-24.7859, -65.4117] },
-        { nombre: "Ushuaia, Argentina", region: "Sudamérica", coords: [-54.8019, -68.3030] },
-        { nombre: "San Pedro de Atacama, Chile", region: "Sudamérica", coords: [-22.9087, -68.1997] },
-        { nombre: "San José, Costa Rica", region: "Centroamérica", coords: [9.9281, -84.0907] },
-        { nombre: "Panamá", region: "Centroamérica", coords: [8.9824, -79.5199] },
-        { nombre: "Managua, Nicaragua", region: "Centroamérica", coords: [12.1149, -86.2362] },
-        { nombre: "León, Nicaragua", region: "Centroamérica", coords: [12.4379, -86.8780] },
-        { nombre: "Granada, Nicaragua", region: "Centroamérica", coords: [11.9299, -85.9560] },
-        { nombre: "Isla de Ometepe, Nicaragua", region: "Centroamérica", coords: [11.5392, -85.5701] },
-        { nombre: "Londres, Reino Unido", region: "Europa", coords: [51.5074, -0.1278] },
-        { nombre: "París (Torre Eiffel), Francia", region: "Europa", coords: [48.8566, 2.3522] },
-        { nombre: "Barcelona, España", region: "Europa", coords: [41.3851, 2.1734] },
-        { nombre: "Roma, Italia", region: "Europa", coords: [41.9028, 12.4964] }
+        { nombre: "Copán Ruinas & Copán Pueblo, Honduras", region: "Centroamérica", coords: [14.8388, -89.1411] },
+        { nombre: "Playa Omoa, Honduras", region: "Centroamérica", coords: [15.7725, -88.0336] },
+        { nombre: "Puerto Cortés, Honduras", region: "Centroamérica", coords: [15.8272, -87.9297] },
+        { nombre: "Puerto Corinto (Frontera), Honduras", region: "Centroamérica", coords: [15.7922, -87.8864] },
+        { nombre: "San Pedro Sula, Honduras", region: "Centroamérica", coords: [15.5042, -88.0250] },
+        { nombre: "Cayo Caulker, Belice", region: "Centroamérica", coords: [17.7431, -88.0261] },
+        { nombre: "Belice City, Belice", region: "Centroamérica", coords: [17.5046, -88.1962] },
+        { nombre: "Belmopán, Belice", region: "Centroamérica", coords: [17.2510, -88.7590] },
+        { nombre: "San Ignacio (Xunantunich & Cahal Pech), Belice", region: "Centroamérica", coords: [17.1583, -89.0696] },
+        { nombre: "Cerro Monserrate & La Candelaria, Bogotá", region: "Sudamérica", coords: [4.6058, -74.0555] },
+        { nombre: "Estadio El Alto (+4,150m) & La Paz, Bolivia", region: "Sudamérica", coords: [-16.5000, -68.1500] },
+        { nombre: "Huayna Potosí (6,088m) & Illimani, Bolivia", region: "Sudamérica", coords: [-16.2667, -68.1500] },
+        { nombre: "Colonia del Sacramento, Uruguay", region: "Sudamérica", coords: [-34.4714, -57.8442] },
+        { nombre: "Ciudad del Este (Tereré & Comercio), Paraguay", region: "Sudamérica", coords: [-25.5097, -54.6111] },
+        { nombre: "Cusco & Machu Picchu, Perú", region: "Sudamérica", coords: [-13.5320, -71.9675] },
+        { nombre: "Río de Janeiro, Brasil", region: "Sudamérica", coords: [-22.9068, -43.1729] },
+        { nombre: "Anchorage & Denali, Alaska", region: "Norteamérica", coords: [61.2181, -149.9003] },
+        { nombre: "París, Europa", region: "Europa", coords: [48.8566, 2.3522] }
       ];
 
       var marcadoresMap = {};
@@ -911,8 +939,8 @@
           var filtrados = destinos.filter(function(d) { return d.region === region; });
           cargarMarcadores(filtrados);
           
-          if(region === 'Centroamérica') map.setView([14.5, -90.5], 7);
-          if(region === 'Sudamérica') map.setView([-20, -60], 3);
+          if(region === 'Centroamérica') map.setView([12.5, -85], 6);
+          if(region === 'Sudamérica') map.setView([-15, -65], 4);
           if(region === 'Norteamérica') map.setView([55, -120], 3);
           if(region === 'Europa') map.setView([48, 10], 4);
         }
@@ -928,7 +956,7 @@
         if(el) {
           el.style.display = 'block';
           el.scrollIntoView({ behavior: 'smooth' });
-          map.setView(coords, 8);
+          map.setView(coords, 7);
         }
       };
 
@@ -938,7 +966,7 @@
           var modal = box.closest('.guide-modal');
           modal.querySelectorAll('.sub-content-box').forEach(function(b) { b.style.display = 'none'; });
           box.style.display = 'block';
-          map.setView(coords, 10);
+          map.setView(coords, 9);
         }
       };
     });
