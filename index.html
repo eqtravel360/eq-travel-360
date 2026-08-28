@@ -490,13 +490,23 @@
     
     <div class="cards-grid">
       
-      <!-- CHILE & ATACAMA -->
+      <!-- SALTA & FOLKLORE AMPLIO -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Chile • Santiago, Atacama & Estrellas</span>
-          <h3>Chile: Santiago, Atacama, Calle Caracol & Tatio</h3>
-          <p>Santiago, San Pedro de Atacama, Calle Caracol, tours de observación de estrellas en el desierto y los Geysers del Tatio.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaChile', [-33.4489, -70.6693])">Ver Guías de Ruta</button>
+          <span class="card-tag">Argentina • Folklore, Gauchos & Freestyle</span>
+          <h3>Salta: Peñas, Gauchos, Teleférico & Freestyle</h3>
+          <p>Folclore tradicional, cultura gaucha, el teleférico al San Bernardo, batallas de freestyle juvenil en parques y paseos por Salta la Linda.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaSaltaFolklore', [-24.7859, -65.4117])">Ver Guías de Ruta</button>
+        </div>
+      </div>
+
+      <!-- CHILE & PASO DE JAMA / OLLAGÜE -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Chile • Atacama, Pasos & Volcanes</span>
+          <h3>Chile: Paso de Jama, Volcán Ollagüe & Atacama</h3>
+          <p>Santiago, Calle Caracol, San Pedro de Atacama, observación de estrellas, Geysers del Tatio, cruce por el Paso de Jama y el majestuoso Volcán Ollagüe.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaChileAmpliado', [-22.9087, -68.1997])">Ver Guías de Ruta</button>
         </div>
       </div>
 
@@ -580,12 +590,12 @@
         </div>
       </div>
 
-      <!-- ARGENTINA & CHILE SUR -->
+      <!-- ARGENTINA SUR -->
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Sudamérica • Fin del Mundo & Andes</span>
-          <h3>Argentina: Ushuaia, Atacama & Salta</h3>
-          <p>Ushuaia (Fin del Mundo), Salta la Linda, viñedos de Mendoza y Buenos Aires.</p>
+          <h3>Argentina: Ushuaia, Mendoza & Buenos Aires</h3>
+          <p>Ushuaia (Fin del Mundo), viñedos de Mendoza y la cultura porteña de Buenos Aires.</p>
           <button class="card-btn" onclick="abrirGuia('guiaArgentina', [-54.8019, -68.3030])">Ver Guías de Ruta</button>
         </div>
       </div>
@@ -694,14 +704,44 @@
 
     <!-- MODALES DE GUÍAS DETALLADAS -->
 
-    <!-- CHILE -->
-    <div id="guiaChile" class="guide-modal">
+    <!-- SALTA & FOLKLORE AMPLIO -->
+    <div id="guiaSaltaFolklore" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇨🇱 Chile: Santiago, Atacama, Estrellas & Tatio</h2>
+      <h2>🇦🇷 Salta: Folklore, Gauchos, Teleférico & Freestyle</h2>
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subSaltaPeñas', [-24.7859, -65.4117])">🎸 Peñas, Folklore & Tradición Gaucha</span>
+        <span class="sub-link" onclick="mostrarSub('subTelefericoSalta', [-24.7915, -65.4055])">🚡 Teleférico Cerro San Bernardo</span>
+        <span class="sub-link" onclick="mostrarSub('subFreestyleSalta', [-24.7890, -65.4100])">🎤 Batallas de Freestyle en el Parque</span>
+      </div>
+      <div id="subSaltaPeñas" class="sub-content-box">
+        <h3>🎸 Peñas Folklóricas & Tradición Gaucha</h3>
+        <span class="transport-tag">🚶 A PIE POR EL CENTRO HISTÓRICO DE SALTA</span>
+        <span class="cultural-tag">🎻 MÚSICA ANDINA, ZAMBAS & EMPANADAS SALTEÑAS</span>
+        <p><b>Qué hacer:</b> Recorrer las peñas tradicionales de la Balcarce, vivir de cerca el legado cultural de los gauchos salteños, la poesía de sus canciones y disfrutar de unas auténticas empanadas cortadas a cuchillo con buen vino torrontés.</p>
+      </div>
+      <div id="subTelefericoSalta" class="sub-content-box" style="display:none;">
+        <h3>🚡 Teleférico al Cerro San Bernardo</h3>
+        <span class="transport-tag">🚡 TELEFÉRICO URBANO DESDE PARQUE SAN MARTÍN</span>
+        <p><b>Qué hacer:</b> Subir desde el Parque San Martín hasta la cima del cerro San Bernardo para obtener una vista panorámica inigualable de todo el Valle de Lerma y la ciudad de Salta.</p>
+      </div>
+      <div id="subFreestyleSalta" class="sub-content-box" style="display:none;">
+        <h3>🎤 Batallas de Freestyle Juvenil en los Parques</h3>
+        <span class="transport-tag">🌳 PARQUE SAN MARTÍN / PLAZAS CÉNTRICAS</span>
+        <span class="cultural-tag">🎧 CULTURA URBANA & RAP IMPROVISADO</span>
+        <p><b>Qué hacer:</b> Conectar con el talento de los jóvenes salteños en las plazas y parques de la ciudad, donde la movida del freestyle y las batallas de rap callejeras combinan la pasión local con el pulso urbano actual.</p>
+      </div>
+    </div>
+
+    <!-- CHILE AMPLIADO (PASO DE JAMA Y OLLAGÜE) -->
+    <div id="guiaChileAmpliado" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇨🇱 Chile: Santiago, Atacama, Paso de Jama & Volcán Ollagüe</h2>
       <div class="sub-nav">
         <span class="sub-link" onclick="mostrarSub('subSantiago', [-33.4489, -70.6693])">🏙️ Santiago & Calle Caracol</span>
-        <span class="sub-link" onclick="mostrarSub('subAtacamaChile', [-22.9087, -68.1997])">✨ San Pedro de Atacama & Observación de Estrellas</span>
+        <span class="sub-link" onclick="mostrarSub('subAtacamaChile', [-22.9087, -68.1997])">✨ San Pedro de Atacama & Estrellas</span>
         <span class="sub-link" onclick="mostrarSub('subTatio', [-22.3333, -68.0167])">🌋 Geysers del Tatio</span>
+        <span class="sub-link" onclick="mostrarSub('subPasoJama', [-23.2389, -67.0494])">🛣️ Paso de Jama (Frontera)</span>
+        <span class="sub-link" onclick="mostrarSub('subVolcanOllague', [-21.3000, -68.2500])">🌋 Volcán Ollagüe & Poblado</span>
       </div>
       <div id="subSantiago" class="sub-content-box">
         <h3>🏙️ Santiago & Calle Caracol</h3>
@@ -719,6 +759,16 @@
         <h3>🌋 Geysers del Tatio</h3>
         <span class="transport-tag">🚐 TOUR MATUTINO EN 4x4 DESDE SAN PEDRO</span>
         <p><b>Qué hacer:</b> Visita a más de 4,300 metros de altitud al amanecer para contemplar el impresionante campo geotérmico y sus fumarolas de vapor rodeadas de los Andes.</p>
+      </div>
+      <div id="subPasoJama" class="sub-content-box" style="display:none;">
+        <h3>🛣️ Paso de Jama: Alta Ruta Cordillerana</h3>
+        <span class="transport-tag">🚗 RUTA INTERNACIONAL RUTA 27 (CHILE - ARGENTINA)</span>
+        <p><b>Qué hacer:</b> Conducir o viajar en bus por uno de los pasos fronterizos de alta montaña más altos del mundo (a más de 4,200 msnm), conectando el norte chileno con la Puna de Atacama y Salta.</p>
+      </div>
+      <div id="subVolcanOllague" class="sub-content-box" style="display:none;">
+        <h3>🌋 Volcán Ollagüe & Hito Fronterizo</h3>
+        <span class="transport-tag">🚙 EXPEDICIÓN 4x4 DESDE CALAMA O UYUNI</span>
+        <p><b>Qué hacer:</b> Maravillarse con el imponente estratovolcán activo (5,868 msnm) situado en la frontera entre Chile y Bolivia, famoso por su histórico campamento minero azufrero en altura y sus paisajes lunares.</p>
       </div>
     </div>
 
@@ -946,13 +996,13 @@
       </div>
     </div>
 
-    <!-- ARGENTINA & CHILE SUR -->
+    <!-- ARGENTINA SUR -->
     <div id="guiaArgentina" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇦🇷 Argentina: Ushuaia, Salta & Mendoza</h2>
+      <h2>🇦🇷 Argentina: Ushuaia, Mendoza & Buenos Aires</h2>
       <div class="sub-nav">
         <span class="sub-link" onclick="mostrarSub('subUshuaia', [-54.8019, -68.3030])">🐧 Ushuaia (Fin del Mundo)</span>
-        <span class="sub-link" onclick="mostrarSub('subSalta', [-24.7859, -65.4117])">🏜️ Salta & Mendoza</span>
+        <span class="sub-link" onclick="mostrarSub('subMendoza', [-32.8895, -68.8458])">🍇 Mendoza & Vinos</span>
         <span class="sub-link" onclick="mostrarSub('subBsAs', [-34.6037, -58.3816])">💃 Buenos Aires</span>
       </div>
       <div id="subUshuaia" class="sub-content-box">
@@ -961,10 +1011,10 @@
         <span class="stay-tag">🏨 HOSTALES EN EL CENTRO DE USHUAIA</span>
         <p><b>Qué hacer:</b> Navegación por el Canal Beagle hacia el Faro del Fin del Mundo, caminata entre pingüinos en Isla Martillo y trekking en el Parque Nacional Tierra del Fuego.</p>
       </div>
-      <div id="subSalta" class="sub-content-box" style="display:none;">
-        <h3>🏜️ Salta la Linda & Mendoza</h3>
-        <span class="transport-tag">🚌 BUS / VUELO LOCAL</span>
-        <p><b>Qué hacer:</b> En Salta, el Tren a las Nubes y Purmamarca; en Mendoza, ruta de bodegas de vino Malbec al pie de los Andes.</p>
+      <div id="subMendoza" class="sub-content-box" style="display:none;">
+        <h3>🍇 Mendoza: Ruta del Vino & Andes</h3>
+        <span class="transport-tag">🚌 BUS / AUTO RENTADO</span>
+        <p><b>Qué hacer:</b> Recorrido por bodegas de vino Malbec al pie de la cordillera de los Andes.</p>
       </div>
       <div id="subBsAs" class="sub-content-box" style="display:none;">
         <h3>💃 Buenos Aires</h3>
@@ -1246,9 +1296,13 @@
       }).addTo(map);
 
       var destinos = [
+        { nombre: "Salta (Peñas, Folklore, Gauchos & Freestyle), Argentina", region: "Sudamérica", coords: [-24.7859, -65.4117] },
+        { nombre: "Teleférico Cerro San Bernardo, Salta, Argentina", region: "Sudamérica", coords: [-24.7915, -65.4055] },
         { nombre: "Santiago & Calle Caracol, Chile", region: "Sudamérica", coords: [-33.4489, -70.6693] },
         { nombre: "San Pedro de Atacama (Estrellas), Chile", region: "Sudamérica", coords: [-22.9087, -68.1997] },
         { nombre: "Geysers del Tatio, Chile", region: "Sudamérica", coords: [-22.3333, -68.0167] },
+        { nombre: "Paso de Jama (Frontera), Chile-Argentina", region: "Sudamérica", coords: [-23.2389, -67.0494] },
+        { nombre: "Volcán Ollagüe & Hito, Chile-Bolivia", region: "Sudamérica", coords: [-21.3000, -68.2500] },
         { nombre: "Salar de Uyuni, Bolivia", region: "Sudamérica", coords: [-20.1338, -67.4891] },
         { nombre: "Reserva Nacional de Paracas, Perú", region: "Sudamérica", coords: [-13.8398, -76.2517] },
         { nombre: "Miraflores & Costa Verde (Lima), Perú", region: "Sudamérica", coords: [-12.1111, -77.0329] },
@@ -1278,7 +1332,6 @@
         { nombre: "Ushuaia (Fin del Mundo), Argentina", region: "Sudamérica", coords: [-54.8019, -68.3030] },
         { nombre: "Buenos Aires, Argentina", region: "Sudamérica", coords: [-34.6037, -58.3816] },
         { nombre: "Mendoza, Argentina", region: "Sudamérica", coords: [-32.8895, -68.8458] },
-        { nombre: "Salta la Linda, Argentina", region: "Sudamérica", coords: [-24.7859, -65.4117] },
         { nombre: "Anchorage, Alaska (EE.UU.)", region: "Norteamérica", coords: [61.2181, -149.9003] },
         { nombre: "Parque Nacional Denali, Alaska", region: "Norteamérica", coords: [63.1148, -151.1926] },
         { nombre: "París (Torre Eiffel), Francia", region: "Europa", coords: [48.8566, 2.3522] },
