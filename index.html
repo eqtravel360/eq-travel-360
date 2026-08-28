@@ -485,6 +485,16 @@
     
     <div class="cards-grid">
       
+      <!-- BRASIL & TRIPLE FRONTERA -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Brasil • Maravillas & Playas</span>
+          <h3>Brasil: Río de Janeiro, Ilha Grande & Iguazú</h3>
+          <p>Río de Janeiro (Cristo Redentor/Corcovado), el paraíso tropical de Ilha Grande y las impresionantes Cataratas del Iguazú.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaBrasil', [-22.9068, -43.1729])">Ver Guías de Ruta</button>
+        </div>
+      </div>
+
       <!-- MÉXICO -->
       <div class="card">
         <div class="card-body">
@@ -659,6 +669,35 @@
 
     <!-- MODALES DE GUÍAS DETALLADAS -->
 
+    <!-- BRASIL -->
+    <div id="guiaBrasil" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇧🇷 Brasil: Maravillas & Caribe Tropical</h2>
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subRioMain', [-22.9068, -43.1729])">🇧🇷 Río de Janeiro & Cristo Redentor</span>
+        <span class="sub-link" onclick="mostrarSub('subIlhaGrandeMain', [-23.1523, -44.2319])">🏝️ Ilha Grande</span>
+        <span class="sub-link" onclick="mostrarSub('subIguazuMain', [-25.6953, -54.4367])">🌊 Cataratas del Iguazú</span>
+      </div>
+      <div id="subRioMain" class="sub-content-box">
+        <h3>🇧🇷 Río de Janeiro & Cristo Redentor</h3>
+        <span class="transport-tag">🚇 METRÔ RIO / TREN DO CORCOVADO</span>
+        <span class="stay-tag">🏨 HOSPEDAJE EN COPACABANA O IPANEMA</span>
+        <p><b>Qué hacer:</b> Tren del Corcovado para subir al Cristo Redentor, teleférico al Pão de Açúcar, atardecer en Arpoador y recorrer el barrio histórico de Santa Teresa.</p>
+      </div>
+      <div id="subIlhaGrandeMain" class="sub-content-box" style="display:none;">
+        <h3>🏝️ Ilha Grande (Vila do Abraão)</h3>
+        <span class="transport-tag">🚌 BUS DE RÍO A CONCEIÇÃO DE JACAREÍ + 🚤 FLEXBOAT</span>
+        <span class="stay-tag">🏠 POSADAS EN VILA DO ABRAÃO</span>
+        <p><b>Qué hacer:</b> Caminata a la paradisíaca playa de Lopes Mendes y tour en taxi-boat por las lagunas verde y azul.</p>
+      </div>
+      <div id="subIguazuMain" class="sub-content-box" style="display:none;">
+        <h3>🌊 Cataratas do Iguaçu (Triple Frontera)</h3>
+        <span class="transport-tag">🚌 BUS LOCAL PNT</span>
+        <span class="stay-tag">🏨 HOSPEDAJE EN FOZ DO IGUAÇU</span>
+        <p><b>Qué hacer:</b> Recorrer las pasarelas del Parque Nacional do Iguaçu con vista frontal a la Garganta del Diablo y visitar el Parque de las Aves.</p>
+      </div>
+    </div>
+
     <!-- MÉXICO -->
     <div id="guiaMexico" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
@@ -727,7 +766,7 @@
       </div>
       <div id="subNY" class="sub-content-box">
         <h3>🗽 Nueva York</h3>
-        <span class="transport-tag">🚇 MTA SUBWAY (M24/7)</span>
+        <span class="transport-tag">🚇 MTA SUBWAY (24/7)</span>
         <span class="stay-tag">🏨 HOTELS/HOSTELS EN MANHATTAN O QUEENS</span>
         <p><b>Qué hacer:</b> Times Square, Central Park, estatua de la Libertad (Ferry gratuito de Staten Island) y vistas nocturnas desde la cima del Empire State o Summit One Vanderbilt.</p>
       </div>
@@ -1113,7 +1152,11 @@
       }).addTo(map);
 
       var destinos = [
+        { nombre: "Río de Janeiro (Cristo Redentor), Brasil", region: "Sudamérica", coords: [-22.9068, -43.1729] },
+        { nombre: "Ilha Grande, Brasil", region: "Sudamérica", coords: [-23.1523, -44.2319] },
+        { nombre: "Cataratas do Iguaçu, Brasil", region: "Sudamérica", coords: [-25.6953, -54.4367] },
         { nombre: "Teotihuacán (Pirámides), México", region: "Norteamérica", coords: [19.6925, -98.8438] },
+        { nombre: "Chichicastenango, Guatemala", region: "Centroamérica", coords: [14.9444, -91.1125] },
         { nombre: "Chichén Itzá, México", region: "Norteamérica", coords: [20.6843, -88.5678] },
         { nombre: "Cancún & Cozumel, México", region: "Norteamérica", coords: [21.1619, -86.8515] },
         { nombre: "Toronto (CN Tower & Lago Ontario), Canadá", region: "Norteamérica", coords: [43.6426, -79.3871] },
@@ -1175,8 +1218,7 @@
         { nombre: "Estadio El Alto (+4,150m) & La Paz, Bolivia", region: "Sudamérica", coords: [-16.5000, -68.1500] },
         { nombre: "Huayna Potosí (6,088m) & Illimani, Bolivia", region: "Sudamérica", coords: [-16.2667, -68.1500] },
         { nombre: "Colonia del Sacramento, Uruguay", region: "Sudamérica", coords: [-34.4714, -57.8442] },
-        { nombre: "Ciudad del Este (Tereré & Comercio), Paraguay", region: "Sudamérica", coords: [-25.5097, -54.6111] },
-        { nombre: "Río de Janeiro, Brasil", region: "Sudamérica", coords: [-22.9068, -43.1729] }
+        { nombre: "Ciudad del Este (Tereré & Comercio), Paraguay", region: "Sudamérica", coords: [-25.5097, -54.6111] }
       ];
 
       var marcadoresMap = {};
