@@ -519,6 +519,16 @@
     
     <div class="cards-grid">
       
+      <!-- CUBA & LA HABANA -->
+      <div class="card">
+        <div class="card-body">
+          <span class="card-tag">Caribe • Historia, Son & Autos Clásicos</span>
+          <h3>Cuba: La Habana Vieja & El Malecón</h3>
+          <p>La Habana Vieja, El Capitolio, paseo en autos clásicos de los años 50 (*almendrones*), el ambiente del Malecón al atardecer y el místico Son cubano.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaCuba', [23.1136, -82.3666])">Ver Guías de Ruta</button>
+        </div>
+      </div>
+
       <!-- SALTA & FOLKLORE AMPLIO -->
       <div class="card">
         <div class="card-body">
@@ -642,9 +652,9 @@
       <!-- EUROPA -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Europa • Trenes & Capitales</span>
-          <h3>Circuito Europa Clásica</h3>
-          <p>Guías para conectar en tren de alta velocidad París (Eiffel), Londres, Barcelona y Roma.</p>
+          <span class="card-tag">Europa • Francia, Trenes & Capitales</span>
+          <h3>Europa: Francia (Lyon, Nîmes, Orléans), París, Londres & Roma</h3>
+          <p>Recorridos detallados por la gastronomía de Lyon, las ruinas romanas de Nîmes, la historia de Orléans y Chartres, París, Londres y más.</p>
           <button class="card-btn" onclick="abrirGuia('guiaEuropa', [48.8566, 2.3522])">Ver Guías de Ruta</button>
         </div>
       </div>
@@ -732,6 +742,36 @@
     </div>
 
     <!-- MODALES DE GUÍAS DETALLADAS -->
+
+    <!-- CUBA & LA HABANA -->
+    <div id="guiaCuba" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇨🇺 Cuba: La Habana Vieja & Tradición Caribeña</h2>
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subHabanaVieja', [23.1367, -82.3500])">🏛️ La Habana Vieja & El Capitolio</span>
+        <span class="sub-link" onclick="mostrarSub('subMaleconAutos', [23.1410, -82.3700])">🚗 El Malecón & Autos Clásicos (Almendrones)</span>
+        <span class="sub-link" onclick="mostrarSub('subPlazaRev', [23.1245, -82.3860])">🇨🇺 Plaza de la Revolución & Cultura de Son</span>
+      </div>
+
+      <div id="subHabanaVieja" class="sub-content-box">
+        <h3>🏛️ La Habana Vieja & El Capitolio</h3>
+        <span class="transport-tag">🚶 A PIE POR EL CENTRO HISTÓRICO</span>
+        <span class="stay-tag">🏠 CASAS PARTICULARES DE HOSPEDAJE</span>
+        <p><b>Qué hacer:</b> Recorrer la Plaza de la Catedral, la Plaza de Armas, el Templete, caminar por la calle Obispo y maravillarse con la majestuosa arquitectura del Capitolio Nacional de La Habana.</p>
+      </div>
+
+      <div id="subMaleconAutos" class="sub-content-box" style="display:none;">
+        <h3>🚗 El Malecón & Paseo en Autos Clásicos</h3>
+        <span class="transport-tag">🚘 ALMENDRONES (AUTOS CLÁSICOS DE LOS AÑOS 50)</span>
+        <p><b>Qué hacer:</b> Alquilar un auto clásico descapotable para recorrer el Paseo del Prado hasta el Malecón al atardecer, disfrutando de la brisa marina y las vistas al Castillo del Morro.</p>
+      </div>
+
+      <div id="subPlazaRev" class="sub-content-box" style="display:none;">
+        <h3>🇨🇺 Plaza de la Revolución & Tradición de Son Cubano</h3>
+        <span class="cultural-tag">🎶 SON CUBANO, RUMBA & TRADICIÓN</span>
+        <p><b>Qué hacer:</b> Visitar la histórica Plaza de la Revolución con los relieves del Che Guevara y Camilo Cienfuegos, y por la noche disfrutar de música en vivo y baile en la Bodeguita del Medio, Floridita o centros culturales de Son tradicional.</p>
+      </div>
+    </div>
 
     <!-- SALTA & FOLKLORE AMPLIO -->
     <div id="guiaSaltaFolklore" class="guide-modal">
@@ -1057,7 +1097,7 @@
       <div id="subMendoza" class="sub-content-box" style="display:none;">
         <h3>🍇 Mendoza: Ruta del Vino & Andes</h3>
         <span class="transport-tag">🚌 BUS / AUTO RENTADO</span>
-        <p><b>Qué hacer:</b> Recorrido por bodegas de vino Malbec al pie de la cordillera de los Andes.</p>
+        <p><b>Qué hacer:</b> Recorridos por bodegas de vino Malbec al pie de la cordillera de los Andes.</p>
       </div>
       <div id="subBsAs" class="sub-content-box" style="display:none;">
         <h3>💃 Buenos Aires</h3>
@@ -1086,31 +1126,59 @@
       </div>
     </div>
 
-    <!-- EUROPA -->
+    <!-- EUROPA CON LYON, NÎMES Y ORLÉANS/CHARTRES -->
     <div id="guiaEuropa" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇪🇺 Europa Clásica: Trenes & Capitales</h2>
+      <h2>🇪🇺 Europa Clásica: Francia, Trenes & Capitales</h2>
       <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subLyon', [45.7640, 4.8357])">🍷 Lyon (Gastronomía & Traboules)</span>
+        <span class="sub-link" onclick="mostrarSub('subNimes', [43.8367, 4.3601])">🏛️ Nîmes (Anfiteatro Romano)</span>
+        <span class="sub-link" onclick="mostrarSub('subOrleansChartres', [47.9029, 1.9090])">🏰 Orléans & Catedral de Chartres</span>
         <span class="sub-link" onclick="mostrarSub('subParis', [48.8566, 2.3522])">🗼 París (Torre Eiffel)</span>
         <span class="sub-link" onclick="mostrarSub('subLondres', [51.5074, -0.1278])">🎡 Londres</span>
         <span class="sub-link" onclick="mostrarSub('subBarcelona', [41.3851, 2.1734])">🎨 Barcelona</span>
         <span class="sub-link" onclick="mostrarSub('subRoma', [41.9028, 12.4964])">🏛️ Roma</span>
       </div>
-      <div id="subParis" class="sub-content-box">
-        <h3>🗼 París & Torre Eiffel</h3>
-        <span class="transport-tag">🚆 EUROSTAR / TGV</span>
-        <p><b>Conexión:</b> Tren Eurostar directo hacia Londres (2h 15m) o TGV hacia España y Alemania.</p>
+
+      <div id="subLyon" class="sub-content-box">
+        <h3>🍷 Lyon: Capital Gastronómica de Francia</h3>
+        <span class="transport-tag">🚆 TGV DESDE PARÍS (2 Horas)</span>
+        <span class="cultural-tag">🥖 BOUCHONS LYONNAIS & TRABOULES HISTÓRICOS</span>
+        <p><b>Qué hacer:</b> Explorar el centro histórico (*Vieux Lyon*), cruzar los pasadizos secretos o *traboules*, subir a la Basílica de Notre-Dame de Fourvière para obtener la vista panorámica de la confluencia del Roine y el Saona, y cenar en un típico *Bouchon* degustando la auténtica gastronomía lionesa.</p>
       </div>
+
+      <div id="subNimes" class="sub-content-box" style="display:none;">
+        <h3>🏛️ Nîmes: La Roma Francesa</h3>
+        <span class="transport-tag">🚆 TREN DE ALTA VELOCIDAD (SUR DE FRANCIA)</span>
+        <span class="cultural-tag">🏛️ ANFITEATRO ROMANO & MAISON CARRÉE</span>
+        <p><b>Qué hacer:</b> Sorprenderse con el increíblemente conservado Anfiteatro Romano (*Les Arènes de Nîmes*), el templo romano *Maison Carrée* y los jardines de la Fontaine. Una parada histórica esencial en el sur de Francia.</p>
+      </div>
+
+      <div id="subOrleansChartres" class="sub-content-box" style="display:none;">
+        <h3>🏰 Orléans & la Majestuosa Catedral de Chartres</h3>
+        <span class="transport-tag">🚆 TREN REGIONAL DESDE PARÍS (1-1.5 Horas)</span>
+        <span class="cultural-tag">👑 HISTORIA DE JUANA DE ARCO & VITRALES GÓTICOS</span>
+        <p><b>Qué hacer:</b> Recorrer Orléans conectando con la historia heroica de Juana de Arco y la Catedral de Sainte-Croix; hacer la ruta cercana hacia Chartres para maravillarse con la Catedral de Chartres, cumbre de la arquitectura gótica mundial famosa por sus vitrales de azul cobalto del siglo XIII.</p>
+      </div>
+
+      <div id="subParis" class="sub-content-box" style="display:none;">
+        <h3>🗼 París & Torre Eiffel</h3>
+        <span class="transport-tag">🚆 EUROSTAR / TGV / RER</span>
+        <p><b>Conexión:</b> Tren Eurostar directo hacia Londres (2h 15m), TGV directo a Lyon y trenes regionales hacia Orléans y Chartres.</p>
+      </div>
+
       <div id="subLondres" class="sub-content-box" style="display:none;">
         <h3>🎡 Londres</h3>
         <span class="transport-tag">🚇 UNDERGROUND (SUBTERRÁNEO)</span>
         <p><b>Qué hacer:</b> Big Ben, London Eye, Museos gratuitos y paseos por el Támesis.</p>
       </div>
+
       <div id="subBarcelona" class="sub-content-box" style="display:none;">
         <h3>🎨 Barcelona</h3>
         <span class="transport-tag">🚆 TREN AVE / METRO</span>
         <p><b>Qué hacer:</b> Sagrada Familia, Parque Güell y paseos por Las Ramblas y el Barrio Gótico.</p>
       </div>
+
       <div id="subRoma" class="sub-content-box" style="display:none;">
         <h3>🏛️ Roma</h3>
         <span class="transport-tag">🚆 LEONARDO EXPRESS</span>
@@ -1339,6 +1407,7 @@
       }).addTo(map);
 
       var destinos = [
+        { nombre: "La Habana Vieja & El Malecón, Cuba", region: "Centroamérica", coords: [23.1136, -82.3666] },
         { nombre: "Salta (Peñas, Folklore, Gauchos & Freestyle), Argentina", region: "Sudamérica", coords: [-24.7859, -65.4117] },
         { nombre: "Teleférico Cerro San Bernardo, Salta, Argentina", region: "Sudamérica", coords: [-24.7915, -65.4055] },
         { nombre: "Santiago & Calle Caracol, Chile", region: "Sudamérica", coords: [-33.4489, -70.6693] },
@@ -1377,6 +1446,10 @@
         { nombre: "Mendoza, Argentina", region: "Sudamérica", coords: [-32.8895, -68.8458] },
         { nombre: "Anchorage, Alaska (EE.UU.)", region: "Norteamérica", coords: [61.2181, -149.9003] },
         { nombre: "Parque Nacional Denali, Alaska", region: "Norteamérica", coords: [63.1148, -151.1926] },
+        { nombre: "Lyon (Gastronomía & Traboules), Francia", region: "Europa", coords: [45.7640, 4.8357] },
+        { nombre: "Nîmes (Anfiteatro Romano), Francia", region: "Europa", coords: [43.8367, 4.3601] },
+        { nombre: "Orléans (Juana de Arco) & Chartres, Francia", region: "Europa", coords: [47.9029, 1.9090] },
+        { nombre: "Catedral de Chartres, Francia", region: "Europa", coords: [48.4475, 1.4878] },
         { nombre: "París (Torre Eiffel), Francia", region: "Europa", coords: [48.8566, 2.3522] },
         { nombre: "Londres, Reino Unido", region: "Europa", coords: [51.5074, -0.1278] },
         { nombre: "Barcelona, España", region: "Europa", coords: [41.3851, 2.1734] },
@@ -1458,7 +1531,7 @@
           var filtrados = destinos.filter(function(d) { return d.region === region; });
           cargarMarcadores(filtrados);
           
-          if(region === 'Centroamérica') map.setView([12.5, -85], 6);
+          if(region === 'Centroamérica') map.setView([15, -80], 5);
           if(region === 'Sudamérica') map.setView([-25, -65], 3);
           if(region === 'Norteamérica') map.setView([40, -100], 3);
           if(region === 'Europa') map.setView([48, 10], 4);
