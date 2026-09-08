@@ -692,10 +692,10 @@
       <!-- GUATEMALA -->
       <div class="card">
         <div class="card-body">
-          <span class="card-tag">Guatemala • Flores, Cacao & Cumbres</span>
-          <h3>Guatemala: Isla de Flores & Mayas</h3>
-          <p>Isla de Flores (Petén), San Juan La Laguna (Cacao/Fuego), Chichicastenango, Tajumulco, Tikal y Antigua.</p>
-          <button class="card-btn" onclick="abrirGuia('guiaGuateGeneral', [16.9304, -89.8906])">Ver Guías de Ruta</button>
+          <span class="card-tag">Guatemala • Flores, Cacao, Fuego & Cumbres</span>
+          <h3>Guatemala: Volcán de Fuego, Antigua & Mayas</h3>
+          <p>Caminata al Acatenango con vista frontal a las erupciones del Volcán de Fuego, Isla de Flores, San Juan La Laguna, Tikal y Antigua.</p>
+          <button class="card-btn" onclick="abrirGuia('guiaGuateGeneral', [14.4747, -90.8806])">Ver Guías de Ruta</button>
         </div>
       </div>
 
@@ -742,6 +742,58 @@
     </div>
 
     <!-- MODALES DE GUÍAS DETALLADAS -->
+
+    <!-- GUATEMALA -->
+    <div id="guiaGuateGeneral" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇬🇹 Guatemala: Volcán de Fuego, Antigua, Cacao & Cumbres</h2>
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subVolcanFuego', [14.4747, -90.8806])">🌋 Volcán de Fuego & Acatenango</span>
+        <span class="sub-link" onclick="mostrarSub('subFlores', [16.9304, -89.8906])">🏝️ Isla de Flores (Petén)</span>
+        <span class="sub-link" onclick="mostrarSub('subSanJuan', [14.6906, -91.2881])">🍫 San Juan La Laguna (Cacao & Fuego)</span>
+        <span class="sub-link" onclick="mostrarSub('subChichi', [14.9444, -91.1125])">🕯️ Chichicastenango</span>
+        <span class="sub-link" onclick="mostrarSub('subTajumulco', [15.0433, -91.9037])">🌋 Volcán Tajumulco</span>
+      </div>
+
+      <!-- SUB-SECCIÓN VOLCÁN DE FUEGO & ACATENANGO -->
+      <div id="subVolcanFuego" class="sub-content-box">
+        <h3>🌋 Volcán de Fuego & Acatenango: Espectáculo de Magma e Infierno Vivo</h3>
+        <span class="transport-tag">🚌 SHUTTLE 4x4 DESDE ANTIGUA A LA SOLEDAD (1 HORAS)</span>
+        <span class="stay-tag">🏕️ CAMPAMENTO BASE EN ACATENANGO (3,700m)</span>
+        <p><b>La Experiencia:</b> Es una de las experiencias de senderismo y aventura más épicas de todo el planeta. La caminata inicia en la aldea La Soledad ascendiendo el Volcán Acatenango durante 5 a 6 horas atravesando bosques de pino y campos de lava, hasta llegar al campamento base a casi 3,700 msnm. Justo enfrente, a solo 1 o 2 kilómetros en línea recta, el temible <b>Volcán de Fuego</b> retumba cada 15 a 30 minutos lanzando bocanadas de ceniza, explosiones ensordecedoras y ríos de lava incandescente iluminando la noche estrellada.</p>
+        
+        <p><b>Cómo Llegar desde Antigua Guatemala:</b>
+        <br>1. En <b>Antigua Guatemala</b> (a solo 45 km de Ciudad de Guatemala), reserva un tour guiado de 2 días y 1 noche.
+        <br>2. Las agencias locales incluyen transporte ida y vuelta en microbús o 4x4 desde Antigua hasta la base en La Soledad (aprox. 1 a 1.5 horas de trayecto).
+        <br>3. Incluyen guías certificados, equipo de acampar, comidas y abrigo térmico.</p>
+
+        <p><b>Consejos Clave:</b>
+        <br>• <b>Equipo:</b> Ropa por capas, chaqueta cortavientos impermeable, ropa térmica para la noche (las temperaturas caen por debajo de 0°C), linterna frontal y bastones de senderismo.
+        <br>• <b>Hidratación:</b> Lleva al menos 3 a 4 litros de agua para el trayecto y bocadillos calóricos.
+        <br>• <b>Caminata Opcional a la Arista de Fuego:</b> Algunos tours ofrecen una caminata nocturna extra hacia la propia cresta del Volcán de Fuego para sentir los retumbos bajo los pies (solo para personas con excelente condición física y cuando la actividad lo permita de forma segura).</p>
+      </div>
+
+      <div id="subFlores" class="sub-content-box" style="display:none;">
+        <h3>🏝️ Isla de Flores & Base para Tikal</h3>
+        <span class="transport-tag">🚌 BUS NOCTURNO / ✈️ VUELO A FLORES</span>
+        <p><b>Qué hacer:</b> Recorrer las calles de la isla en el lago Petén Itzá y salida temprana a las ruinas mayas de Tikal.</p>
+      </div>
+      <div id="subSanJuan" class="sub-content-box" style="display:none;">
+        <h3>🍫 San Juan La Laguna: Cacao Sagrado & Fuego Maya</h3>
+        <span class="transport-tag">🚤 LANCHA DESDE PANAJACHEL</span>
+        <p><b>Qué hacer:</b> Ceremonia del Cacao puro y Ceremonia del Fuego Maya con un *Ajq'ij* (guía espiritual).</p>
+      </div>
+      <div id="subChichi" class="sub-content-box" style="display:none;">
+        <h3>🕯️ Chichicastenango: Sincretismo K'iche'</h3>
+        <span class="transport-tag">🚌 BUS DÍAS DE MERCADO</span>
+        <p><b>Qué hacer:</b> Ceremonias en las escalinatas de la Iglesia de Santo Tomás (18 escalones del calendario maya).</p>
+      </div>
+      <div id="subTajumulco" class="sub-content-box" style="display:none;">
+        <h3>🌋 Volcán Tajumulco (4,220m)</h3>
+        <span class="transport-tag">🚌 BUS XELA A ALDEA TUICHÁN</span>
+        <p><b>Qué hacer:</b> Cumbre más alta de Centroamérica. Campamento para ver el amanecer sobre las nubes.</p>
+      </div>
+    </div>
 
     <!-- CUBA & LA HABANA -->
     <div id="guiaCuba" class="guide-modal">
@@ -825,7 +877,7 @@
         <p><b>Qué hacer:</b> Caminatas por el Valle de la Luna y los tours nocturnos de <b>observación astronómica</b> aprovechando los cielos más limpios del planeta en el desierto de Atacama.</p>
       </div>
       
-      <!-- SUB-SECCIÓN GEYSERS DEL TATIO CON AUDIOGUÍA, GALERÍA Y VIDEO -->
+      <!-- SUB-SECCIÓN GEYSERS DEL TATIO -->
       <div id="subTatio" class="sub-content-box" style="display:none;">
         <h3>🌋 Geysers del Tatio</h3>
         <span class="transport-tag">🚐 TOUR MATUTINO EN 4x4 DESDE SAN PEDRO</span>
@@ -1443,38 +1495,6 @@
       </div>
     </div>
 
-    <!-- GUATEMALA -->
-    <div id="guiaGuateGeneral" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇬🇹 Guatemala: Flores, Cacao, Fuego & Cumbres</h2>
-      <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subFlores', [16.9304, -89.8906])">🏝️ Isla de Flores (Petén)</span>
-        <span class="sub-link" onclick="mostrarSub('subSanJuan', [14.6906, -91.2881])">🍫 San Juan La Laguna (Cacao & Fuego)</span>
-        <span class="sub-link" onclick="mostrarSub('subChichi', [14.9444, -91.1125])">🕯️ Chichicastenango</span>
-        <span class="sub-link" onclick="mostrarSub('subTajumulco', [15.0433, -91.9037])">🌋 Volcán Tajumulco</span>
-      </div>
-      <div id="subFlores" class="sub-content-box">
-        <h3>🏝️ Isla de Flores & Base para Tikal</h3>
-        <span class="transport-tag">🚌 BUS NOCTURNO / ✈️ VUELO A FLORES</span>
-        <p><b>Qué hacer:</b> Recorrer las calles de la isla en el lago Petén Itzá y salida temprana a las ruinas mayas de Tikal.</p>
-      </div>
-      <div id="subSanJuan" class="sub-content-box" style="display:none;">
-        <h3>🍫 San Juan La Laguna: Cacao Sagrado & Fuego Maya</h3>
-        <span class="transport-tag">🚤 LANCHA DESDE PANAJACHEL</span>
-        <p><b>Qué hacer:</b> Ceremonia del Cacao puro y Ceremonia del Fuego Maya con un *Ajq'ij* (guía espiritual).</p>
-      </div>
-      <div id="subChichi" class="sub-content-box" style="display:none;">
-        <h3>🕯️ Chichicastenango: Sincretismo K'iche'</h3>
-        <span class="transport-tag">🚌 BUS DÍAS DE MERCADO</span>
-        <p><b>Qué hacer:</b> Ceremonias en las escalinatas de la Iglesia de Santo Tomás (18 escalones del calendario maya).</p>
-      </div>
-      <div id="subTajumulco" class="sub-content-box" style="display:none;">
-        <h3>🌋 Volcán Tajumulco (4,220m)</h3>
-        <span class="transport-tag">🚌 BUS XELA A ALDEA TUICHÁN</span>
-        <p><b>Qué hacer:</b> Cumbre más alta de Centroamérica. Campamento para ver el amanecer sobre las nubes.</p>
-      </div>
-    </div>
-
     <!-- HONDURAS -->
     <div id="guiaHonduras" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
@@ -1562,6 +1582,13 @@
       }).addTo(map);
 
       var destinos = [
+        { nombre: "Volcán de Fuego & Acatenango, Guatemala", region: "Centroamérica", coords: [14.4747, -90.8806] },
+        { nombre: "Antigua Guatemala, Guatemala", region: "Centroamérica", coords: [14.5586, -90.7295] },
+        { nombre: "Isla de Flores (Petén), Guatemala", region: "Centroamérica", coords: [16.9304, -89.8906] },
+        { nombre: "San Juan La Laguna (Cacao & Fuego), Guatemala", region: "Centroamérica", coords: [14.6906, -91.2881] },
+        { nombre: "Santo Tomás de Chichicastenango, Guatemala", region: "Centroamérica", coords: [14.9444, -91.1125] },
+        { nombre: "Volcán Tajumulco, Guatemala", region: "Centroamérica", coords: [15.0433, -91.9037] },
+        { nombre: "Tikal, Guatemala", region: "Centroamérica", coords: [17.2220, -89.6237] },
         { nombre: "La Habana Vieja & El Malecón, Cuba", region: "Centroamérica", coords: [23.1136, -82.3666] },
         { nombre: "Salta (Peñas, Folklore, Gauchos & Freestyle), Argentina", region: "Sudamérica", coords: [-24.7859, -65.4117] },
         { nombre: "Teleférico Cerro San Bernardo, Salta, Argentina", region: "Sudamérica", coords: [-24.7915, -65.4055] },
@@ -1581,7 +1608,6 @@
         { nombre: "Ilha Grande, Brasil", region: "Sudamérica", coords: [-23.1523, -44.2319] },
         { nombre: "Cataratas do Iguaçu, Brasil", region: "Sudamérica", coords: [-25.6953, -54.4367] },
         { nombre: "Teotihuacán (Pirámides), México", region: "Norteamérica", coords: [19.6925, -98.8438] },
-        { nombre: "Chichicastenango, Guatemala", region: "Centroamérica", coords: [14.9444, -91.1125] },
         { nombre: "Chichén Itzá, México", region: "Norteamérica", coords: [20.6843, -88.5678] },
         { nombre: "Cancún & Cozumel, México", region: "Norteamérica", coords: [21.1619, -86.8515] },
         { nombre: "Toronto (CN Tower & Lago Ontario), Canadá", region: "Norteamérica", coords: [43.6426, -79.3871] },
@@ -1625,12 +1651,6 @@
         { nombre: "Volcán San Cristóbal, Nicaragua", region: "Centroamérica", coords: [12.7025, -87.0042] },
         { nombre: "Volcán Masaya (Lava), Nicaragua", region: "Centroamérica", coords: [11.9853, -86.1608] },
         { nombre: "Volcán Concepción (Ometepe), Nicaragua", region: "Centroamérica", coords: [11.5392, -85.5701] },
-        { nombre: "Isla de Flores (Petén), Guatemala", region: "Centroamérica", coords: [16.9304, -89.8906] },
-        { nombre: "San Juan La Laguna (Cacao & Fuego), Guatemala", region: "Centroamérica", coords: [14.6906, -91.2881] },
-        { nombre: "Santo Tomás de Chichicastenango, Guatemala", region: "Centroamérica", coords: [14.9444, -91.1125] },
-        { nombre: "Volcán Tajumulco, Guatemala", region: "Centroamérica", coords: [15.0433, -91.9037] },
-        { nombre: "Tikal, Guatemala", region: "Centroamérica", coords: [17.2220, -89.6237] },
-        { nombre: "Antigua Guatemala", region: "Centroamérica", coords: [14.5586, -90.7295] },
         { nombre: "Copán Ruinas & Copán Pueblo, Honduras", region: "Centroamérica", coords: [14.8388, -89.1411] },
         { nombre: "Playa Omoa, Honduras", region: "Centroamérica", coords: [15.7725, -88.0336] },
         { nombre: "Puerto Cortés, Honduras", region: "Centroamérica", coords: [15.8272, -87.9297] },
