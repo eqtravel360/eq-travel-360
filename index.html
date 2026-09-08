@@ -573,8 +573,8 @@
       <div class="card">
         <div class="card-body">
           <span class="card-tag">Sudamérica • Andes, Volcanes & Mitad del Mundo</span>
-          <h3>Ecuador & Colombia Sur: Quito, Chimborazo & Ipiales</h3>
-          <p>Quito (Mitad del Mundo, Basílica del Voto Nacional), Volcán Chimborazo (Condor Cocha 5,100m), Tulcán e Ipiales (Santuario Las Lajas).</p>
+          <h3>Ecuador & Colombia Sur: Quito, Chimborazo, Rumichaca & Ipiales</h3>
+          <p>Quito (Mitad del Mundo, Basílica del Voto Nacional), Volcán Chimborazo (Condor Cocha 5,100m), Puente Internacional de Rumichaca e Ipiales (Santuario Las Lajas).</p>
           <button class="card-btn" onclick="abrirGuia('guiaEcuadorColombia', [-0.1807, -78.4678])">Ver Guías de Ruta</button>
         </div>
       </div>
@@ -743,6 +743,96 @@
 
     <!-- MODALES DE GUÍAS DETALLADAS -->
 
+    <!-- ECUADOR & COLOMBIA SUR -->
+    <div id="guiaEcuadorColombia" class="guide-modal">
+      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
+      <h2>🇪🇨🇨🇴 Ecuador & Colombia Sur: Mitad del Mundo, Fronteras & Cumbres</h2>
+      <div class="sub-nav">
+        <span class="sub-link" onclick="mostrarSub('subQuitoP', [-0.1807, -78.4678])">🏛️ Quito, Mitad del Mundo & Basílica</span>
+        <span class="sub-link" onclick="mostrarSub('subChimborazoP', [-1.4693, -78.8169])">🌋 Volcán Chimborazo (5,100m)</span>
+        <span class="sub-link" onclick="mostrarSub('subRumichacaP', [0.8144, -77.6625])">🌉 Puente Internacional Rumichaca</span>
+        <span class="sub-link" onclick="mostrarSub('subIpialesP', [0.8248, -77.6432])">⛪ Ipiales (Santuario Las Lajas) & Tulcán</span>
+      </div>
+
+      <!-- QUITO & MITAD DEL MUNDO -->
+      <div id="subQuitoP" class="sub-content-box">
+        <h3>🏛️ Quito: Centro Histórico, Mitad del Mundo & Basílica del Voto Nacional</h3>
+        <span class="transport-tag">🚇 METRO DE QUITO / BUS CIENTÍFICO SAN ANTONIO</span>
+        <span class="stay-tag">🏨 HOSPEDAJE EN CENTRO HISTÓRICO O LA MARISCAL</span>
+        <p><b>Qué hacer:</b> Caminar por el Centro Histórico mejor conservado de América, subir a las torres neogóticas de la <b>Basílica del Voto Nacional</b>, tomar el bus hacia el monumento a la <b>Mitad del Mundo (Latitud 0°0'0")</b> y subir al Teleférico para ver los volcanes que rodean Quito.<br>
+        <b>Dónde quedarse:</b> Hoteles boutique en el Centro Histórico o hostales en La Mariscal.</p>
+
+        <h4 style="color: var(--text-bright); margin-top: 20px; margin-bottom: 5px;">🎧 Audioguía:</h4>
+        <audio controls style="width: 100%; max-width: 400px; margin-bottom: 15px;">
+          <source src="mitad del mundo.opus" type="audio/ogg">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+
+        <h4 style="color: var(--text-bright); margin-top: 15px; margin-bottom: 5px;">📸 Galería & Video Vlog de la Mitad del Mundo:</h4>
+        <div class="media-gallery">
+          <img src="mitad_del_mundo[1].jpg" alt="Mitad del Mundo Foto 1">
+          <img src="mitad_del_mundo_2[1].jpg" alt="Mitad del Mundo Foto 2">
+          <video controls preload="metadata">
+            <source src="la mitad del mundo clip.mp4" type="video/mp4">
+            Tu navegador no soporta reproducción de video.
+          </video>
+        </div>
+      </div>
+
+      <!-- CHIMBORAZO -->
+      <div id="subChimborazoP" class="sub-content-box" style="display:none;">
+        <h3>🌋 Volcán Chimborazo & Laguna Condor Cocha (5,100m)</h3>
+        <span class="transport-tag">🚌 BUS DE RIOBAMBA A REFUGE CARREL</span>
+        <span class="stay-tag">🏠 HOSPEDAJE EN RIOBAMBA O CABAÑAS DE LA RESERVA</span>
+        <p><b>Qué hacer:</b> Subida en vehículo hasta el Refugio Hermanos Carrel (4,800m) e inicio de caminata exigente sobre piedra volcánica hasta la <b>Laguna Condor Cocha (5,100m)</b>. El punto más cercano al sol desde el centro de la Tierra.</p>
+
+        <h4 style="color: var(--text-bright); margin-top: 20px; margin-bottom: 5px;">🎧 Audioguía:</h4>
+        <audio controls style="width: 100%; max-width: 400px; margin-bottom: 15px;">
+          <source src="laguna condor cocha .mp4" type="audio/mp4">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+      </div>
+
+      <!-- PUENTE INTERNACIONAL DE RUMICHACA (NUEVA PESTAÑA SEPARADA) -->
+      <div id="subRumichacaP" class="sub-content-box" style="display:none;">
+        <h3>🌉 Puente Internacional de Rumichaca (Frontera Ecuador - Colombia)</h3>
+        <span class="transport-tag">🚌 BUS QUITO-TULCÁN + 🚕 TAXI FRONTERIZO</span>
+        <p><b>La Experiencia:</b> El cruce por el histórico cañón del río Guáitara que une la ciudad ecuatoriana de Tulcán con la colombiana de Ipiales. Es el principal paso terrestre binacional de los Andes Septentrionales.</p>
+        
+        <p><b>Cómo Llegar:</b> Tomar un bus desde la Terminal Carcelén en Quito hacia Tulcán (aprox. 5 horas). Desde la terminal de Tulcán, abordar un taxi o colectivo directo hasta la oficina de migración en el Puente de Rumichaca para realizar sellado de pasaporte y cruce peatonal.</p>
+
+        <h4 style="color: var(--text-bright); margin-top: 20px; margin-bottom: 5px;">🎧 Audioguía de la Frontera & Las Lajas:</h4>
+        <audio controls style="width: 100%; max-width: 400px; margin-bottom: 15px;">
+          <source src="audio las lajas.ogg" type="audio/ogg">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+      </div>
+
+      <!-- IPIALES & LAS LAJAS -->
+      <div id="subIpialesP" class="sub-content-box" style="display:none;">
+        <h3>⛪ Ipiales (Santuario Las Lajas) & Tulcán</h3>
+        <span class="transport-tag">🚕 TAXI DESDE RUMICHACA A IPIALES</span>
+        <span class="stay-tag">🏨 HOSPEDAJE EN IPIALES O TULCÁN</span>
+        <p><b>Qué hacer:</b> Visitar el Cementerio de Tulcán famoso por sus esculturas en ciprés, cruzar Rumichaca e impactarse con el impresionante Santuario neogótico de Las Lajas construido sobre el cañón del río Guáitara.</p>
+
+        <h4 style="color: var(--text-bright); margin-top: 20px; margin-bottom: 5px;">🎧 Audioguía:</h4>
+        <audio controls style="width: 100%; max-width: 400px; margin-bottom: 15px;">
+          <source src="audio las lajas.ogg" type="audio/ogg">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+
+        <h4 style="color: var(--text-bright); margin-top: 15px; margin-bottom: 5px;">📸 Galería & Video Vlog de Ipiales:</h4>
+        <div class="media-gallery">
+          <img src="ipiales[1].jpg" alt="Ipiales Foto 1">
+          <img src="ipiales_2[1].jpg" alt="Ipiales Foto 2">
+          <video controls preload="metadata">
+            <source src="ipiales_clip[1].mp4" type="video/mp4">
+            Tu navegador no soporta reproducción de video.
+          </video>
+        </div>
+      </div>
+    </div>
+
     <!-- GUATEMALA -->
     <div id="guiaGuateGeneral" class="guide-modal">
       <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
@@ -755,7 +845,6 @@
         <span class="sub-link" onclick="mostrarSub('subTajumulco', [15.0433, -91.9037])">🌋 Volcán Tajumulco</span>
       </div>
 
-      <!-- SUB-SECCIÓN VOLCÁN DE FUEGO & ACATENANGO -->
       <div id="subVolcanFuego" class="sub-content-box">
         <h3>🌋 Volcán de Fuego & Acatenango: Espectáculo de Magma e Infierno Vivo</h3>
         <span class="transport-tag">🚌 SHUTTLE 4x4 DESDE ANTIGUA A LA SOLEDAD (1 HORAS)</span>
@@ -877,7 +966,6 @@
         <p><b>Qué hacer:</b> Caminatas por el Valle de la Luna y los tours nocturnos de <b>observación astronómica</b> aprovechando los cielos más limpios del planeta en el desierto de Atacama.</p>
       </div>
       
-      <!-- SUB-SECCIÓN GEYSERS DEL TATIO -->
       <div id="subTatio" class="sub-content-box" style="display:none;">
         <h3>🌋 Geysers del Tatio</h3>
         <span class="transport-tag">🚐 TOUR MATUTINO EN 4x4 DESDE SAN PEDRO</span>
@@ -1080,80 +1168,6 @@
         <h3>🏜️ Ica & Huacachina</h3>
         <span class="transport-tag">🚌 BUS DESDE LIMA O PARACAS</span>
         <p><b>Qué hacer:</b> Sandboarding y buggies en el oasis de Huacachina.</p>
-      </div>
-    </div>
-
-    <!-- ECUADOR & COLOMBIA SUR -->
-    <div id="guiaEcuadorColombia" class="guide-modal">
-      <button class="close-btn" onclick="cerrarGuias()">✕ Cerrar</button>
-      <h2>🇪🇨🇨🇴 Ecuador & Colombia Sur: Mitad del Mundo & Cumbres</h2>
-      <div class="sub-nav">
-        <span class="sub-link" onclick="mostrarSub('subQuitoP', [-0.1807, -78.4678])">🏛️ Quito, Mitad del Mundo & Basílica</span>
-        <span class="sub-link" onclick="mostrarSub('subChimborazoP', [-1.4693, -78.8169])">🌋 Volcán Chimborazo & Laguna Condor Cocha (5,100m)</span>
-        <span class="sub-link" onclick="mostrarSub('subIpialesP', [0.8248, -77.6432])">⛪ Ipiales (Santuario Las Lajas) & Tulcán</span>
-      </div>
-
-      <!-- QUITO & MITAD DEL MUNDO -->
-      <div id="subQuitoP" class="sub-content-box">
-        <h3>🏛️ Quito: Centro Histórico, Mitad del Mundo & Basílica del Voto Nacional</h3>
-        <span class="transport-tag">🚇 METRO DE QUITO / BUS CIENTÍFICO SAN ANTONIO</span>
-        <span class="stay-tag">🏨 HOSPEDAJE EN CENTRO HISTÓRICO O LA MARISCAL</span>
-        <p><b>Qué hacer:</b> Caminar por el Centro Histórico mejor conservado de América, subir a las torres neogóticas de la <b>Basílica del Voto Nacional</b>, tomar el bus hacia el monumento a la <b>Mitad del Mundo (Latitud 0°0'0")</b> y subir al Teleférico para ver los volcanes que rodean Quito.<br>
-        <b>Dónde quedarse:</b> Hoteles boutique en el Centro Histórico o hostales en La Mariscal.</p>
-
-        <h4 style="color: var(--text-bright); margin-top: 20px; margin-bottom: 5px;">🎧 Audioguía:</h4>
-        <audio controls style="width: 100%; max-width: 400px; margin-bottom: 15px;">
-          <source src="mitad del mundo.opus" type="audio/ogg">
-          Tu navegador no soporta el elemento de audio.
-        </audio>
-
-        <h4 style="color: var(--text-bright); margin-top: 15px; margin-bottom: 5px;">📸 Galería & Video Vlog de la Mitad del Mundo:</h4>
-        <div class="media-gallery">
-          <img src="mitad_del_mundo[1].jpg" alt="Mitad del Mundo Foto 1">
-          <img src="mitad_del_mundo_2[1].jpg" alt="Mitad del Mundo Foto 2">
-          <video controls preload="metadata">
-            <source src="la mitad del mundo clip.mp4" type="video/mp4">
-            Tu navegador no soporta reproducción de video.
-          </video>
-        </div>
-      </div>
-
-      <!-- CHIMBORAZO -->
-      <div id="subChimborazoP" class="sub-content-box" style="display:none;">
-        <h3>🌋 Volcán Chimborazo & Laguna Condor Cocha (5,100m)</h3>
-        <span class="transport-tag">🚌 BUS DE RIOBAMBA A REFUGE CARREL</span>
-        <span class="stay-tag">🏠 HOSPEDAJE EN RIOBAMBA O CABAÑAS DE LA RESERVA</span>
-        <p><b>Qué hacer:</b> Subida en vehículo hasta el Refugio Hermanos Carrel (4,800m) e inicio de caminata exigente sobre piedra volcánica hasta la <b>Laguna Condor Cocha (5,100m)</b>. El punto más cercano al sol desde el centro de la Tierra.</p>
-
-        <h4 style="color: var(--text-bright); margin-top: 20px; margin-bottom: 5px;">🎧 Audioguía:</h4>
-        <audio controls style="width: 100%; max-width: 400px; margin-bottom: 15px;">
-          <source src="laguna condor cocha .mp4" type="audio/mp4">
-          Tu navegador no soporta el elemento de audio.
-        </audio>
-      </div>
-
-      <!-- IPIALES & LAS LAJAS -->
-      <div id="subIpialesP" class="sub-content-box" style="display:none;">
-        <h3>⛪ Ipiales (Santuario Las Lajas) & Tulcán</h3>
-        <span class="transport-tag">🚌 BUS DESDE QUITO A TULCÁN + 🚕 TAXI FRONTERA RUMICHACA</span>
-        <span class="stay-tag">🏨 HOSPEDAJE EN IPIALES O TULCÁN</span>
-        <p><b>Qué hacer:</b> Visitar el Cementerio de Tulcán famoso por sus esculturas en ciprés, cruzar el puente internacional Rumichaca e impactarse con el impresionante Santuario neogótico de Las Lajas construido sobre el cañón del río Guáitara.</p>
-
-        <h4 style="color: var(--text-bright); margin-top: 20px; margin-bottom: 5px;">🎧 Audioguía:</h4>
-        <audio controls style="width: 100%; max-width: 400px; margin-bottom: 15px;">
-          <source src="audio las lajas.ogg" type="audio/ogg">
-          Tu navegador no soporta el elemento de audio.
-        </audio>
-
-        <h4 style="color: var(--text-bright); margin-top: 15px; margin-bottom: 5px;">📸 Galería & Video Vlog de Ipiales:</h4>
-        <div class="media-gallery">
-          <img src="ipiales[1].jpg" alt="Ipiales Foto 1">
-          <img src="ipiales_2[1].jpg" alt="Ipiales Foto 2">
-          <video controls preload="metadata">
-            <source src="ipiales_clip[1].mp4" type="video/mp4">
-            Tu navegador no soporta reproducción de video.
-          </video>
-        </div>
       </div>
     </div>
 
@@ -1582,6 +1596,7 @@
       }).addTo(map);
 
       var destinos = [
+        { nombre: "Puente Internacional Rumichaca (Frontera), Ecuador-Colombia", region: "Sudamérica", coords: [0.8144, -77.6625] },
         { nombre: "Volcán de Fuego & Acatenango, Guatemala", region: "Centroamérica", coords: [14.4747, -90.8806] },
         { nombre: "Antigua Guatemala, Guatemala", region: "Centroamérica", coords: [14.5586, -90.7295] },
         { nombre: "Isla de Flores (Petén), Guatemala", region: "Centroamérica", coords: [16.9304, -89.8906] },
